@@ -1,0 +1,114 @@
+<!-- %data1 -->
+<div class="card mb-3 text-left" style="max-width: 100%;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4 bg-main-vote">
+                                        <img src="http://www.cikrf.ru/upload/resize_cache/iblock/605/760_515_1/jzsle1zt_2.jpg##__IMG_ANSWER__"
+                                             class="card-img" style="max-height: 200px;">
+                                        <!-- <ul class="mt-3">
+                                            <li class="my-2"><a class="main-a" href="#">Стратегия</a></li>
+                                            <li class="my-2"><a class="main-a" href="#">Тактика</a></li>
+                                            <li class="my-2"><a class="main-a" href="#">Программа</a></li>
+                                            <li class="my-2"><a class="main-a" href="#">О кандидате</a></li>
+                                        </ul> -->
+
+                                
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-3">
+                                            <h5 class="card-title" id="pa__ID_ANSWER__">__NAME_ANSWER__ </h5>
+                                            <p class="card-text">__TEXT_ANSWER__</p>
+                                        </div>
+                                        
+<div align="right">
+    
+    <span>__IS_LIKE__ </span> 
+    
+        <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+           href="/derjava/ajax.php?ax=set_like_answer&pa=__ID_ANSWER__&v=1"
+           onclick="ajax_a_like_click2(event)">
+            <img class="float-lg-left float-none" src="img/like.png" style="height: 20px;">
+        </a>
+        <span class="d-lg-inline">Да </span>
+        <a class="main-a mr-4" href="/derjava/ajax.php?ax=get_likeanswer_list&pa=__ID_ANSWER__&v=1"
+           onclick="ajax_a_likelist_click2(event)">
+        <span class="d-lg-inline" data-name="cnt_like">__CNT_LIKE__</span>
+        </a>
+
+        <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+           href="/derjava/ajax.php?ax=set_like_answer&pa=__ID_ANSWER__&v=-1"
+           onclick="ajax_a_like_click2(event)">
+            <img class="float-lg-left float-none" src="img/dislike.png" style="height: 20px;">
+        </a>
+        <span class="d-none d-lg-inline">Нет </span>
+        <a class="main-a" href="/derjava/ajax.php?ax=get_likeanswer_list&pa=__ID_ANSWER__&v=-1"
+           onclick="ajax_a_likelist_click2(event)">
+           <span class="d-lg-inline" data-name="cnt_dislike"> __CNT_DISLIKE__ </span>
+        </a>
+    <!-- в list_like  помещается список тех, кому нравится голосование -->
+    <div class="table-responsive text-left mt-3 table-hover">
+        <table data-name="list_like"></table>
+    </div>
+</div>
+                                        
+                                    </div>
+</div>
+                                    
+<div class="clearfix"></div>
+<br><br><br><br><br>
+<div class="clearfix"></div>
+<div>
+                                        <p>
+Опрос используется как варинат в голосованиях. Для голосования перейдите в соответствующее голосование.
+                                        </p>                                        
+                                        <table>
+                                            <tr>
+<th>Голосование</th>
+<th>Вы проголосовали</th>
+<th>Включить/Исключить</th>
+<th></th>
+                                            </tr>                                            
+                                            
+                                            
+<!-- __rows1__ -->
+<tr>
+    <td><a href="/derjava/poll.php?qq=__ID_POLL__#pa__ID_ANSWER__">__NAME_POLL__</a></td>
+    <td>
+                                            <!-- __VISIBLE_BTN_ANSWER_CHECK__ -->
+                                            <button class="btn main-bg-color main-btn float-left float-lg-right my-1 mx-0 shadow-none"
+                                                    onclick="golosovanie_answer_click2(event)"
+                                                    pa="__ID_ANSWER__"
+                                                    qq="__ID_POLL__"
+                                                    checked=" ">
+                                                Голосовать
+                                            </button>
+                                            <!-- __VISIBLE_BTN_ANSWER_CHECK__ -->
+                                            
+                                            <!-- __IS_ANSWER_CHECKED__ -->
+                                                <button class="btn z-depth-0 p-0 border"
+                                                        onclick="golosovanie_answer_click2(event)"
+                                                        pa="__ID_ANSWER__"
+                                                        qq="__ID_POLL__"
+                                                        checked="checked">
+                                                    <i class="material-icons text-danger align-middle"
+                                                       style="font-size: 30px;">check</i>
+                                                </button>
+                                                <small class="align-middle" style="line-height: 33px;">Ваш голос принят
+                                                <br> ** для отмены голоса нажмите галочку
+                                                </small>
+                                            <!-- __IS_ANSWER_CHECKED__ -->
+    
+    </td>
+    <td>
+        <!-- __CNT2APPROVE__ --> __CNT2APPROVE__ <button onclick="setLocation('/derjava/poll_answer.php?ax=pollanswer_approve&p=__ID_POLL__&pa=__ID_ANSWER__')" >Подтвердить</button>  <!-- __CNT2APPROVE__ -->
+        <!-- !__CNT2APPROVE__ --> <button onclick="setLocation('/derjava/poll_answer.php?ax=pollanswer_del&p=__ID_POLL__&pa=__ID_ANSWER__')" >Удалить</button>  <!-- !__CNT2APPROVE__ -->
+    </td>
+    <td></td>
+</tr>
+<!-- __rows1__ -->
+                                        </table>                                        
+</div>
+
+
+                                        
+                                    </div>
+<!-- data1% -->

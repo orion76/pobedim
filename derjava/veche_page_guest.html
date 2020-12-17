@@ -1,0 +1,310 @@
+<!-- 
+
+data1_lu - таблица участников
+      
+remove - системная псевдо-переменная, которая удаляет блоки
+
+$header$ - вложенный файл  header.html-clip
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta property="og:type" content="website">
+    
+    <!-- %data0 -->
+    <meta property="og:url" content="__SESSION_ROOT__/derjava/veche.php?__VECHE__">
+    <link rel="canonical" href="__SESSION_ROOT__/derjava/veche.php?__VECHE__"/>
+    <!-- data0% -->
+
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script type="text/javascript" src="/derjava/veche.js"></script>
+    <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+	    <div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right" itemscope itemtype="http://schema.org/ImageObject">
+                <!-- <div align="right">Объединение</div> -->
+                <div class="bg-white rounded border mb-3">
+                    <!--Заголовок-->
+                    <!-- %data0 -->
+<!--
+        <div class="badge shadow-none bg-white m-3 position-absolute"><span class="text-dark">__NAME_KIND_VECHE__</span>
+                    </div>
+-->
+                    <!-- __IMG_VECHE__ -->
+                    <img class="rounded-top overflow-hidden" style="max-height:200px; __STYLE_IMG_VECHE__"
+                         src="__IMG_VECHE__"
+                         itemprop="contentUrl" >
+                    <!-- __IMG_VECHE__ -->
+
+        <div class=""><span class="text-dark">__NAME_KIND_VECHE__</span>
+        </div>
+
+                    <div class="col">
+                        <h1>
+                            <small class="float-left font-weight-light pt-1"  itemprop="name" >__NAME_VECHE__</small>
+                        </h1>
+
+
+                        <!-- data0% -->
+
+                        <!-- %data99 -->
+                        <!-- __VECHE_IS_COMMETTEE__ -->
+
+                        <div class="clearfix"></div>
+                        <hr class="mx-n3">
+
+                        
+                        <!-- __ID_POLL_VECHE__ -->
+                        <div> Цель группы - исполнение решения __VECHE_IS_COMMETTEE__
+                            по голосованию  <a class="main-a" href="/derjava/poll.php?qq=__ID_POLL_VECHE__">
+                                __NAME_POLL_VECHE__ </a>
+                        </div>
+                        <!-- __ID_POLL_VECHE__ -->
+                        
+                       
+                        
+                        <!--  __ID_POLL_RESULT__ -->
+                        Итоговое голосование: <a class="main-a"
+                                                 href="/derjava/poll.php?ax=&qq=__ID_POLL_RESULT__">
+                        __NAME_POLL_RESULT__</a>
+                        <br>Принятое решение по итоговому голосованию: __NAME_ANSWER_RESULT__ 
+                        <small><br>* на <a class="main-a" href="/derjava/veche_edit.php?iv=__VECHE__">форме редактирования
+                            группы</a>
+                            координатор фиксирует решение
+                        </small>
+                        <!--  __ID_POLL_RESULT__ -->
+
+                        <!-- __VECHE_IS_COMMETTEE__ -->
+                        <!-- data99% -->
+
+                        <hr class="mx-n3">
+
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <hr class="mt-2">
+
+                    <!--/Заголовок-->
+
+                    <div class="col no-gutters float-left col-md-12 col-lg-8">
+
+                        <!--Описание группы-->
+
+                        <table id="tablePreview" class="table table-sm table-borderless">
+                            <tbody>
+                            <!-- %data0 -->
+                            <tr>
+                                <td colspan="2">
+                                <!-- __VISIBLE_CAN_EDIT_VECHE__ -->
+                                <a class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect"
+                                   href="/derjava/veche_edit.php?iv=__VECHE__"> Редактировать объединение </a>
+                                <!-- __VISIBLE_CAN_EDIT_VECHE__ -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Описание</th>
+                                <td  itemprop="description">
+                                    __TEXT_VECHE__
+                                </td>
+                                <!-- data0% -->
+                            </tr>
+                            <!-- %urls_veche -->
+                            <tr>
+                                <th>Ссылки</th>
+                                <td>
+                                    <ul style="padding:0px;margin:0px;">
+                                    <!-- urls_veche% -->
+
+                                    <!-- %url_veche -->
+                                    <li style="padding-top: 10px;">
+                                    <a href="__URL_WEB_VECHE__" class="main-a font-weight">__TEXT_WEB_VECHE__</a>
+                                    </li>
+                                    <!-- url_veche% -->
+
+                                    <!-- %urls_veche -->
+                                    </ul>
+                                </td>
+                            </tr>
+                            <!-- urls_veche% -->
+                          
+                            </tbody>
+                        </table>
+
+                        <!--Описание группы-->
+
+                        <!--Приглашение в объединение-->
+
+                        <div class="rounded border py-2 mb-3">
+
+                            <div class="p-2">
+                                <span class="mr-3"><small>ПРИГЛАСИ В ОБЪЕДИНЕНИЕ</small></span>
+                                <div class="w100 d-md-none my-2"></div>
+                                <!-- %data0 -->
+                                <!--<a href=""><img src="/derjava/img/logo/twitter-logo.png" alt=""></a>-->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=__SHARE_VECHE__"
+                                   target="_blank"><img
+                                        src="/derjava/img/logo/fb-logo.png" alt=""></a>
+                                <a href="https://vk.com/share.php?url=__SHARE_VECHE__" target="_blank"><img
+                                        src="/derjava/img/logo/vk-logo.png" alt=""></a>
+                                <!--<a href=""><img src="/derjava/img/logo/inst-logo.png" alt=""></a>-->
+                                <a href="https://connect.ok.ru/offer?url=__SHARE_VECHE__" target="_blank"><img
+                                        src="/derjava/img/logo/ok-logo.png" alt=""></a>
+                                <!-- data0% -->
+
+                            </div>
+
+                        </div>
+
+                        <!--Приглашение в объединение-->
+
+
+                    </div>
+
+                    <!-- Инструменты объединения -->
+
+                    <div class="float-right col-md-12 col-lg-4 border-left">
+
+    <!-- %data_referendum --> 
+      <hr>
+      <!-- __VECHE_REFERENDUM__ -->
+      <span style="padding: 1px;">  <a href="/derjava/veche.php?__VECHE_REFERENDUM__">РЕФЕРЕНДУМ</a></span>
+      <!-- __VECHE_REFERENDUM__ -->
+      <br>
+    <!-- data_referendum% -->  
+
+
+                     <!-- %data0 -->   
+
+                        <!-- __VISIBLE_BTN_COOP__ -->
+                        <hr class="ml-n3 my-2">
+                        <a class="main-a" href="/bazar/bazar.php?iv=__VECHE__">Кооперативная ярмарка</a>
+                        <!-- __VISIBLE_BTN_COOP__ -->
+
+                        
+<!-- __VISIBLE_TOOLS0__ -->
+                        <hr class="ml-n3 my-2">
+                        <a class="main-a" href="/derjava/text_search.php?iv=__VECHE__">Список публикаций объединения __CNT_TALK__</a>
+                        <hr class="ml-n3 my-2">
+                        <!-- __CNT_POLL__ --> <a class="main-a" href="/derjava/poll_search.php?iv=__VECHE__">Список голосований объединения __CNT_POLL__</a><!-- __CNT_POLL__ -->
+<!-- __VISIBLE_TOOLS0__ -->                        
+<!-- __VISIBLE_TOOLS6__ -->                        
+                        <a class="main-a" href="/derjava/poll_search.php?iv=__VECHE__">Список проблем для решения на референдумах</a>
+<!-- __VISIBLE_TOOLS6__ -->                        
+<!-- __VISIBLE_TOOLS7__ -->
+                        <hr class="ml-n3 my-2">
+                        <a class="main-a" href="/derjava/text_search.php?iv=__VECHE__">Список пуликаций Президиума</a>
+                        <hr class="ml-n3 my-2">
+                        <a class="main-a" href="/derjava/poll_search.php?iv=__VECHE__">Список голосований Президиума</a>
+<!-- __VISIBLE_TOOLS7__ -->                        
+<!-- __VISIBLE_TOOLS8__ -->
+                        <hr class="ml-n3 my-2">
+                        <a class="main-a" href="/derjava/text_search.php?iv=__VECHE__">Список пуликаций Съезда</a>
+                        <hr class="ml-n3 my-2">
+                        <a class="main-a" href="/derjava/poll_search.php?iv=__VECHE__">Повестка съезда / список голосований</a>
+<!-- __VISIBLE_TOOLS8__ -->                        
+
+
+                        <!-- data0% -->
+                    </div>
+
+                    <!-- /Инструменты объединения -->
+
+                    <!-- /Участники правая колонка -->
+                    <div class="clearfix"></div>
+                </div>
+
+                <!--/Основной контент-->
+
+                <!-- Участники -->
+                <div class="bg-white rounded border mb-3">
+
+                    <!-- %data0 -->
+                    <!-- __VISIBLE_CNT_CV__ -->
+                    <div class="col py-3">
+                        <p>
+                        __INFO_CNT_CV__</p>
+                        <form class="form-inline" method="post" action="/derjava/veche.php?iv=__VECHE__">
+                            <input class="form-control col mr-1 rounded-pill m-height" type="text" name="sx" value="__SX__"
+                                   placeholder="Введите имя участника или символ % для отображения всех участников">
+                            <input class="btn shadow-none rounded-pill main-btn" type="submit" value="Найти участника">
+                            <br><a href="/derjava/veche.php?iv=__VECHE__&sx=*" > все участники</a>
+                        </form>
+                    </div>
+                    <!-- __VISIBLE_CNT_CV__ -->
+                    <!-- data0% -->
+
+
+                    <div class="table-responsive mt-3">
+                        <table class="table table-striped drj-table table-sm">
+                            <thead>
+                            <tr>
+                                <th scope="col" colspan="2"><a class="main-a" data-toggle="modal"
+                                                               href="#modalYchastnik">Участник</a></th>
+                                <th scope="col"><a class="main-a" data-toggle="modal" href="#modalDelegat">Делегат</a>
+                                </th>
+                                <th scope="col"><a class="main-a" data-toggle="modal" href="#modalStatus">Статус</a>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <!-- %data1_lu -->
+                            <tr>
+                                <td>
+                                    <a class="main-a" href="/derjava/user_contact.php?__U__"><img
+                                            class="rounded-pill mr-3"
+                                            style="height: 38px;"
+                                            src="img/ava-4.jpg##__IMGSRC_USER__"
+                                            alt=""></a>
+                                </td>
+                                <td> __TEXT_CERTIFICATE__</td>
+                                <td><!-- __U_DELEGATE_EX__ -->
+                                    <a class="main-a" href="#"><img class="rounded-pill mr-3" style="height: 38px;"
+                                                                    src="img/ava-2.jpg##__IMGSRC_DELEDATE__" alt=""></a>
+                                    <!-- __U_DELEGATE_EX__ -->
+                                </td>
+                                <td>__NAME_ROLE_VECHE__</td>
+
+                            </tr>
+                            <!-- data1_lu% -->
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /Участники -->
+                
+
+                <!-- $wall_guest$ -->
+
+            </div>
+        </div>
+    </div>
+
+<!-- $guest$ -->
+</main>
+
+<!-- $login-modal$ -->
+<!-- $veche-descr$ -->
+
+</body>
+</html>

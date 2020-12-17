@@ -1,0 +1,249 @@
+/*
+    github.css
+*/
+
+@charset "utf-8";
+
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open Sans Regular'),url('./font/github/400.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: normal;
+    src: local('Open Sans Italic'),url('./font/github/400i.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Open Sans Bold'),url('./font/github/700.woff') format('woff')
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Open Sans Bold Italic'),url('./font/github/700i.woff') format('woff')
+}
+
+
+
+div.md_ {
+    font-family: Arial;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+    display: inline-block;
+    width: 100%;
+    overflow-wrap:normal;
+}
+div.md_ p {
+    display: inline-block;
+}
+
+div.md_ > *:first-child {
+    margin-top: 0 !important;
+}
+div.md_ > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+div.md_    a {
+        color: #4183C4;
+    }
+div.md_    h1,
+div.md_    h2,
+div.md_    h3,
+div.md_    h4,
+div.md_    h5,
+div.md_    h6 {
+        position: relative;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        line-height: 1.4;
+        cursor: text;
+    }
+div.md_    h1:hover a.anchor,
+    h2:hover a.anchor,
+    h3:hover a.anchor,
+    h4:hover a.anchor,
+    h5:hover a.anchor,
+    h6:hover a.anchor {
+        text-decoration: none;
+    }
+div.md_    h1 tt,
+    h1 code {
+        font-size: inherit;
+    }
+div.md_    h2 tt,
+div.md_    h2 code {
+        font-size: inherit;
+    }
+div.md_    h3 tt,
+div.md_    h3 code {
+        font-size: inherit;
+    }
+div.md_    h4 tt,
+div.md_    h4 code {
+        font-size: inherit;
+    }
+div.md_    h5 tt,
+div.md_    h5 code {
+        font-size: inherit;
+    }
+div.md_    h6 tt,
+div.md_    h6 code {
+        font-size: inherit;
+    }
+div.md_    h1 {
+        padding-bottom: .3em;
+        font-size: 2.25em;
+        line-height: 1.2;
+        border-bottom: 1px solid #eee;
+    }
+div.md_    h2 {
+       padding-bottom: .3em;
+        font-size: 1.75em;
+        line-height: 1.225;
+        border-bottom: 1px solid #eee;
+    }
+div.md_    h3 {
+        font-size: 1.5em;
+        line-height: 1.43;
+    }
+div.md_    h4 {
+        font-size: 1.25em;
+    }
+div.md_    h5 {
+        font-size: 1em;
+    }
+div.md_    h6 {
+       font-size: 1em;
+        color: #777;
+    }
+div.md_    p,
+div.md_    blockquote,
+div.md_    ul,
+div.md_    ol,
+div.md_    dl,
+div.md_    table{
+        margin: 0.8em 0;
+    }
+div.md_    li>ol,
+div.md_    li>ul {
+        margin: 0 0;
+    }
+div.md_    hr {
+        height: 2px;
+        padding: 0;
+        margin: 16px 0;
+        background-color: #e7e7e7;
+        border: 0 none;
+        overflow: hidden;
+        box-sizing: content-box;
+    }
+
+div.md_ > h2:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+div.md_ > h1:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+div.md_ > h1:first-child + h2 {
+        margin-top: 0;
+        padding-top: 0;
+    }
+div.md_ > h3:first-child,
+div.md_ > h4:first-child,
+div.md_ > h5:first-child,
+div.md_ > h6:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+div.md_    a:first-child h1,
+div.md_    a:first-child h2,
+div.md_    a:first-child h3,
+div.md_    a:first-child h4,
+div.md_    a:first-child h5,
+div.md_    a:first-child h6 {
+        margin-top: 0;
+        padding-top: 0;
+    }
+div.md_    h1 p,
+div.md_    h2 p,
+div.md_    h3 p,
+div.md_    h4 p,
+div.md_    h5 p,
+div.md_    h6 p {
+        margin-top: 0;
+    }
+div.md_    li p.first {
+        display: inline-block;
+    }
+div.md_    ul,
+div.md_    ol {
+        padding-left: 30px;
+    }
+div.md_    ul:first-child,
+div.md_    ol:first-child {
+        margin-top: 0;
+    }
+div.md_    ul:last-child,
+div.md_    ol:last-child {
+        margin-bottom: 0;
+    }
+div.md_    blockquote {
+        border-left: 4px solid #dfe2e5;
+        padding: 0 15px;
+        color: #777777;
+    }
+div.md_    blockquote blockquote {
+        padding-right: 0;
+    }
+div.md_    table {
+        padding: 0;
+        word-break: initial;
+    }
+div.md_    table tr {
+        border-top: 1px solid #dfe2e5;
+        margin: 0;
+        padding: 0;
+    }
+div.md_    table tr:nth-child(2n),
+div.md_    thead {
+        background-color: #f8f8f8;
+    }
+div.md_    table tr th {
+        font-weight: bold;
+        border: 1px solid #dfe2e5;
+        border-bottom: 0;
+        text-align: left;
+        margin: 0;
+        padding: 6px 13px;
+    }
+div.md_    table tr td {
+        border: 1px solid #dfe2e5;
+        text-align: left;
+        margin: 0;
+        padding: 6px 13px;
+    }
+div.md_    table tr th:first-child,
+div.md_    table tr td:first-child {
+        margin-top: 0;
+    }
+div.md_    table tr th:last-child,
+div.md_    table tr td:last-child {
+        margin-bottom: 0;
+    }
+
+

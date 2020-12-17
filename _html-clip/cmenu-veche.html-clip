@@ -1,0 +1,17 @@
+ <!-- Левое КОНТЕКСТНОЕ МЕНЮ,  такие меню должны быть для  каждого шаблонного файла
+
+  main-list-active
+-->
+   
+<!-- 
+<div style="margin:0px; padding: 0px; min-width: 300px;">
+    <iframe width="250" 
+            height="250" 
+            src="https://www.youtube.com/embed/EdkuihIQmYo" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+    </iframe>               
+</div>
+
+-->

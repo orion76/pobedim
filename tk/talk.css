@@ -1,0 +1,247 @@
+textarea {
+    white-space: noraml;
+    text-align: left;
+    background-color: white; 
+}
+
+.textarea { cursor:text;font-size: 12pt; text-align: left;
+       min-height: 20px; min-width: 40px; background-color: white; 
+}
+div.textarea > textarea {display: none;}
+
+input { font-size: 12pt;}
+
+
+.tkbundle { text-align: left; background-color: lightgray; }
+
+ul.droplist:hover > li > ul{
+    display: inline-block;
+    width:600px;
+    max-height: 400px;
+    white-space:normal;
+    margin: 4px;
+    padding: 2px;
+    right:-10px;
+    top:-1px;
+}
+ul.droplist > li > ul > li {
+    display: inline-block;  
+    color: navy;
+    padding: 3px;
+    margin: 2px;
+}
+
+
+form.ltk_search { }
+div.lhashtag {
+        background-color: transparent;
+        z-index: 55;
+        position: relative;
+        top: 5px;
+        left: 5px;
+}
+
+.lhashtag ul {display:none;}
+
+.lhashtag li{display: inline-block;
+             list-style-type: none; 
+             margin:2px; 
+             padding: 2px; 
+}
+
+div.ttg2, div.ttg3, div.ttg4, div.ttg5 { display: inline-block; margin: 5px; padding: 3px;}
+div.ttg2 ul, div.ttg3 ul, div.ttg4 ul, div.ttg5 ul 
+{ padding: 15px; position:absolute; z-index: 445; margin: 0px; top:25px; left:-21px; background-color: black;}
+div.ttg5:hover > ul ,  div.ttg4:hover > ul , div.ttg3:hover > ul , div.ttg2:hover > ul { display:inline-block;   }
+ 
+
+.ltk_events a {margin-left: 10px;}
+
+form.ltk_pn_new { width:100%; }
+input[name="ttku"] { width:70%; }
+
+
+
+form.ltk_pn_new {display: inline-block;}
+form.ltk_search {display: inline-block; }
+form.ltk_search input[type=text]{  }
+form.ltk_search input[type=submit]{ width:60px;}
+
+
+.yes ,.tgYes { background-color: lightgreen;padding: 2px;}
+.no , .tgNo  { background-color: black; color:#00ff77;padding: 2px;  }
+
+ 
+.talk li { list-style:none; vertical-align: top; }
+
+li.talking {
+    padding-top: 5px;
+    margin:15px;
+}
+
+li.talking button{ display:none }
+ul:hover > li.talking:hover > button{ display: inline-block; } 
+/* li.tg_yes::after , li.tg_no::after { content: url(/16/copylink16.png); margin-left: 15px; width: 16px; height: 16px; }
+*/
+.copylink {
+    padding-left: 10px;
+}
+
+ul.ltalk {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    max-width: 600px;
+    text-align: top;
+}
+
+ul.ltalk > li {
+    border: solid 1px black;
+    background-color: lightcyan;
+    padding: 3px;
+    vertical-align: top;
+    display: inline-block;
+    list-style-type: none;
+    margin: 4px;
+    overflow:scroll;
+    max-height: 400px; 
+    list-style-position: inside;
+    text-align: left;
+    width: 100%;
+}
+ul.ltalk .unloaded { min-width: 300px; min-height: 200px; background-color: grey; }
+ul.ltalk .unloaded a { color: navy; background-color: white; }
+ul.ltalk .unloaded a.tkref::before{ content: ' Статья не загружена '; padding: 10px; color: red; background: lightyellow; }
+ul.ltalk .loading a.tkref::before{ content: ' Статья загружается ..... '; color: black; background: lightyellow; padding: 10px; }
+
+ul.ltalk .unloaded div {background-color: lightgray; color: black;}
+
+ul.ltalk .loaded {}
+
+
+.tku_login{
+    border: 1px solid black;
+    background-color: white;
+}
+
+.tku_preview{
+    background-color: lightblue;
+    color: black;
+    text-align: center;
+}
+
+.tku_editpreview{
+    max-height: 600px;
+    overflow: auto;
+}
+
+
+.tk_pn {
+    background-color: white;
+    min-height: 100px;
+    min-width: 320px;
+    text-align: center;
+    border: solid #00ff77 thin;
+}
+/* .tk_pn img { max-height: 200px;} */
+
+.tk_tl {
+    /* background-color: yellow; color: black;  max-height: 40px; */
+    vertical-align: top;
+    word-wrap:normal;
+    white-space:normal;
+}
+.tk_text {
+    min-height: 100px;
+    text-align: left;
+    vertical-align: top;
+    word-wrap:break-word;
+    white-space:normal;
+    overflow:auto;
+}
+
+
+/* .tk_text a:visited { color: wheat; } .tk_text a:link { color: yellow; } */
+.tk_fm   {text-align: center;   }
+.tk_fm iframe  {
+                display: inline-block; 
+                width:98%;                
+                min-height: 250px; 
+                max-width: 99%; 
+                background-color: white;
+                color: navy;
+} 
+
+
+
+.tg_yes, button[value="1"] { color: green;  background-color: white; padding: 2px; margin-right: 5px;height:40px;}
+.tg_no,  button[value="-1"]{ color:red;  background-color: white; padding: 2px; margin-right: 5px; height:40px;}
+.tk_ot, .tg_ot , button[value="4"] , .tg_ot li {color: navy; background-color: lightcyan;}
+.tk_st, .tg_st , button[value="5"], .tg_st li{color: navy; background-color: lightslategrey;}
+.tk_rg, .tg_rg, button[value="3"], .tg_rg li{color: black; background-color: lightcoral;}
+.tk_pr, .tg_pr, button[value="2"], .tg_pr li {color: black; background-color: lightyellow; }
+
+
+.tk_hashtag { text-align: left; heigh:20px; vertical-align: bottom; }
+.tk_ot,.tk_st,.tk_rg,.tk_pr { display: inline-block; margin-left: 5px; padding: 4px;}
+.tk_ot::before{content: "#"; color: red; background-color: lightsteelblue;padding: 4px;}
+.tk_st::before{content: "@"; color: red; background-color: lightsteelblue;padding: 4px;}
+.tk_rg::before{content: ":"; color: red; background-color: lightsteelblue;padding: 4px;}
+.tk_pr::before{content: "<"; color: red; background-color: lightsteelblue;padding: 4px; }
+
+
+.tg_pr::before{content: "<"; padding: 4px; }
+.tg_rg::before{content: ":"; padding: 4px;}
+.tg_ot::before{content: "#";padding: 4px;}
+.tg_st::before{content: "@";padding: 4px;}
+.tg__fb::before{content: "fb$";padding: 4px;}
+.tg__vk::before{content: "vk$";padding: 4px;}
+
+
+sup.tg_yes, sup.tg_no { background: none; margin-left: 5px; }
+/* sup.tg_yes {color:green;} sup.tg_no {color: red;} */
+
+button.tg_yes, button.tg_no {text-decoration: none; text-align: center; background-color:white;
+                margin: 0; padding: 1px;  background-repeat: no-repeat;
+                text-align: right;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+button.tg_yes::before { content: url(../16/yes16.png) ; }
+button.tg_no::before { content: url(../16/no16.png) ; }
+
+
+ul.ltg { text-align: left; } 
+ul.ltg li {
+         display: block; 
+         vertical-align: top; 
+    }
+
+div.tg_edit { display:inline; border:solid 1px; 
+              min-width: 50px;
+          padding-left: 10px;
+          padding-right: 5px; }
+
+
+ 
+
+ span.tgu {  display: inline-block;    
+     vertical-align: top; 
+  } 
+
+.tgu img {
+    background-position:center;
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+.tgu::after{
+    display: inline-block;
+    vertical-align: top; 
+    content:': ';  
+}
+
+.tgu::before{
+    display: inline-block;
+    vertical-align: top; 
+}

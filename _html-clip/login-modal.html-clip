@@ -1,0 +1,277 @@
+<!-- %session -->
+<!-- !__SESSION_ISUSERLOGGED__ -->
+
+<script>
+    function login_btn3_click(event){
+      var dd = document.getElementById("login_ml");
+      dd.value = "";
+      login_ctrl("",event);
+    }
+
+    function login_btn1_click(event){
+      var dd = document.getElementById("login_ml");
+      var r = ajax_get("/auth/ajax0.php?ax=btn1&ml="+dd.value);
+      if (r=='ok') location.reload(); else
+      { 
+          var dd = document.getElementById("login_fail");
+          dd.style.display = '';
+      }
+    }
+
+    function login_btn2_click(event){
+      var dd = document.getElementById("login_ml");  
+      var r = ajax_get("/auth/ajax0.php?ax=btn2&ml="+dd.value);
+
+      dd = document.getElementById("login_cap_s");
+      dd.value='';
+
+      dd = document.getElementById("login_cap_msg");
+      dd.style.display = '';
+      dd.innerHTML = r;
+
+      var dpw = document.getElementById("login_pw");
+      dpw.style.display = '';
+
+      if (r.indexOf('err:') > 0){
+          dd = document.getElementById("login_cap");
+          dd.style.display = 'none';
+        }
+    }
+
+
+    function login_ctrl(ax,event){
+        var n = event_target(event);
+        var s = n.value;
+
+/*
+        if (ax=="clear"){
+            var ml = document.getElementById("login_ml");
+        }
+*/
+        if (ax=="ln"){
+            s = trim(s);
+            if (s.length < 4 || (!isNumber(s) && !isEmail(s)) ) ax="";
+        }
+            var dsnw = document.getElementById("login_social");
+            var dpw = document.getElementById("login_pw");
+            var dpc = document.getElementById("login_cap");
+
+            var bn1 = document.getElementById("login_btn1");
+            var bn2 = document.getElementById("login_btn2");
+            var bn3 = document.getElementById("login_btn_clear");
+
+            var dd = document.getElementById("login_fail");
+            dd.style.display = 'none';
+            dd = document.getElementById("login_cap_msg");
+            dd.style.display = 'none';
+
+        if(ax==""){
+            dsnw.style.display = '';dpw.style.display = 'none';dpc.style.display = 'none';
+            bn3.style.display = 'none';
+        } else {
+            dsnw.style.display = 'none';
+            var r = "_"+ajax_get("/auth/ajax0.php?ax="+ax+"&s="+s);
+            if (r.indexOf('cap')>0) dpc.style.display = ''; else dpc.style.display = 'none';
+            if (r.indexOf('pw')>0) dpw.style.display = ''; else dpw.style.display = 'none';
+            if (r.indexOf('bn1')>0) bn1.style.display = ''; else bn1.style.display = 'none';
+            if (r.indexOf('bn2')>0) bn2.style.display = ''; else bn2.style.display = 'none';
+            if (r.indexOf('pw')>0) bn3.style.display = ''; else bn3.style.display = 'none';
+        }
+    }
+
+    function login_keypress(event){
+       login_ctrl("ln",event);
+    }
+    function loginpw_keypress(event){
+        login_ctrl("pw",event);
+    }
+    function logincap_keypress(event){
+        login_ctrl("cap",event);
+    }
+</script>
+
+<div class="modal fade" id="dModal" tabindex="-1" role="dialog" aria-labelledby="dModal" aria-hidden="true">
+
+    <div class="modal-dialog cascading-modal" role="document">
+
+
+        <!--Content-->
+		<div class="modal-content rounded-top">
+
+                <div class="text-center py-4">
+                        <p>Войдите через электронную почту 
+                            <input type="text" oninput="login_keypress(event)" name="email" id="login_ml" >
+
+                 <button id="login_btn_clear" style="display:none;" onclick="login_btn3_click(event)" >
+                 <i class="material-icons align-middle" style="font-size:10pt;background-color:transparent;">clear</i>
+                 </button>
+
+                        </p>
+                        <div id="login_social">
+                         или с помощью соцсетей:
+                        <!-- <a class="mx-2" href=""><img src="/derjava/img/logo/twitter-logo.png" alt=""></a> -->
+                        <a class="mx-2" href="/auth/login.php?ax=fb" onclick="click_login(event)" rel="nofollow"><img src="/derjava/img/logo/fb-logo.png" ></a>
+                        <a class="mx-2" href="/auth/login.php?ax=vk" onclick="click_login(event)" rel="nofollow"><img src="/derjava/img/logo/vk-logo.png" ></a>
+                        <!-- <a class="mx-2" href=""><img src="/derjava/img/logo/inst-logo.png" alt=""></a> -->
+                        <a class="mx-2" href="/auth/login.php?ax=ok" onclick="click_login(event)" rel="nofollow"><img src="/derjava/img/logo/ok-logo.png" ></a>
+                        <!-- <br> <font color="red">Вход через соцсети не будет работать до конца дня</font> -->
+                        </div>
+                        <div id="login_pw" style="display:none;">
+                        пароль <input type="password" oninput="loginpw_keypress(event)" name="pw" id="login_i_pw">
+                        <button id="login_btn1" style="display:none;"  onclick="login_btn1_click(event)" >Войти</button>
+                            <div style="display:none;color:red;" id="login_fail" >
+                                Пароль введён с ошибкой.
+                            </div>
+                        </div>
+                        <div id="login_cap" style="display:none;">
+                            <br>или картинка снизу <input type="text" oninput="logincap_keypress(event)" name="cap" id="login_cap_s" >
+                            <br><img src="/auth/captcha.php" title="Щёлкните для нового кода" alt="Капча"
+                            onclick="this.src='/auth/captcha.php?'+(Math.random());" >
+                            <button id="login_btn2" style="display:none;" onclick="login_btn2_click(event)" >Выслать пароль на почту </button>
+                            
+                        </div>
+                        <div id="login_cap_msg" style="display:none;"></div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!--Modal cascading tabs-->
+			<div class="modal-c-tabs" style="display: none;" >
+				<!-- Nav tabs -->
+				<ul class="nav nav-tabs main-bg-color darken-3 rounded-top" role="tablist">
+                                    <li class="nav-item">
+						<a class="nav-link border-0 main-a mt-2 ml-2 " data-toggle="tab" href="#panel7" role="tab">
+						   <i class="fas fa-user mr-1"></i>Войти</a>
+                                    </li>
+                                    <li class="nav-item">
+						<a class="nav-link border-0 main-a mt-2 active " data-toggle="tab" href="#panel8" role="tab">
+                                                    <i	class="fas fa-user-plus mr-1"></i>Зарегистрироваться</a>
+                                	</li>
+					<li class="nav-item">
+						<a class="nav-link border-0 main-a mt-2" data-toggle="tab" href="#panel9" role="tab">
+							<small>Забыли пароль?</small>
+						</a>
+					</li>
+				</ul>
+
+
+				<!-- Tab panels -->
+				<div class="tab-content">
+<!--Panel 7  ВХОД  -->
+    <div class="tab-pane fade" id="panel7" role="tabpanel"> 
+        <!--Body-->
+        <div class="modal-body pb-4 mb-1">
+
+            <form method="post" action="/auth/login.php?ax=101" name="f1"  onsubmit="submit_login(event)" >
+                <div class="md-form form-sm mb-5">
+
+<!--                        <i class="fas fa-envelope prefix"></i>   -->
+                        <small>Адрес электронной почты (email):</small>
+                        <input name="email" type="text" id="dModalInput1" class="form-control form-control-sm validate">
+                        <!-- <label data-error="ошибка" data-success="верно" for="dModalInput1">Ваш email</label> -->
+                </div>
+
+                <div class="md-form form-sm mb-4">
+                        <i class="fas fa-lock prefix"></i>
+                        <small>Пароль, который вы получили по эл. почте (email):</small>
+                        <input name="pw" type="password" id="dModalInput2" class="form-control form-control-sm validate">
+                        <!--<label data-error="ошибка" data-success="верно" for="dModalInput2">Пароль</label> -->
+                </div>
+                <div class="text-center mt-2 mb-3">
+                        <input type="submit" class="btn main-btn-m" value="Войти" >
+                </div>
+            </form>
+                
+        </div>
+</div>
+
+<!--/.Panel 7-->
+
+<!--Panel 8 ЗАРЕГИСТРИРОВАТЬСЯ  -->
+<div class="tab-pane fade in show active" id="panel8" role="tabpanel">                                        
+
+						<!--Body-->
+						<div class="modal-body">
+                                                   
+                                                   
+<form method="post" action="/auth/login.php?ax=111" name="f2" onsubmit="submit_login(event)" >
+<input type="hidden" name="pw" value="">
+            <div class="md-form form-sm mb-6">
+
+<div align="right" style="margin:0px;">
+    <a href="https://www.youtube.com/watch?v=nTIlUraVwd0" target="hx"> Видеоинструкция </a>
+</div>
+                    <small>Адрес электронной почты (email):</small>
+                    <input name="email" type="text" id="dModalInput3" class="form-control form-control-sm " >
+                    <br><small>Код с картинки внизу:</small>
+                    <input name="captcha" type="text" id="dModalInput23" class="form-control form-control-sm " >
+                    <br><img src="/auth/captcha.php" title="Щёлкните для нового кода" alt="Капча"
+                           onclick="this.src='/auth/captcha.php?'+(Math.random());" >
+
+                    <!-- <label data-error="ошибка" data-success="верно" for="dModalInput3">Ваш email</label> -->
+                    <div class="px-3 mt-2">На вашу электронную почту придет пароль, используйте его для входа на сайт</div>
+            </div>
+
+            <div class="text-center form-sm mt-1 mb-4">
+                    <input type="submit" class="btn main-btn-m" value="Зарегистрироваться" >
+            </div>
+</form>
+
+            
+						</div>
+                                                
+
+<!--
+<div style="width:300px;height:200px;">
+    <img class="mr-3" style="width:300px;height:200px;cursor:pointer;"
+         onclick="youtube_img_click(event)" src="https://img.youtube.com/vi/nTIlUraVwd0/hqdefault.jpg">
+</div>
+-->
+					</div>
+					<!-- Panel 8-->
+
+                                        
+<!--Panel 9  ВОССТАНОВЛЕНИЕ ПАРОЛЯ  -->
+					<div class="tab-pane fade" id="panel9" role="tabpanel">
+
+						<div class="modal-body">
+<form method="post" action="/auth/login.php?ax=112" name="f3"  onsubmit="submit_login(event)" >
+<input type="hidden" name="pw" value="">
+<input type="hidden" name="email" value="">
+        <p class="m-auto text-center">Для восстановления пароля введите свой адрес электронной почты</p>
+        <div class="md-form form-sm mb-5">
+                <i class="fas fa-envelope prefix"></i>
+                <small>Адрес электронной почты (email):</small>
+                <input name="email_recovery" type="text" id="dModalInput4" class="form-control form-control-sm ">
+                <!-- <label data-error="ошибка" data-success="верно" for="dModalInput4">Ваш email</label> -->
+        </div>
+
+        <div class="text-center form-sm mt-1 mb-4">
+                <input type="submit" class="btn main-btn-m" value="Восстановить пароль">
+        </div>
+</form>
+
+						</div>
+					</div>
+					<!--/.Panel 8-->
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- !__SESSION_ISUSERLOGGED__ -->
+<!-- session% -->

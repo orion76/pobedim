@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script type="text/javascript" src="/derjava/veche.js"></script>
+    <script>
+        function u0new_secret(event){
+            preventDefault(event);
+            var n = event_target(event);
+            var np = n.parentNode;
+            var s = ajax_get("/derjava/ajax.php?ax=get_u_secret" );
+            np.innerHTML = 'Код <span style="color:red">'+ s+'</span>';
+        }
+        function u0use_secret(event){
+            preventDefault(event);
+            var n = event_target(event);
+            var np = n.parentNode;
+            //var s = ajax_get("/derjava/ajax.php?ax=get_u_secret" );
+            //np.innerHTML = 'Код <span style="color:red">'+ s+'</span>';
+            var bb = np.querySelectorAll('button');
+            for(var i=0;i <2;i++){
+                bb[i].style.display='none';
+            }
+            var f = np.querySelector('form');
+            f.style.display='';
+        }
+
+
+        function m0sendconfirm(event) {
+            preventDefault(event);
+            var s = ajax_get("/derjava/user_settings.php?ax=send_confirmcode" );
+            alert(s);
+        }
+
+        function hide_btn_sendconfirm_email(event) {
+            var e = getElementById("btn_sendconfirm_email");
+            e.style.display = "none";
+            e = getElementById("ipt_confirm_email");
+            e.style.display = "none";
+        }
+    </script>
+
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<style>
+    .form-controls0 { margin: 0px; padding: 0px; }
+    .form-control0 { padding: 0.375rem 0.75rem; min-width: 200px;  }
+    .lbl { padding: 5px; min-width: 200px; width: auto;}
+    .control0 { display: block !important;  margin-top: 5px; text-align:justify; white-space: nowrap;}
+</style>
+
+
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+<div class="container pt-5  div-main">
+	<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- cmenu-0000 -->
+</div>
+
+			<!--Основной контент   -->
+	<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+                <div class="bg-white rounded border mb-3">
+
+
+
+
+                    <div class="col">
+                        <p>
+                            <a href="/derjava/user_files.php?ax=filefolder" style="margin:20px;" rel="nofollow">Файлы</a>
+                            <a href="/derjava/user_an_ct.php?ax=cert" style="margin:20px;" rel="nofollow">Волонтёр (администрируемые голоса)</a>
+<!-- %data0 -->
+<!--
+   <a href="/coop/fin.php?iu=__U__"> [финансы] </a>
+-->
+<!-- data0% -->
+                        </p>
+
+<h2>
+                        <span class="float-left font-weight-light pt-1">Настройка анкеты</span>
+</h2>
+                        <div class="clearfix"></div>
+                        <hr class="mt-2">
+
+                        <h3>
+                            <small class="font-weight-light pt-1">Эту информацию видят все</small>
+                        </h3>
+                        <p>
+                            Данные нужны только:<br>
+                            1) для контакта с вами координаторов советов/вече, в которые вы сами вступаете<br>
+                            2) при составлении протоколов голосований.
+                        </p>
+                        
+
+    <form method="post" action="/derjava/user_settings.php?ax=update">
+
+<!-- %data0 -->
+        <div class="file-field">
+            <p>Для аватара выберите <a href="/derjava/user_files.php?ax=filefolder" target="lfu">фото</a></p>
+            <div class="mb-4">
+                <img src="/photo_u.php?x=200&u=__U__" style="max-height: 200px; max-width: 200px;">
+                Угол поворота фото в градусах <input type="text" name="photo_rotate" value="__PHOTO_ROTATE__">
+            </div>
+            <!-- __CNT_VECHE1__ -->__CNT_VECHE1__<!-- __CNT_VECHE1__ -->
+            <!-- __TS_UPDATED__ -->
+                    <!-- !__CNT_VECHE1__ -->
+            <span style="display:inline-block;color: red;">
+        Вы не присоединились ни к одному Народному совету/вече в Державе,
+        поэтому в голосованиях ваше волеизъявление учитывается как мнение гостя.
+        <a href="/derjava/veche_search.php?kv=1&sx=__CITY_URLENCODED__" target="sx" rel="nofollow">Перейдите к поиску вече</a>
+         (не забудьте нажать кнопку "Присоединиться")
+            </span>
+                <!-- !__CNT_VECHE1__ -->
+            <!-- __TS_UPDATED__ -->
+
+        </div>
+<!-- data0% -->
+
+<!-- %data0 -->
+        <ul class="form-controls0">
+
+<li class="control0">
+                <span class="lbl" >Имя</span>
+                <input type="text" class="form-control0"
+                       name="nu1" value="__NAME1_CERTIFICATE__"
+                       style="border: 1px lightgray solid"
+                       placeholder="Имя"
+                       >
+</li>
+<li class="control0">
+                <span class="lbl" >Отчество</span>
+                <input type="text" class="form-control0"
+                       name="nu2" value="__NAME2_CERTIFICATE__"
+                       style="border: 1px lightgray solid"
+                       placeholder="Отчество"
+                       >
+</li>
+<li class="control0">
+                <span class="lbl" >Фамилия</span>
+                <input type="text" class="form-control0"
+                       name="nu3" value="__NAME3_CERTIFICATE__"
+                       style="border: 1px lightgray solid"
+                       placeholder="Фамилия"
+                       >
+</li>
+<li class="control0">
+                <span class="lbl">День рождения</span>
+                <input type="text" class="form-control0"
+                       name="birthday_u" value="__BIRTHDAY_U__"
+                       style="border: 1px lightgray solid; width:150px;"
+                       placeholder="День рождения"
+                       >
+</li>
+<li class="control0">
+                <span class="lbl" >Пол</span>
+                <select name="gender_u" style="max-width:300px;"
+                        class="browser-default custom-select">
+                    <option selected disabled>[Выберите пол]</option>
+                    <option value="m" __S_MALE__>Мужской</option>
+                    <option value="f" __S_FEMALE__>Женский</option>
+                </select>
+</li>
+<li class="control0">
+                <span class="lbl">Город:</span>
+                <input type="text" class="form-control0"
+                       name="city_u" value="__CITY_U__"
+                       style="border: 1px lightgray solid"
+                       placeholder="Город"
+                       >
+                geo:  __CITY_HOST__ / __REGION_HOST__ , __IP_HOST__ 
+</li>
+<li class="control0">
+                <span class="lbl" >Специальности через запятую:</span>
+                <input type="text" class="my-2 my-lg-0 col-lg-9 col-12 form-control0"
+                       name="lspeciality" value="__LIST_SPECIALITY_U__"
+                       style="border: 1px lightgray solid"
+                       placeholder="Специальности через запятую"
+                       >
+</li>
+<li class="control0">
+                <span class="lbl">Контактная информация</span>
+                <input type="text" class="my-2 my-lg-0 col-lg-9 col-12 form-control0"
+                       name="contacts_u" value="__CONTACT_CERTIFICATE__"
+                       style="border: 1px lightgray solid"
+                       placeholder="Контактная информация"
+                       >
+</li>
+<li class="control0">
+                <span class="lbl">Дополнительная информация</span>
+                <input type="text" class="my-2 my-lg-0 col-lg-9 col-12 form-control0"
+                       name="info_u" value="__INFO_U__"
+                       style="border: 1px lightgray solid"
+                       placeholder="Дополнительная информация"
+                       >
+</li>
+<li class="control0">
+                <span class="lbl">Страницы пользователя через запятую</span>
+                <input type="text" class="my-2 my-lg-0 col-lg-9 col-12 form-control0"
+                       name="web_u" value="__WEB_U__"
+                       style="border: 1px lightgray solid"
+                       placeholder="Страницы пользователя через запятую"
+                       >
+</li>
+        </ul>
+<!-- data0% -->
+
+        <div class="rounded z-depth-0 border pt-3 my-3" style="background-color:#f6f6f6">
+                <span class="font-weight-light pt-0">
+                    Дата и место рождения использeтся при совпадении ФИО участников для объективности
+                    результатов голосований на народном вече.
+                </span>
+<!-- %data0 -->
+                <ul class="form-controls0">
+
+<li class="control0">
+                    <span class="lbl" >Дата рождения</span>
+                    <input type="date" class="form-control0"
+                           name="date_birthday" value="__D_BIRTH_CERTIFICATE__"
+                           style="border: 1px lightgray solid"
+                           placeholder="Дата рождения "
+                           >
+</li>
+<li class="control0">
+                    <span class="lbl">Место рождения</span>
+                    <input type="text" class="form-control0"
+                           name="place_birthday" value="__PLACE_BIRTH_CERTIFICATE__"
+                           style="border: 1px lightgray solid"
+                           >
+</li>
+<li class="control0">
+                    <span class="lbl" >Почта для уведомлений __EMAIL_NOTIFY0__</span>
+                    <input type="text" class="form-control0"
+                           name="email_notify" value="__EMAIL_NOTIFY__"
+                           onchange="hide_btn_sendconfirm_email(event)"
+                           style="border: 1px lightgray solid"
+                           placeholder="Почта для уведомлений"
+                           >
+                    <!-- __VISIBLE_MAIL_NOTIFY__ -->
+                    <button
+                            id="btn_sendconfirm_email"
+                            onclick="m0sendconfirm(event)"
+                            class="btn main-bg-color main-btn my-3 mx-0 shadow-none waves-effect waves-light">
+                        Выслать код подверждения на адрес __EMAIL_NOTIFY__
+                    </button>
+                    <!-- __VISIBLE_MAIL_NOTIFY__ -->
+                    <div class="w-100"></div>
+                    <!-- __VISIBLE_MAIL_CONFIRM__ -->
+                    <span class="lbl" > Полученный код подтверждения почтового ящика:</span>
+                    <input
+                            id="ipt_confirm_email"
+                            name="email_notify_confirmcode_in"
+                            type="text" class="form-control0"
+                            style="border: 1px lightgray solid"
+                            placeholder=".. введите код из письма">
+                    <!-- __VISIBLE_MAIL_CONFIRM__ -->
+</li>
+                </ul>
+<!-- data0% -->
+        </div>
+
+        <input type="hidden" value="__URL_PHOTO_U__" name="url_photo_u">
+        <input type="submit"
+               class="btn float-md-right float-left main-bg-color shadow-none waves-effect waves-light mb-4"
+               value="Сохранить анкету">
+    </form>
+
+                         
+                        <div class="clearfix"></div>
+                        <br>
+                        <h4>Типы контактов </h4>
+                        <table>
+                            <tr>
+                                <th>Наименование</th>
+                                <th style="max-width: 80px;">Номер в списке</th>
+                                <th style="max-width: 100px;">Важность сообщений *2</th>
+                                <th style="max-width: 100px;">Игнорировать голосования *3</th>
+                                <th style="max-width: 100px;">Игнорировать оповещения</th>
+                                <th style="max-width: 100px;">Блокировать сообщения</th>
+                            </tr>
+                            <!-- %data31 -->
+                            <tr>
+                                <td>
+                            <!-- __CAN_EDIT_KIND_USER__ -->
+                                <input type="text" value="__NAME_KIND_USER__" name="NAME_KIND_USER"
+                                       onchange="ajax_input_change(event)" data-action="/derjava/ajax.php?ax=upd_user_kind&ku=__ID_KIND_USER__"
+                                       >
+                            <!-- __CAN_EDIT_KIND_USER__ -->
+                            <!-- !__CAN_EDIT_KIND_USER__ -->
+                                __NAME_KIND_USER__
+                            <!-- !__CAN_EDIT_KIND_USER__ -->
+                                </td>
+                                <td>
+                                    <input type="text" style="max-width:40px;"
+                                        value="__SORTING_KIND_USER__" name="SORTING_KIND_USER"
+                                        onchange="ajax_input_change(event)" data-action="/derjava/ajax.php?ax=upd_user_kind&ku=__ID_KIND_USER__"
+                                        >
+                                </td>
+                                <td>
+                                    <input type="text" style="max-width:40px;"
+                                        value="__DO_IMPORTANT__" name="DO_IMPORTANT"
+                                        onchange="ajax_input_change(event)" data-action="/derjava/ajax.php?ax=upd_user_kind&ku=__ID_KIND_USER__"
+                                        >
+                                </td>
+                                <td>
+                                    <input type="checkbox" __CHECKED_DO_IGNORE_POLL__ name="DO_IGNORE_POLL"
+                                        onclick="ajax_input_change(event)" data-action="/derjava/ajax.php?ax=upd_user_kind&ku=__ID_KIND_USER__"
+                                        >
+                                </td>
+                                <td>
+                                    <input type="checkbox" __CHECKED_DO_IGNORE_CAST__ name="DO_IGNORE_CAST"
+                                        onclick="ajax_input_change(event)" data-action="/derjava/ajax.php?ax=upd_user_kind&ku=__ID_KIND_USER__"
+                                        >
+                                </td>
+                                <td>
+                                    <input type="checkbox" __CHECKED_DO_DISABLE_MSG__ name="DO_DISABLE_MSG"
+                                        onclick="ajax_input_change(event)" data-action="/derjava/ajax.php?ax=upd_user_kind&ku=__ID_KIND_USER__"
+                                        >
+                                </td>
+
+                            </tr>
+                            <!-- data31% -->
+                        </table>
+                        <p>*если в порядке сортировки задано отрицательное значение, то строка будет спрятана</p>
+                        <p> ** что отношение к собственным голосованиям регулируется типом контакта к которой вы сами себя отнесли,
+                                по умолчанию - "родственники". Изменяя свой тип контакта, можно увидеть как изменятся списки постов и голосований.
+                        </p>
+                        <p>*2 если отрицательное число, то посты и комментарии пользователей, голосования не будут отображаться</p>
+                        <!-- %data0 -->
+                        <p>*3 обратите внимание, что отношение к собственным голосованиям регулируется той группой к которой вы сами себя
+                            <a href="/derjava/user_contact.php?__U__" target="uu" rel="nofollow"> отнесли</a>, по умолчанию - "родственники"  </p>
+                        <!-- data0% -->
+                        <p>*4 пока ещё не работает, эти контакты не смогут отвечать на ваши комментарии и комментировать ваши посты, писать в личные сообщения</p>
+                    </div>
+                </div>
+                
+
+<div class="clearfix"></div>
+<!-- <a href="/bazar/register.php">Получить доступ к ярмарке</a> -->
+
+<div class="clearfix"></div>
+<h2>Личная стена</h2>
+                <!--Блок оставления коммента в группе-->
+                <div class="bg-white rounded border mb-3">
+                    <p class="col font-weight-normal mt-3">Оставьте свое сообщение для ответов и комментирования</p>
+                        <!-- %data0 -->
+                    <form action="/derjava/ajax.php?ax=newmsg6&redirect=1&wu=__U__" method="post" class="mb-3">
+                        <input type="hidden" name="ln" value="/derjava/user_settings.php?ax=&u=__U__">
+                        <!-- data0% -->
+                        <div class="col media mt-3">
+                            <!-- %menu_u -->
+                            <img class="rounded-pill mr-3" style="height: 38px;"
+                                 src="img/ava-4.jpg##__IMGSRC_USER_ON__">
+                            <!-- menu_u% -->
+                            <textarea name="txt" class="form-control mr-3" onkeyup="control_autoheight(event)" style="overflow:hidden;"></textarea>
+                            <button type="submit"
+                                    class="w-25 btn main-bg-color main-btn px-2 m-0 shadow-none waves-effect waves-light">
+                                <img class="float-lg-left float-none" src="img/send.png" style="height: 20px;" alt="">
+                                <span class="d-none d-lg-inline">Отправить</span>
+                            </button>
+                        </div>
+                        <!-- %data0 -->
+                    </form>
+                        <!-- data0% -->
+                </div>
+                
+<div class="clearfix"></div>
+                <!-- $wall$ -->
+
+        </div>
+            <!--/Основной контент-->
+        </div>
+</div>
+
+<!-- %data0 -->
+<div>
+   __U__ <br><br>
+</div>
+<!-- data0% -->
+</main>
+
+
+</body>
+</html>

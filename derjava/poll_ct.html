@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+				<div class="no-gutters bg-white rounded border mb-3">
+					<!--Заголовок-->
+					<div class="col">
+						
+Ниже список администрируемых вами голосов.<br>
+Поставьте галочки в соответствии с распоряжениями владельцев голосов (протоколу собрания).
+<!-- %data0 -->
+<form action="/derjava/ajax.php?ax=set_answer&f=1&qq=__ID_POLL__&pa=__ID_ANSWER__"  method="post">
+
+
+<table>
+    <tr>
+   <!-- !__VV_OPTION__ --> <td></td><!-- !__VV_OPTION__ -->
+    <td>ФИО </td>
+    <!-- __VV_OPTION__ -->
+    <td style="text-align:center;width:80px; " >За</td>
+    <td style="text-align:center;width:80px; ">Против</td>
+    <!-- __VV_OPTION__ -->
+</tr>
+<!-- data0% -->
+
+<!-- %data1 -->
+<tr>
+    <!-- !__VV_OPTION__ --><td style="text-align:center; " ><input name="ic[]" __CHECKED__ type="checkbox" value="__ID_CERTIFICATE__" ></td><!-- !__VV_OPTION__ -->
+    <td>__NAME1_CERTIFICATE__ __NAME2_CERTIFICATE__ __NAME3_CERTIFICATE__ </td>
+    <!-- __VV_OPTION__ -->
+    <td style="text-align:center; " ><input name="icY[]" __CHECKED_YES__ type="checkbox" value="__ID_CERTIFICATE__" ></td>
+    <td style="text-align:center; " ><input name="icN[]" __CHECKED_NO__ type="checkbox" value="__ID_CERTIFICATE__" ></td>
+    <!-- __VV_OPTION__ -->
+</tr>
+<!-- data1% -->
+</table>
+    <input type="submit" value="Сохранить">
+</form>
+                                            
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+
+<!--Модальное окно регистрации-->
+   <!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+.div-main {
+   background-color: green; 
+   }
+.div-ajax { background-color: blue; 
+   }
+
+.div-body { 
+    background-color:lightyellow; 
+  }
+        
+.div-hmenu { background-color:blue; }        
+.div-fmenu { background-color:blue; }
+
+.div-header { background-color:lightyellow; }        
+.div-footer { background-color:lightyellow; }        
+
+.div-alarm { }
+        
+.div-title {}        
+.div-content{}
+.div-search{}
+.div-found{}
+        
+.div-subtitle {}        
+.div-text{}        
+        

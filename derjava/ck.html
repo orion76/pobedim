@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="nofollow" >
+    <meta name="robots" content="noindex" >
+    <meta name="googlebot" content="noindex" >
+
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+    
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 div-right">
+				<div class="no-gutters bg-white rounded border mb-3">
+					<!--Заголовок-->
+					<div class="col">
+
+<!-- %data0 --> 
+<form action="/derjava/ck.php" method="post">
+    <input name="ct" type="text" value="__CT__">
+    <input type="submit" value="Проверить">
+</form>
+<!-- data0% -->
+
+<h2>Проверка голосований</h2>
+<!-- %data0 -->
+    __NAME_CERTIFICATE__
+<!-- data0% -->
+                                            <table>
+                                            <!-- %data1 -->
+                                            <tr style="min-height: 60px;">
+<!--
+<td>__ID_POLL__</td>
+<td>__ID_ANSWER__</td>
+-->
+                                                <td style="border-bottom: 1px black solid"><a href="/derjava/poll.php?qq=__ID_POLL__">  __NAME_POLL__ </a></td>
+                                                <td> 
+                <!-- __CHECK__ --> <i class="material-icons text-danger align-middle" style="font-size: 20px;">check</i> <!-- __CHECK__ -->
+                <!-- __YES__ --><i class="material-icons align-middle" style="font-size: 20px;color:green;">thumb_up</i><!-- __YES__ -->
+                <!-- __NO__ --><i class="material-icons align-middle" style="font-size: 20px;color:red;">thumb_down</i><!-- __NO__ -->
+                                                </td>
+                                                <td style="border-bottom: 1px black solid">__NAME_ANSWER__<br></td>
+                                                <td style="min-width: 80px;">
+                                                    <a href="/derjava/ck_log.php?ct=__ID_CERTIFICATE__&qq=__ID_POLL__" target="_blank">__TS_SYS__</a>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <!-- data1% -->
+                                            </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+
+<!--Модальное окно регистрации-->
+   <!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+
+
+</body>
+</html>

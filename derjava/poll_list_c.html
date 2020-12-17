@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script>
+        function btn_confirm_attach(event){
+            var t = event.target;
+            var ul=document.getElementById("ulConfirms");
+            var da = ul.getAttribute('data-a');
+            var dp = ul.getAttribute('data-p');
+            var dc = ul.getAttribute('data-c');
+            var dk = ul.getAttribute('data-ka');
+    var bf = document.getElementById("input_uploader");
+    bf.setAttribute('data-id',0);
+    bf.setAttribute('data-action','/derjava/ajax.php?ax=confirm_upload&qq='+dp+'&pa='+da+'&ka='+dk+'&ct='+dc);
+    bf.click();
+        }
+
+        function btn_confirmed(event){
+            var t = event.target;
+            var tl = getParentNode('TABLE',t);
+            var tr = getParentNode('TR',t);
+            var da = tl.getAttribute('data-a');
+            var dp = tl.getAttribute('data-p');
+            var dc = tr.getAttribute('data-c');
+            var dk = tr.getAttribute('data-ka');
+            var rz= ajax_get('/derjava/ajax.php?ax=confirms_list&qq='+dp+'&pa='+da+'&ka='+dk+'&ct='+dc);
+            var r = JSON.parse(rz);
+            var div=document.getElementById("divConfirms");
+            div.style.display='none;';
+
+            var tx = div.querySelector('textarea');
+            var tv = ajax_get('/derjava/ajax.php?ax=confirm_text_get&qq='+dp+'&pa='+da+'&ka='+dk+'&ct='+dc);
+            tx.value = tv;
+
+            var ul=document.getElementById("ulConfirms");
+            ul.setAttribute('data-p',dp);
+            ul.setAttribute('data-c',dc);
+            ul.setAttribute('data-ka',dk);
+            ul.setAttribute('data-a',da);
+            ul.innerHTML = '-';
+            div.style.display='';
+            var lf=document.getElementById("fm0");
+            lf.innerHTML = '-';
+            var zz = '';
+            for (var i = 0; i < r.length; i++)
+            {
+                zz= zz + '<li >'+r[i]['U']+' '+r[i]['TEXT_CONFIRM']+r[i]['LF']+'</li>';
+            }
+            ul.innerHTML = zz;
+        }
+
+        function btn_confirm_answer(event){
+            var t = event.target;
+            var tl = getParentNode('TABLE',t);
+            var tr = getParentNode('TR',t);
+            var da = tl.getAttribute('data-a');
+            var dp = tl.getAttribute('data-p');
+            var dc = tr.getAttribute('data-c');
+            var dk = tr.getAttribute('data-ka');
+            var np = t.parentNode;
+            var nc = np.querySelector('small.cnt');
+            var s = t.getAttribute('data-ck');
+            var v = null;
+            if (s==1) v=0; else v=1;
+            var r=ajax_get('/derjava/ajax.php?ax=confirm_answer&v='+v+'&qq='+dp+'&pa='+da+'&ka='+dk+'&ct='+dc);
+            if(r == '') {
+                if (s == 1) {
+                    t.setAttribute('data-ck',0);
+                    t.innerHTML = '+';
+                    v = t.getAttribute('data-cnt0');
+                } else
+                {
+                    t.setAttribute('data-ck',1);
+                    t.innerHTML = 'x';
+                    v = t.getAttribute('data-cnt1');
+                }
+                nc.innerHTML = v;
+                if (v == 0) nc.style.display='none'; else nc.style.display='';
+            }
+        }
+
+function confirm_text_change(event){
+    preventDefault(event);
+    var t = event.target;
+    var tx =t.value;
+            var ul=document.getElementById("ulConfirms");
+            var da = ul.getAttribute('data-a');
+            var dp = ul.getAttribute('data-p');
+            var dc = ul.getAttribute('data-c');
+            var dk = ul.getAttribute('data-ka');
+    ajax_post('/derjava/ajax.php?ax=confirm_text_upd&&qq='+dp+'&pa='+da+'&ka='+dk+'&ct='+dc , 'tc='+encodeURIComponent(tx));
+}
+
+    </script>
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+    
+<div style="display:none" id="uploader">
+    <form style="display:none" method="post" enctype="multipart/form-data" target="iframe_uploader" id="form_uploader" action="" >
+        <input type="file" id="input_uploader" name="userfile" onchange="chosen_uploader(event)">
+        <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+    </form>
+</div>
+
+<!-- $header$ -->
+
+<main>
+
+    <div id="divConfirms" style="display:none;z-index:11111;position:fixed;top:20px;width:300px;height:300px;background-color:lightslategrey;padding: 10px;">
+        Примечание:<br>
+        <textarea class="form-control rounded"
+            onchange="confirm_text_change(event)"
+            name="tc"
+            onkeyup="control_autoheight(event)"
+            onfocus="control_autoheight(event)"
+            style="overflow:hidden;width:100%;min-height: 30px;"
+	>__TEXT_CONFIRM__</textarea>
+
+        <button onclick="btn_confirm_attach(event)" >Прикрепить файл</button>
+        <ul id="ulConfirms">
+        </ul>
+        <button onclick="{this.parentNode.style.display='none';}">Закрыть</button>
+        <ul id="fm0" ></ul>
+    </div>
+
+    <div class="container pt-5  div-main">
+        <div class="row no-gutters">
+
+            <div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+                <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+                <!-- $cmenu-0000$ -->
+            </div>
+
+            <!--Основной контент-->
+            <div class="no-gutters col-sm-12 col-md-8 col-lg-9 div-right">
+                <div class="no-gutters bg-white rounded border mb-3 p-3">
+                    <!--Заголовок-->
+                    <!-- %data0 -->
+                    <button class="btn main-btn mb-3"
+                            onclick="setLocation('/derjava/poll_list_c.php?qq=__ID_POLL__&pa=__ID_ANSWER__&ax=getfile')">
+                        Загрузить файл
+                    </button>
+                    <p>
+                        Проголосовало <span class="font-weight-normal">__CNT_ANSWER__</span> за <span class="font-weight-normal"> " <a href="/derjava/poll.php?__ID_POLL__"> __NAME_ANSWER__</a>"</span>
+                    </p>
+
+<!-- __VISIBLE_SHOWALL__ -->
+<div>
+    <a class="btn" href="/derjava/poll_list_c.php?qq=__ID_POLL__&pa=__ID_ANSWER__&ax=&lon=*">Показать список полностью</a>
+</div>
+<!-- __VISIBLE_SHOWALL__ -->
+<!-- !__VISIBLE_SHOWALL__ -->
+<div>
+    <a class="btn" href="/derjava/poll_list_c.php?qq=__ID_POLL__&pa=__ID_ANSWER__&ax=&lon=user">Показать только список управляемых голосов</a>
+</div>
+<!-- !__VISIBLE_SHOWALL__ -->
+
+
+
+                    <div class="table-striped table-responsive table-bordered table-hover">
+                    <table class="w-100" data-p="__ID_POLL__" data-a="__ID_ANSWER__">
+             <!-- data0% -->
+                        <tr >
+                            <th>.</th>
+                            <th style="width:250px">ФИО,Контакты</th>
+                            <th style="width:80px">Делегат</th>
+                            <th style="width:50px">статус</th>
+                            <th style="width:80px">Время</th>
+                            <th style="width:50px">Подтвердили</th>
+                        </tr>
+                        <!-- %data7 -->
+                        <tr data-c="__ID_CERTIFICATE__" data-ka="__ID_KIND_ANSWER__">
+                            <td>
+
+                <!-- __CHECK__ --> <i class="material-icons text-danger align-middle" style="font-size: 20px;">check</i> <!-- __CHECK__ -->
+                <!-- __YES__ --> <img class="float-lg-left float-none" src="img/like.png" style="height: 20px;"> <!-- __YES__ -->
+                <!-- __NO__ --><img class="float-lg-left float-none" src="img/dislike.png" style="height: 20px;"><!-- __NO__ -->
+
+                            </td>
+
+                            <td>__NAME_CERTIFICATE__ , __CONTACT_CERTIFICATE__</td>
+                            <td>__NAME_U_DELEGATE__
+                                <hr class="my-0"> __CONTACT_U_DELEGATE__</td>
+
+                            <td>__NAME_ROLE_VECHE__ ,
+                                <!-- __U_ADMIN__ --><a href="/derjava/user_contact.php?__U_ADMIN__"> контакт </a><!-- __U_ADMIN__ -->
+                                <!-- __HAS_DELEGATE__ -->
+                                <!-- __U_DELEGATE__ --><br> <a href="/derjava/user_contact.php?__U_DELEGATE__"> делегат </a>
+                                <!-- __U_DELEGATE__ -->
+                                <!-- __HAS_DELEGATE__ -->
+                            </td>
+                            <td>__TS_SYS__ <span style="display: none;">__ID_CERTIFICATE__</span> </td>
+
+
+                            <td>
+               <button data-ck="__IS_CONFIRMED_U__" data-cnt0="__CONFIRM_MINUS__" data-cnt1="__CONFIRM_PLUS__"
+                       onclick="btn_confirm_answer(event)" >
+                    <i class="material-icons" data-toggle="tooltip" title="прикреплены файлы" style="font-size:14pt;">__CONFIRM_CHG__</i>
+               </button><a onclick="btn_confirmed(event)" >
+                            <small class="cnt" style="padding-left:20px;"> <!-- __CNT_CONFIRMED__ -->  __CNT_CONFIRMED__ <!-- __CNT_CONFIRMED__ --> </small>
+                        </a>
+                               <!-- __FILE_ATTACHED__ -->
+                               <i class="material-icons" data-toggle="tooltip" title="прикреплены файлы" style="font-size:12pt;">attach_file</i>
+                               <!-- __FILE_ATTACHED__ -->
+                         </td>
+
+                        </tr>
+                        <!-- data7% -->
+                    </table>
+                    </div>
+
+                    <div class="col no-gutters">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $bootstrap-head$ -->
+
+    <!-- $head$ -->
+    <!-- %head -->
+    <title>__TITLE__</title>
+    <!-- head% -->
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+
+<!--  %data0 -->
+                <h1 class="ml-3 mt-3 float-left">Собрания </h1>
+                
+                <!--  __VECHE__  -->
+                <div class="clearfix"></div>
+                <h2> __NAME_VECHE__ </h2>
+                 <!--  __VECHE__  -->
+                 
+                <button class="btn main-btn ml-2 ml-lg-5 mt-4 rounded z-depth-1"
+                        onclick="setLocation('/derjava/poll_create.php?iv=__VECHE__&kp=4')">Создать новое собрание
+                </button>
+                 
+                <div class="clearfix"></div>
+                <hr>
+                <form class="col form-inline mr-5" action="/derjava/poll9_search.php?iv=__VECHE__" method="post">
+                    <input name="sx" class="form-control col mr-1 rounded-pill m-height" type="search"
+                           value="__SX__"
+                           placeholder="Введите тему собрания" aria-label="Search">
+                   <!--  <br>Статут<input value="__ID_STATUTE__" type="number" name="is" > -->
+                    <button class="btn shadow-none rounded-pill main-btn" type="submit">Искать</button>
+                </form>
+<!-- data0% -->
+                
+                
+                <div class="col mt-3 table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>
+                                Тема собрания
+                            </th>
+                            <th>
+                                Объединение
+                            </th>
+                            <th>
+                                Люди
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <!-- %data2 черновики собственных неопубликованных голосований  -->
+                        <tr>
+                            <th class="text-nowrap p-1 text-center" scope="row"><img src="/32/pencil32.jpg" width="50">
+                            </th>
+                            <td><a class="main-a" href="/derjava/poll_edit.php?qq=__ID_POLL__">__NAME_POLL__</a></td>
+                            <td>
+                                <!-- __VECHE__ -->
+                                <a class="main-a" href="/derjava/veche.php?iv=__VECHE__">
+                                    <small>__NAME_VECHE__</small>
+                                </a>
+                                <!-- __VECHE__ -->
+                            </td>
+                        </tr>
+                        <!-- data2% -->
+
+                        <!-- %data1 -->
+                        <tr>
+                            <th class="text-nowrap p-1 text-center" scope="row"><img
+                                    src="temp/img/thumb64.jpg##__IMG_POLL__" width="50"></th>
+                            <td> <a class="main-a" href="__HREF_POLL__">__NAME_POLL__</a>  __ID_STATUTE__</td>
+                            <td><a class="main-a" href="__HREF_VECHE__">
+                                <small>__NAME_VECHE__</small>
+                            </a></td>
+                            <td>__CNT_LIKE__</td>
+                        </tr>
+                        <!-- data1% -->
+
+                        </tbody>
+                    </table>
+
+<div>
+Собрание  выполняет 2 функции: <br>
+1) информирует о мероприятии, требуется проголосовать ЗА или ПРОТИВ. <br>
+2) голосование по резолюции митинга  после проведения мероприятия.<br>
+<br>
+Проведение митингов с использованием системы теперь позволяет фиксировать результаты и 
+организовывать рабочие группы по выполнению резолюций митинга. 
+А также фиксировать итог работы рабочих групп.
+</div>
+
+                    
+                    
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    
+
+</main>
+
+
+<!--Модальное окно регистрации-->
+
+   <!-- $login-modal$ -->
+
+<!--/Модальное окно регистрации-->
+
+</body>
+</html>

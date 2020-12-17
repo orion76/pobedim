@@ -1,0 +1,7 @@
+<div style="display:none" id="uploader">
+    <form style="display:none" method="post" enctype="multipart/form-data" id="form_uploader" >
+        <input type="file" id="input_uploader" name="userfile" onchange="chosen_uploader(event)">
+        <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+    </form>
+</div>
+

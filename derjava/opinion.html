@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- %data0 -->
+    <link rel="canonical" href="__SESSION_ROOT__/derjava/opinion.php?__ID_ANSWER__"/>
+    <!-- data0% -->
+
+    <!-- $bootstrap-head$ -->
+
+<!-- $head$ -->
+    <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+    <script type="text/javascript" src="/derzhava/golosovanie_user.js"></script>
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+    
+<!-- $header$ -->
+<main >
+
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+				<div class="no-gutters bg-white rounded border mb-3">
+<div class="col">
+    <!-- %data0 -->
+            <div class="row no-gutters">
+                                    <div class="col-md-4 bg-main-vote">
+                                        <img src="__IMG_ANSWER__"
+                                             class="card-img" style="max-height: 200px;">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-3">
+                                            <h5 class="card-title" id="pa__ID_ANSWER__">__NAME_ANSWER__ </h5>
+                                            <p class="card-text">__TEXT_ANSWER__</p>
+                                        </div>
+                                    </div>
+            </div>
+    <!-- data0% -->
+
+<br><br><br>
+<h2>Мнение использовано в голосованиях:</h2>
+    <table>
+<!-- %data1 -->
+        <tr style="min-height:30px;">
+            <td>
+<!-- __IMGSRC_POLL__ -->
+                <img src="__IMGSRC_POLL__" >
+<!-- __IMGSRC_POLL__ -->
+            </td>
+            <td style="font-size: 14pt;"><a href="/derjava/poll.php?__ID_POLL__"> __NAME_POLL__</a></td>
+        </tr>
+<!-- data1% -->
+    </table>
+
+<br><br><br>
+
+
+                <div class="bg-white rounded border mb-3">
+                <!--Блок оставления коммента в группе-->
+                <p class="col font-weight-normal mt-3">Оставьте свой пост </p>
+                <!-- %data0 -->
+                <form action="/derjava/ajax.php?ax=newmsg6&w=__ID_WALL__&redirect=1&pa=__ID_ANSWER__" method="post" class="mb-3"
+                      onsubmit="wall_new_post(event)"
+                      rel="nofollow"
+                      >
+                    <input type="hidden" name="ln" value="/derjava/opinion.php?pa=__ID_ANSWER__">
+                    <!-- data0% -->
+                    <div class="col media mt-3">
+                        <!-- %menu_u -->
+                        <img class="rounded-pill mr-3" style="height: 38px;"
+                             src="__IMGSRC_USER_ON__">
+                        <!-- menu_u% -->
+                        <textarea name="txt" class="form-control mr-3"
+                                  onkeyup="control_autoheight(event)" style="overflow:hidden;"
+                        ></textarea>
+                        <button type="submit"
+                                class="w-25 btn main-bg-color main-btn px-2 m-0 shadow-none waves-effect waves-light">
+                            <img class="float-lg-left float-none" src="/derjava/img/send.png" style="height: 20px;"
+                                 alt="">
+                            <span class="d-none d-lg-inline">Отправить</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+
+                <!-- $wall$ -->
+                
+</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+</main>
+
+
+<!-- $login-modal$ -->
+
+
+
+</body>
+
+</html>

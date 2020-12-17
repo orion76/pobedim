@@ -1,0 +1,154 @@
+<style>
+    .wall img {
+        max-height: 320px;
+        max-width: 480px;
+    }
+</style>
+
+
+<!-- %data0 -->
+<!-- __TEXT_RIGHTS_WALL__ --> <br><small>  __TEXT_RIGHTS_WALL__ </small> <!-- __TEXT_RIGHTS_WALL__ -->
+
+<span>
+<!-- __ID_MSG_WALL__ -->
+    <a style="padding: 10px;" href="/derjava/wall.php?w=__ID_WALL__"> показывать всю стену</a>
+<!-- __ID_MSG_WALL__ -->
+</span>
+<!-- data0% -->
+
+
+<!-- %data8 -->
+            <!-- СООБЩЕНИЕ В СООБЩЕСТВЕ !!!! -->
+
+            <div class="bg-white rounded border mb-3 wall" style="border-color: black !important;">
+
+
+                <!--ОСНОВНОЕ -->
+                <div class="col media pt-3" id="m__ID_MSG_WALL__"><a name="m__ID_MSG_WALL__" href="/derjava/wallmsg.php?m=__ID_MSG_WALL__" ><small>__ID_MSG_WALL__</small></a><br>
+
+                    <a href="/derjava/user_contact.php?__U__">
+                        <img class="mr-3 rounded-circle" style="width: 70px;" src="img/ava-2.jpg##__IMGSRC_USER__" >
+                    </a>
+                    <p>__NAME_USER__<br>
+                        <!-- <a class="main-a" href="/derjava/user_contact.php?__U__"></a> -->
+                        <!-- __VECHE__ -->
+                        <small><a class="main-a text-muted"
+                                  href="/derjava/veche.php?iv=__VECHE__#m__ID_MSG_WALL__"> __TS_MSG_WALL__ </a>
+                        </small>
+                        <!-- __VECHE__ -->
+                        <!-- __ID_POLL__ -->
+                        <small><a class="main-a text-muted"
+                                  href="/derjava/poll.php?qq=__ID_POLL__#m__ID_MSG_WALL__"> __TS_MSG_WALL__ </a>
+                        </small>
+                        <!-- __ID_POLL__ -->
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="col"> 
+                    <!-- !__TEXT_MSG_WALL_200__ -->
+                    __TEXT_MSG_WALL__
+                    <!-- !__TEXT_MSG_WALL_200__ -->
+                    <!-- __TEXT_MSG_WALL_200__ -->
+                    <div> __TEXT_MSG_WALL_200__
+                        <button onclick="wall_msg_showfull(event)"
+                                style="color: #89b852;background-color: while;"
+                                class="btn ml-3 p-1 border z-depth-0 d-inline font-weight-bold">показать полностью ...</button>
+                        <div class="original_text" style="display:none;">__TEXT_MSG_WALL__</div>
+                    </div>
+                    <!-- __TEXT_MSG_WALL_200__ -->
+                
+<ul id="fm__ID_MSG_WALL__" style="display:block"  >
+<!-- __rows11__ -->
+<li>
+    <a href="/w/__ID_MSG_WALL__/__FILE_WALL__" target="fw">
+    <!-- __IMGSRC_FILE_WALL__ --> <img src="__IMGSRC_FILE_WALL__" > <!-- __IMGSRC_FILE_WALL__ -->  __FILE_WALL__ </a>
+</li>
+<!-- __rows11__ -->
+</ul>
+</div>
+                <div class="row px-3 no-gutters">
+                    <!-- __rows10__ -->
+                    <div class="col img-comment mt-3 mx-1" >
+                        <!-- __IMG__ -->
+                        <img class="" src="__IMGSRC_MSG_WALL__" onclick="__IMG_CLICK__" style="__IMG_STYLE__">
+                        <!-- __IMG__ -->
+                        <!-- __IFRAME__ -->
+                        <!-- __IFRAME__ -->
+                    </div>
+                    <!-- __rows10__ -->
+                </div>
+
+
+
+                <hr>
+
+
+
+
+                <!--КОММЕНТАРИИ ПОЛЬЗОВАТЕЛЕЙ-->
+                <!-- __rows9__  -->
+                <div class="col" id="m__ID_MSG_WALL__"><a name="m__ID_MSG_WALL__" href="/derjava/wallmsg.php?m=__ID_MSG_WALL__" ><small>__ID_MSG_WALL__</small></a><br>
+                    <a href="/derjava/user_contact.php?__U__">
+                        <img class="ml-4 mr-2 rounded-pill" align="left" style="height: 38px"
+                            src="__IMGSRC_USER__">
+                    __NAME_USER__
+                    </a> <br><small> __TS_MSG_WALL__</small>
+                    
+                    <div class="d-flex ml-4 mb-2" style="font-size: 0.85rem">
+                        <!-- !__TEXT_MSG_WALL_200__ -->
+                        __TEXT_MSG_WALL__
+                        <!-- !__TEXT_MSG_WALL_200__ -->
+                        <!-- __TEXT_MSG_WALL_200__ -->
+                        <div> __TEXT_MSG_WALL_200__
+
+                        <button onclick="wall_msg_showfull(event)"
+                                style="color: #89b852;background-color: while;"
+                                class="btn ml-3 p-1 border z-depth-0 d-inline font-weight-bold">показать полностью ...</button>
+                            
+
+                                <div class="original_text" style="display:none;background-color: blue;">__TEXT_MSG_WALL__</div>
+                        </div>
+                        <!-- __TEXT_MSG_WALL_200__ -->
+                    </div>
+
+
+<ul id="fm__ID_MSG_WALL__" class="col">
+<!-- __rows12__ -->
+<li>
+    <a href="/w/__ID_MSG_WALL__/__FILE_WALL__" target="fw">
+    <!-- __IMGSRC_FILE_WALL__ --> <img src="__IMGSRC_FILE_WALL__" > <!-- __IMGSRC_FILE_WALL__ -->  __FILE_WALL__ </a>
+</li>
+<!-- __rows12__ -->
+</ul>
+
+
+                    <div class="clearfix"></div>
+                    <hr class="mx-3 mt-1">
+                </div>
+                <!-- __rows9__ -->
+
+            </div>
+
+
+
+<!-- data8% -->
+
+
+            <!-- %data0 -->
+            <!-- __CNT_WALL_LAST__ -->
+            <div>
+                <button class="w-45 btn main-bg-color main-btn px-2 m-0 shadow-none waves-effect waves-light"
+                    style="height:55px;"
+                    data-w="__ID_WALL__"
+                    data-ts="__ID_MSG_WALL_LAST__"
+                    data-mx="__ID_MSG_WALL_EX__"
+                    onclick="wall_nextpage(event)">
+                    Есть ещё __CNT_WALL_LAST__ постов,  загрузить несколько ?
+                </button>
+            </div>
+            <!-- __CNT_WALL_LAST__ -->
+            <!-- data0% -->
+
+

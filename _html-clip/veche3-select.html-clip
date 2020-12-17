@@ -1,0 +1,65 @@
+<input type="hidden" id="selected_veche" value="0" name="ivp" >
+<div data-ivp="3" data-kv="3" data-level="0">
+    <select id="select0" onchange="select_veche0(event)" class="browser-default custom-select" >
+    </select>
+    <div></div>
+</div>
+
+<script>
+    function select_veche0(event) {
+       var n = event_target(event);
+       var np = n.parentNode;
+       var ni = n.getAttribute('id');
+       var v = n.value;
+
+       var nv = document.getElementById('selected_veche');
+       var vz = v;
+
+       var btn = document.getElementById('submit');
+       if (v == 0 && ni=='select0')
+           btn.style.display='none';
+         else {
+             btn.style.display='';
+             if (v == 0) {
+                 var npz = np.parentNode;
+                 n = npz.querySelector('select');
+                 vz = n.value;
+             }
+         }
+       nv.value = vz;
+
+       var kv = np.getAttribute('data-kv');
+       var d = np.querySelector('div');
+       var s0 = ajax_get('/derjava/ajax.php?ax=select_veche0&vp='+v+'&kv='+kv);
+       if (s0 != '') {
+           var t = document.getElementById('veche_treenode');
+           d.innerHTML = t.innerHTML;
+           d.setAttribute('data-ivp',v);
+           d.setAttribute('data-kv',kv)
+           n = d.querySelector('select');
+           n.innerHTML = s0;
+       } else { d.innerHTML = ''; }
+   }
+
+    
+    var n0 = document.getElementById('select0');
+    var np0 = n0.parentNode;
+    var kv = np0.getAttribute('data-kv');
+    var s0 = ajax_get('/derjava/ajax.php?ax=select_veche0&vp='+kv+'&kv='+kv);
+    n0.innerHTML = s0;
+</script>
+
+<!-- %data0 -->
+<div style="display:none" id="veche_treenode" data-kv="__ID_KIND_VECHE__" data-level="1">
+    <select name="select_" onchange="select_veche0(event)" class="browser-default custom-select" >
+        <option value="0" data-ivp="0" > -- </option>
+    </select>
+    <div>
+    </div>
+</div>
+<!-- data0% -->
+
+
+
+
+

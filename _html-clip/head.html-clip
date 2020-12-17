@@ -1,0 +1,27 @@
+<!-- <base target="_blank"> -->
+<!-- %head -->
+   <!-- __TITLE__ -->
+    <title>__TITLE__</title>
+    <meta name="description" content="__DESCRIPTION__">
+    <meta property="og:title" content="__TITLE_OG__"/>
+    <meta property="og:image" content="__IMG_OG__"/>
+    <!-- __TITLE__ -->
+<!-- head% -->
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<link rel="shortcut icon" href="/favicon0.ico" type="image/x-icon" />
+
+<script type="text/javascript" src="/js/ut0.js?14"></script>
+<script type="text/javascript" src="/js/clipbrd.js?13"></script>
+<script type="text/javascript" src="/js/ajax0.js?13"></script>
+<script type="text/javascript" src="/js/fileuploader.js?12"></script>
+<script type="text/javascript" src="/js/uploadfile.js?12"></script>
+<script type="text/javascript" src="/js/wall.js?12"></script>
+
+<!-- link href="/css/layout.css?02" rel="stylesheet" -->
+
+<link href="/css/more.css?0" rel="stylesheet">
+<link href="/css/div_md_.css?0" rel="stylesheet">
+

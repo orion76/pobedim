@@ -1,0 +1,183 @@
+.body-color{
+    background-color: #f6f6f6;
+}
+
+.main-bg-color{
+    background-color: #89b852;
+}
+
+.main-bg-color-menu{
+    background-color: #B2D48A;
+}
+
+.main-color{
+    color: #B2D48A;
+}
+.main-color-dark{
+    color: #89b852;
+}
+
+.main-bg-dark{
+    background-color: #89b852;
+}
+
+
+
+.m-height{
+    height: 35px;
+}
+.main-btn{
+    min-height: 35px;
+    background-color: #89b852;
+    padding: 7px 20px 7px 20px;
+    border: 1px solid #89b852;
+    color: white;
+}
+
+.main-btn-m{
+    background-color: #89b852;
+    border: 1px solid #89b852;
+    color: white;
+}
+
+.main-btn-vote-h{
+    background-color: white;
+}
+
+.bg-main-vote{
+    background-color: #DAEAC6;
+}
+
+
+
+.main-btn-create-group{
+    display: block;
+    padding: 4px 10px 5px 10px;
+    font-size: 13px;
+    box-shadow: none;
+    border: 2px solid #DAEAC6;
+    color: #0d0d0d;
+    background-color: white;
+}
+
+.main-btn-create-group:hover{
+    color: #89b852;
+    background-color: #DAEAC6;
+}
+
+.main-btn-vote-h:hover{
+    background-color: #DAEAC6;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12) !important;
+}
+.main-btn-vote{
+    vertical-align: middle;
+    box-shadow: none;
+    border: 2px solid #DAEAC6;
+    background-color: #DAEAC6;
+    height: 43px;
+}
+
+.main-btn-vote:hover{
+    background-color: white;
+}
+
+.main-a{
+    text-decoration: underline;
+    color:black;
+    font-weight: 500;
+}
+
+.main-a > i{
+    color:lightgray;
+    font-size: 22px;
+}
+
+.main-a > i:hover{
+    color: #89b852;
+}
+
+.main-a:hover{
+    /* color: #89b852; */
+}
+
+.progress-bar > * > .main-a:hover{
+    color: white;
+}
+
+.main-list-active{
+    font-weight: 500;
+    background-color: #DAEAC6;
+    border-radius: 4px;
+    color: white;
+}
+
+.main-list-active a:hover{
+    color: white;
+}
+
+
+.main-ul li a{
+    color: #000000;
+    padding: 0px;
+    margin: 0px;
+}
+
+.main-ul li a:hover{
+    font-weight: 500;
+    border-radius: 4px;
+}
+.main-ul li a span:hover{
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.main-ul li{
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem !important;
+}
+
+.main-ul li a span{
+    padding: 0.3rem !important;
+    line-height: 1rem!important;
+    font-size: 80%;
+}
+
+.bg_group{
+    background-position: 50%;
+    background-size: cover;
+}
+
+.drj-table tr td{
+    vertical-align: middle;
+}
+
+.drj-table tr th{
+    vertical-align: middle;
+}
+
+.dialogs:hover{
+    background-color: #f4f4f4;
+}
+
+.qq-uploader{
+    height: 100px;
+    border: 5px solid #DAEAC6;
+    display: block;
+    margin: 1rem;
+    border-radius: 3px;
+}
+
+.qq-upload-button{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}
+
+.qq-upload-drop-area{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+}

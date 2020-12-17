@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script type="text/javascript" src="/derjava/veche.js?2"></script>
+    <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+    <script type="text/javascript" src="/derjava/poll_user.js"></script>
+
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+	<div class="no-gutters col-sm-12 col-md-8 col-lg-9 div-right">
+                <div class="bg-white rounded border mb-3">
+
+
+                    <!-- %data0 -->
+<!-- __IS_SLOVAR__ -->
+    <a href="/derjava/poll_search.php?sx=__NAME_SLOVAR__" rel="nofollow" >Поиск голосований</a>
+<!-- __IS_SLOVAR__ -->
+
+
+                    
+                    <!-- __IMG_POLL__ -->
+                    <img class="rounded-top overflow-hidden" style="max-width:100%; max-height:200px;__STYLE_IMG_POLL__"
+                         src="img/ava-0.jpg##__IMG_POLL__">
+                    <!-- __IMG_POLL__ -->
+
+                    <!-- !__IMG_POLL__ -->
+                    <img class="rounded-top overflow-hidden" style="max-width:100%; max-height:200px;"
+                         src="/data.derjava/noimgband.jpg">
+                    <!-- !__IMG_POLL__ -->
+
+
+                    <div class="col">
+<p>
+    Чтобы лучше понимать друг друга и иметь возможность договариваться требуется общий словарь терминов.
+    Проголосуйте или дайте своё определение термину, это позволит вашим собеседникам адекватнее вас воспринимать при общении с вами.
+    <br>
+    В анкете каждого пользователя есть ссылка на <a href="/derjava/user_dict.php?iu=">словарь</a>, которым он оперирует в общении.
+</p>
+
+                        <h1>
+                            <small class="float-left font-weight-light pt-1">__NAME_POLL__</small>
+                        </h1>
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <hr class="mt-2">
+
+                    <div class="col no-gutters float-left col-md-12 col-lg-8">
+                        <!-- __CAN_EDIT_POLL__ -->
+                        <a class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect"
+                           href="/derjava/poll_edit.php?ax=edit&qq=__ID_POLL__">Редактировать термин/понятие</a>
+                        <!-- __CAN_EDIT_POLL__ -->
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <!-- data0% -->
+
+                    <!--/Основной контент-->
+                    <div class="jumbotron card card-image rounded p-0 z-depth-0 border mx-3"
+                         style="background-color:#f6f6f6">
+
+                        <div class="text-dark text-center py-1 px-3">
+                            
+<!-- $poll-answer$ -->
+                            
+                            <!-- %data0 -->
+                            <!-- __CAN_ADD_ANSWER__ -->
+                            <div>
+                                <!-- по нажатию кнопки появляется форма добавления варианта ответа -->
+
+                                <button class="btn main-btn my-2 rounded z-depth-1 float-right"
+                                        onclick="btn_golosovanie_more_(event)">
+    Добавить определение для термина
+                                </button>
+                                
+                                <div class="clearfix"></div>
+                                <form class="form-group py-2" style="display: none;" enctype="multipart/form-data"
+                                      action="/derjava/ajax.php?ax=uploadfile_answer&qq=__ID_POLL__&pa=0&bx=view"  rel="nofollow"
+                                      method="POST"  rel="nofollow">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="3000000"/>
+                                    <label for="userfile">Выберите картинку</label>
+                                    <input id="userfile" name="userfile" type="file" accept="image/jpeg,image/png,image/gif"  />
+                                    <textarea class="form-control my-1" name="npa" rows="3"
+                                              placeholder="Текст ответа"></textarea>
+                                    <input type="submit" class="btn main-btn my-2 rounded z-depth-1 float-right"
+                                           value=  "Сохранить вариант определения" >
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                            <!-- __CAN_ADD_ANSWER__ -->
+                            <!-- data0% -->
+                        </div>
+                    </div>
+
+<!-- $poll-read-btn$ -->
+
+
+<!-- $poll-like$ -->
+                    
+                    
+                    <!-- %data0 -->
+                    <!-- __CAN_EDIT_POLL__ -->
+                    <script type="text/javascript" src="/derjava/poll_edit.js"></script>
+                    <button id="btn_publish_poll"
+                            data-qq="__ID_POLL__"
+                            onclick="poll_publish_click(event)"
+                            class="btn main-btn mb-5 mt-3 ml-3 rounded z-depth-1 d-block">Опубликовать голосование
+                    </button>
+                    <!-- __CAN_EDIT_POLL__ -->
+                    <!-- data0% -->
+                </div>
+                
+                <div class="clearfix"></div>
+
+                <div class="bg-white rounded border mb-3">
+                    <!--Блок оставления коммента в группе-->
+                        <p class="col font-weight-normal mt-3">Оставьте свое сообщение в голосовании</p>
+                        <!-- %data0 -->
+                        <form action="/derjava/ajax.php?ax=newmsg6&redirect=1&qq=__ID_POLL__"  rel="nofollow" method="post" class="mb-3">
+                            <input type="hidden" name="ln" value="/derjava/poll.php?qq=__ID_POLL__">
+                            <!-- data0% -->
+                            <div class="col media mt-3">
+                                <!-- %menu_u -->
+                                <img class="rounded-pill mr-3" style="height: 38px;"
+                                     src="img/ava-4.jpg##__IMGSRC_USER_ON__">
+                                <!-- menu_u% -->
+                                <textarea name="txt" class="form-control mr-3" rows="1"></textarea>
+                                <button type="submit"
+                                        class="w-25 btn main-bg-color main-btn px-2 m-0 shadow-none waves-effect waves-light">
+                                    <img class="float-lg-left float-none" src="img/send.png" style="height: 20px;"
+                                         alt="">
+                                    <span class="d-none d-lg-inline">Отправить</span>
+                                </button>
+                            </div>
+                        </form>
+
+                </div>
+
+                <!-- $wall$ -->
+
+
+            </div>
+
+            <!--/Основной контент-->
+        </div>
+    </div>
+</main>
+
+
+<!--Модальное окно регистрации-->
+<!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+
+</body>
+</html>

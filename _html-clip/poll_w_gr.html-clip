@@ -1,0 +1,44 @@
+
+                    <div class="jumbotron card card-image rounded p-0 mx-3 z-depth-0 border"
+                         style="background-color:#f6f6f6">
+                        <div class="text-dark text-center py-1 px-3">
+                            <h2 class="card-title h1-responsive pt-3 mb-2 font-bold"><strong>Рабочие группы</strong>
+                            </h2>
+                            <!-- %data0 --><p class="mx-5 mb-3 mt-0">__NAME_POLL__</p> <!-- data0% -->
+                            <hr>
+                            <!-- %data4 -->
+                            <div class="no-gutters">
+                                <div class="col-md-9 no-gutters">
+                                    <div class="col d-inline float-left bg-main-vote rounded-0"
+                                         style="height: 85px">
+                                        <div class="ml-0 d-block main-bg-color row progress-bar text-left pt-1 float-left"
+                                             style="width: 0%;  height: 100%">
+                                            <p class="ml-2 mb-0 mx-2 p-0 text-dark">__NAME_ANSWER__</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- __BTN_VECHE_ANSWER_CREATE__ -->
+                                <div class="col-md-3 float-right pl-md-2">
+
+                                    <a class="main-btn-create-group"
+                                       href="/derjava/v5_create.php?kv=5&pa=__ID_ANSWER__">
+                                        Создать рабочую группу</a>
+                                </div>
+                                <!-- __BTN_VECHE_ANSWER_CREATE__ -->
+                                <!-- __BTN_VECHE_ANSWER_ENTER__ -->
+                                <div class="col-md-3 float-right pl-md-2">
+                                    <a class="main-btn-create-group"
+                                       href="/derjava/veche.php?iv=__VECHE_ANSWER__"
+                                    >Перейти к рабочей группе</a>
+                                </div>
+                                <!-- __BTN_VECHE_ANSWER_ENTER__ -->
+                            </div>
+                            <div class="clearfix"></div>
+                            <!-- __VECHE_ANSWER_RESULT__ -->
+                            <p class="d-block text-left">Принятое решение в группе __VECHE_ANSWER_RESULT__ </p>
+                            <!-- __VECHE_ANSWER_RESULT__ -->
+                            <div class="clearfix my-2"></div>
+                            <!-- data4% -->
+
+                        </div>
+                    </div>

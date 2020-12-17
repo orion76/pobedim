@@ -1,0 +1,63 @@
+
+<ul class="list-unstyled main-ul">
+        <li class="mb-2 nav-item">
+                <a href="/derjava/download.php"
+                   title="Наша система открыта, каждый может скачать код сайта">
+                        <i class="material-icons align-top main-color">cloud_download</i>
+                        Скачать сайт
+                </a>
+        </li>
+</ul>
+
+<ul class="list-unstyled main-ul">
+
+        <!-- %menu_u -->
+        <li class="nav-item">В разработке:</li>
+
+        <li class="nav-item small __ACTIVE0__">
+            <a href="/derjava/wall.php">
+                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">apps</i>
+                Стена</a>
+        </li>
+
+        <!-- __IS_USER_ON__ -->
+        <li class="mb-2 nav-item __ACTIVE__">
+            <a href="/bazar/thing_search.php">
+                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">storefront</i>
+                ЯРМАРКА</a></li>
+        <!--    <li class="__ACTIVE0__"><a href="/derjava/u_wall.php">Сообщения</a></li> -->
+
+        
+        <li class="nav-item small __ACTIVE__">
+            <a href="/derjava/sys_stat.php">
+                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">directions_walk</i>
+                Cтатистика </a>
+        </li>
+        <!-- __IS_USER_ON__ -->
+
+        <!-- __IS_LOCAL__ -->
+        <li class="nav-item small ">
+            <a href="/derjava/ek_labor.php">
+                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">money</i>
+                Разработка справедливых ставок по
+                зарплатам</a>
+        </li>
+
+        <li class="nav-item small ">
+            <a href="/derjava/ek_product.php">
+                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">category</i>
+                Справочник трудозатрат в продукции
+            </a>
+        </li>
+        <!-- __IS_LOCAL__ -->
+
+        <!-- <li class="__ACTIVE7__"><a href="/derjava/poll.php?qq=1">ВЫБОР ИДЕОЛОГИИ (Конституции)</a></li> -->
+        <li class="nav-item small __ACTIVE3__">
+            <a href="/derjava/text_search.php">
+                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">360</i>
+                НОВОСТИ
+            </a>
+        </li>
+        <!-- menu_u% -->
+</ul>
+

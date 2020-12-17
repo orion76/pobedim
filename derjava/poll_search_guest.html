@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- %session -->
+    <link rel="canonical" href="__SESSION_ROOT__/derjava/poll_search.php" />
+    <!-- session% -->
+
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+
+
+    <!-- %remove -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <script type="text/javascript" src="/js/ut0.js?0"></script>
+    <script type="text/javascript" src="/js/ajax0.js?0"></script>
+    <script type="text/javascript" src="/js/fileuploader.js?0"></script>
+    <script type="text/javascript" src="/js/uploadfile.js?0"></script>
+    <script type="text/javascript" src="/js/wall.js?1"></script>
+
+    <!-- link href="/css/layout.css?02" rel="stylesheet" -->
+
+    <link href="/css/div_md_.css?0" rel="stylesheet">
+    <link href="/derjava/css/bootstrap.css?1" rel="stylesheet">
+    <link href="/derjava/css/mdb.css?1" rel="stylesheet">
+    <link href="/derjava/css/style.css?1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="/derjava/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/derjava/js/popper.min.js"></script>
+    <script type="text/javascript" src="/derjava/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/derjava/js/mdb.min.js"></script>
+
+
+    <!-- remove% -->
+
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<!-- $header$ -->
+<main>
+    <!--Контент-->
+    <div class="container pt-5  div-main">
+        <div class="row no-gutters">
+
+            <div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+                <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+                <!-- $cmenu-0000$ -->
+            </div>
+
+            <!--Основной контент   -->
+            <div class="no-gutters col-sm-12 col-md-8 col-lg-9 div-right">
+                <div class="no-gutters bg-white rounded border mb-3 p-3">
+                    <!-- %data0 -->
+                    <h1 class="float-left">Голосования</h1>
+                    <div class="clearfix"></div>
+                    <hr class="mx-n3">
+                    <form class="form-inline" action="/derjava/poll_search.php?" method="post">
+                        <input name="sx" class="form-control col mr-1 rounded-pill m-height" type="search"
+                               value="__SX__"
+                               placeholder="Введите название голосования" aria-label="Search">
+                        <button class="btn shadow-none rounded-pill main-btn" type="submit">Искать</button>
+                    </form>
+                    <!-- data0% -->
+                    <div class="mt-3 table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>
+                                    Название
+                                </th>
+                                <th>
+                                    Объединение
+                                </th>
+                                <th>
+                                    Люди
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- %data1 -->
+                            <tr>
+                                <th class="text-nowrap p-1 text-center" scope="row"><img
+                                        src="temp/img/thumb64.jpg##__IMG_POLL__" width="50"></th>
+                                <td><a class="main-a" href="__HREF_POLL__">__NAME_POLL__</a></td>
+                                <td><a class="main-a" href="__HREF_VECHE__"><small>__NAME_VECHE__</small></a></td>
+                                <td>__CNT_POLL__</td>
+                            </tr>
+                            <!-- data1% -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- $login-modal$ -->
+
+
+</body>
+</html>

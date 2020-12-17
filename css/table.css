@@ -1,0 +1,27 @@
+
+table {
+    
+}
+
+tr td {
+    border-bottom: 1px solid green;
+    padding: 2px 4px;
+}
+
+.a_ {
+    text-align: center;
+    min-width: 20px;
+}
+
+.s_ {
+    text-align: right;
+    min-width: 20px;
+}
+
+.deb {
+    background-color: lightsalmon;
+}
+
+.cre {
+    background-color: lightblue;
+}

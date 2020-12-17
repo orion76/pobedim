@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script type="text/javascript" src="/derzhava/derzhava_user.js"></script>
+    <script>
+
+        function this_send_converse_click(event) {
+            var n = event.target.parentNode;
+            var m = n.querySelector("textarea");
+            var ic = m.getAttribute('data-id');
+            var href = '/derjava/user_contact.php?ax=send_msg&c=' + ic;
+            ajax_get(href);
+            //location.reload();
+            n.innerHTML = m.value;
+        }
+
+        function this_reply_converse_change(event) {
+            var n = event.target;
+            var ic = n.getAttribute('data-id');
+            var href = '/derjava/user_contact.php?bx=save_re&ic=' + ic + '&tc=' + encodeURIComponent(n.value);
+            ajax_get(href);
+        }
+
+    function ajax_btn_verify_psn_uc( btn, text_response){
+        btn.style.display = 'none';
+        return false;
+    }
+    </script>
+
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+<style>
+    div.m_answer_more { z-index:8888;
+                    position:absolute;
+                    right:-5px;
+                    top:-12px;
+                    display: inline-block;
+                    color:green;
+                    opacity:100%;
+                    background-color:transparent;
+                    padding: 5px;
+    }
+    .m_answer_more ul { display: none; background-color:white;}
+    .m_answer_more:hover ul{ display: inline-block;
+                    border-bottom-width: 1px;
+                    border-color: green;
+                    border-radius: 5px;
+                    border-style: solid;
+    }
+    .m_answer_more ul li { list-style-type: none; padding: 8px; }
+</style>
+
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+                        <div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+
+                <div class="col">
+
+<!-- %data0 -->
+
+<!--  временно спрячем функционал -->
+<div style="">
+                    <div align="right">
+                        <a href="/coop/trn.php?uf=__U__"> [транзакции] </a>
+                    </div>
+
+
+            <div align="left" class="m_answer_more" >
+                <i class="material-icons align-middle" style="font-size:30px;background-color:transparent;">live_help</i>
+                <br>
+                <ul>
+                    <li>
+                        (в разработке)
+                    </li>
+                    <li>
+                      Личные сообщений не находятся в открытом доступе, но и не шифруются - программист может прочитать.
+                    </li>
+                    <li>
+                        Личные сообщения построены как  обращение-ответ и не предполагает беседы.
+                    </li>
+                    <li>
+                        Этот функционал ориентирован на конкретные вопросы для ответов по существу: слова не по делу писать не надо,
+                        включая слова вежливости, приветствия, поздравления, благодарности и прочее.
+                    </li>
+                </ul>
+            </div>
+<div>
+
+    <form action="/derjava/user_contact.php?bx=send_msg" method="post" style="margin-bottom:10px;" >
+        <input type="hidden" name="u_to" value="__U__" >
+        <input type="hidden" name="tc" value="" >
+        <input type="submit" value="Создать новое обращение (вопрос) к __NAME_U__">
+    </form><br>
+
+<!-- __CNT1__ -->
+<h5>Входящие вопросы от __NAME_U__ </h5>
+<!-- __CNT1__ -->    
+<!-- data0% -->
+<ul style="margin:0px;">
+
+<!-- %data1 -->
+<li style="margin-top:15px;list-style-type: none; border: 1px gray solid;">
+   Обращение: __TEXT_CONVERSE0__ <br>
+   <!-- __CANEDIT1__ -->
+   Ответ:  <textarea style="width: 80%" name="re" id="re" 
+                     onchange="this_reply_converse_change(event)"
+                     rows="3"
+                     placeholder="текст обращения (вопроса) для отправки"
+                     data-id="__ID_CONVERSE__"> __TEXT_CONVERSE1__ </textarea>
+        <br> <button onclick="this_send_converse_click(event)">Отправить</button>
+   <!-- __CANEDIT1__ -->
+   <!-- !__CANEDIT1__ -->
+      Ответ:   __TEXT_CONVERSE1__
+   <!-- !__CANEDIT1__ -->
+</li>
+<!-- data1% -->
+</ul>
+</div>
+
+
+<!-- %data0 -->
+<!-- __CNT2__ -->
+<h5>Исходящие вопросы в адрес __NAME_U__ </h5>
+<ul style="margin:0px;">
+<!-- __CNT2__ -->
+<!-- data0% -->
+
+<!-- %data2 -->
+<li style="margin-top:15px;margin-left:0px;padding:5px; list-style-type: none; border: 1px gray solid;">
+   <!-- __CANEDIT2__ -->
+   Обращение:  <textarea style="width: 80%" name="re" id="re" onchange="this_reply_converse_change(event)" rows="3"
+                         data-id="__ID_CONVERSE__"> __TEXT_CONVERSE1__ </textarea>
+        <br> <button onclick="this_send_converse_click(event)">Отправить</button>
+   <!-- __CANEDIT2__ -->
+   <!-- !__CANEDIT2__ -->
+      Обращение:   __TEXT_CONVERSE1__
+      <hr>
+      <div style="margin:0px;">
+      Ответ: __TEXT_CONVERSE0__
+      </div>
+   <!-- !__CANEDIT2__ -->
+</li>
+<!-- data2% -->
+
+<!-- %data0 --><!-- __CNT2__ --></ul><br><br><!-- __CNT2__ --><!-- data0% -->
+
+<hr>
+                </div> <!--  конец спрятанного блока  -->
+
+
+
+
+<!-- %data0 -->
+<img src="/photo_u.php?x=200&u=__U__" style="max-height: 200px;max-width: 200px;">
+
+                    <h1>
+                        <small class="float-left font-weight-light pt-1"> __NAME_U__</small>
+                    </h1>
+<br><br>
+<select onchange="ajax_input_change(event)" data-action="/derjava/ajax.php?ax=set_user_kind&ux=__U__">
+<!-- __rows20__ -->
+    <option __SELECTED__ value="__ID_KIND_USER__" > __NAME_KIND_USER__ </option>
+<!-- __rows20__ -->
+</select>
+<!-- data0% -->
+
+
+<!-- %data0 -->
+
+                    <!-- __VISIBLE_BTN_VFY_U__ -->
+                    <button class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect"
+                            id="btnvfyu"
+                            href="/derjava/ajax.php?ax=verify_n_c&ic=__ID_CERTIFICATE_U__&urc=0"
+                            onclick="ajax_btn_click(event)"
+                            fn_before="ajax_btn_before"
+                            fn_after="ajax_btn_verify_psn_uc"
+                            data-cntv="0"
+                            title="Нажимайте только, ели знаете человека"  >
+                        Да, я знаю этого человека
+                    </button>
+                    <!-- __VISIBLE_BTN_VFY_U__ -->
+
+                                    <p class="my-1" style="margin-left:20px;padding: 5px; display: inline-block;"
+                                       title="количество подтвердивших людей"
+                                       >
+                                        <a href="/derjava/person_confirm.php?ic=__ID_CERTIFICATE_U__">
+                                        __CNT_U_VERIFICATION__ </a>
+                                    </p>
+
+                    <div class="clearfix"></div>                    
+                    <hr class="mt-2">
+
+
+                    <div class="clearfix"></div>
+                    
+                    <!-- __CITY_U__ --> <p>__CITY_U__</p> <!-- __CITY_U__ -->
+                    <!-- __CONTACTS_U__ --> <p>Контактная информация: __CONTACTS_U__</p> <!-- __CONTACTS_U__ -->
+<!-- __INFO_U__ -->                     <p>Кредо/Дополнительная информация: __INFO_U__</p> <!-- __INFO_U__ -->
+<!-- __WEB_U__ -->                     <p>Ссылки: __WEB_U__</p> <!-- __WEB_U__ -->
+<!-- __LSPECIALITY__ -->                     <p>Специальности: __LSPECIALITY__</p> <!-- __LSPECIALITY__ -->
+
+
+                    <!-- __VKONTAKTE_U__ --> 
+                    <br><a class="main-a" href="https://vk.com/id__VKONTAKTE_U__" target="uu"> вк: __VKONTAKTE_U__ </a> <br>
+                    <!-- __VKONTAKTE_U__ -->
+
+
+                    <!-- __ODNOKLASSNIKI_U__ --> 
+                    <br><a class="main-a" href="https://ok.ru/profile/__ODNOKLASSNIKI_U__"  target="uu">
+                        oк: __ODNOKLASSNIKI_U__
+                    </a>
+                    <!-- __ODNOKLASSNIKI_U__ -->
+                    <!-- __FACEBOOK_U__ --><br>fb<!-- __FACEBOOK_U__ -->
+
+<br>geo: __CITY_HOST__ / __REGION_HOST__ , __IP_HOST__ <br>
+
+
+<!-- __CNT_LIBRARY__ -->
+    <br><a href="/derjava/user_dict.php?iu=__U__">Личный словарь (__CNT_LIBRARY__)</a>
+<!-- __CNT_LIBRARY__ -->
+
+<!-- __CNT_POLL__ -->
+    <br><a href="/derjava/ck.php?ct=__ID_CERTIFICATE_U__">Голосования пользователя __CNT_POLL__  </a>
+<!-- __CNT_POLL__ -->
+
+<!-- __CNT_VECHE__ -->
+                    <br><a href="/derjava/u_veche.php?__U__">Объединения пользователя (__CNT_VECHE__)</a>
+<!-- __CNT_VECHE__ --><!-- __CNT_VECHE1__ --> (участник  __CNT_VECHE1__ ) <!-- __CNT_VECHE1__ -->
+
+<!-- __EMAIL_U__ -->  <br> Эл почта: __EMAIL_U__  <!-- __EMAIL_U__ -->
+
+                    
+
+                    <!-- data0% -->
+
+                    <br>
+                    <ul>
+                        <!-- %data3 --><li><a href="/derjava/user_contact.php?__U__"> __U__ </a> </li> <!-- data3% -->
+                    </ul>
+
+
+                    <br>
+
+                    <!-- $wall$ -->
+
+                </div>
+            </div>
+            <!--/Основной контент-->
+        </div>
+    </div>
+
+<span style="z-index:99999;position:fixed;bottom:0px;left:5px;background-color: white;" >
+    <!-- %data0 --><small> __U__ </small><!-- data0% -->
+</span>
+</main>
+
+<!-- $login-modal$ -->
+
+</body>
+</html>

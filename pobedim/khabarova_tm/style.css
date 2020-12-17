@@ -1,0 +1,129 @@
+﻿ 
+body  {
+    background-color:lightgray;background-size:cover;
+    background-position:top;background-repeat:no-repeat;
+    background-position-x:0px;
+    min-height: 500px;
+    vertical-align:bottom;
+    text-align:right;
+    font-family: MyriadPro;
+    margin-right: 5%;  
+    color: black;
+
+    background-image:url(alta8.jpg);
+}
+/*
+@media screen and (min-height: 680px) {
+    body {
+        background-image: url(alta6tower.jpg);
+    }
+}
+@media screen and (max-height: 681px) {
+    body {
+        background-image:url(alta5.jpg);
+    }
+}
+*/
+
+
+#board { min-height: 450px; height:90%; width:100%;
+}
+
+
+footer {
+/* flex: 0 0 auto; */
+  z-index:auto;
+  position:fixed;
+  bottom:5px;
+  left:5px;
+}
+
+.kotabl {
+    text-align:left;
+}
+ 
+footer.kotabl span { background-color:wheat;}
+
+th { text-align:center;
+}
+
+
+div.hello {
+    display:block;
+    white-space:nowrap;
+     text-align:center;
+     margin-right:0%;
+}
+
+form.login { text-align:right;
+             color:navy;
+             background-color: lightyellow;
+}
+
+.cmenu_main {
+    background-color:navy;
+     font-size:14px;
+    padding: 15px;
+}
+.menu_main {
+    position: fixed;
+    top: 10px;
+    right:10px;
+    z-index:555;
+}
+.cmenu_main ul{
+    right:10px;
+}
+
+
+.phone {
+    font-size: 25px;
+    font-weight:bold;
+    color: wheat;
+    text-align:right;
+    margin-right: 70px;
+    vertical-align:top;
+}
+.address {
+    font-size: 18px;
+    font-weight:bold;
+    color: lightyellow;
+    text-align:left;
+    margin-right: 70px;
+    vertical-align:top;
+}
+
+ 
+.ymaps-2-1-64-searchbox, .ymaps-2-1-64-copyright__content { display:none;}
+#ya_map {
+    margin-left:5%;
+    margin-right:5%;
+    text-align:center; 
+    width:90%; 
+    min-height: 700px;
+}
+
+
+tr {  vertical-align:top; }
+
+th    {
+    font-size: 0.8em;
+    border-bottom: 1px double black;
+    border-spacing: 0px 0px;
+    border-collapse: separate;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: navy;
+    background-color: beige;
+}
+
+td  {
+    color: black;
+    border-bottom: 1px dotted black;
+    border-spacing: 0px 0px;
+    border-collapse: separate;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+ 

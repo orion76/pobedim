@@ -1,0 +1,42 @@
+﻿
+
+
+.photos {
+    background-color: lightyellow;
+    padding-top:10px;
+}
+.photos0 {
+    margin-left: 40px;
+    text-align: right;
+}
+
+ div.photos {
+    width:80%;
+    margin-left:40px;
+    text-align:center;
+    display:inline-block;
+}
+
+
+img.bigphoto  {
+    width:70%;
+}
+
+
+img.bigphotonext {
+    width:32px;
+    height:32px;
+    display:inline-block;
+    vertical-align:top;
+}
+
+div.bigphoto {
+    padding-top: 10px;
+     white-space:nowrap;
+}
+
+
+.photo {
+    width: 18%;
+    padding: 5px;
+}

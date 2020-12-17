@@ -1,0 +1,113 @@
+/* ﻿@charset "utf-8"; */
+
+/* http://www.puzzleweb.ru/html/colors_html.php */
+
+
+.cmenu_current_user {
+    z-index:555;
+    right:20px;
+    top:20px;
+    position:fixed;
+}
+
+
+ 
+/* context menu */
+ul.cmenu {
+    display:inline-block;
+}
+
+.cmenu , .cmenu ul, .cmenu li{
+   white-space: nowrap;
+   margin: 0px;
+   padding: 0px;
+   font-size: 12pt;
+   
+}
+
+.cmenu, .cmenu ul {
+          background: rgb(46,95,122);
+          color: white;
+}
+
+.cmenu ul li { padding: 3px; }
+
+.cmenu { /* подменю перемещается относительно меню */
+   position: relative; 
+   display: table;
+   top:5px;
+}
+.cmenu ul { /* подменю находится вне потока */
+  position: absolute;
+  z-index: 5;
+  display: none;
+}
+.cmenu li:hover ul { /* подменю будет показано, если курсор наведён на пункт меню с выпадающем списком */
+  display: block;
+  white-space: nowrap;
+  top: 7px;
+
+  color: white;
+  text-decoration: none;
+  transition: color .2s linear;
+}
+
+ul.cmenu_rtl li:hover ul {
+    right: 5px;
+}
+ul.cmenu_ltr li:hover ul {
+    left: 5px;
+}
+
+
+.cmenu li {
+  display: table-cell;
+  text-align: center;
+  white-space: nowrap;
+}
+.cmenu ul li {
+  display: block;
+  text-align: left;
+}
+
+.cmenu a {
+  display: block;
+  padding: 3px 0;
+  color: #fff;
+  text-decoration: none;
+}
+.cmenu ul a {
+  padding: 3px 15px;
+}
+.cmenu li:hover {
+  background: rgb(96,145,172);
+}
+
+
+ul.droplist {
+         background-color:lightyellow;
+         color:black;
+}
+ ul.droplist li {
+         background-color:yellow;
+         color:black;
+}
+ ul.droplist li:hover {
+         background-color:red;
+         color:black;
+}
+
+
+.inputtext {
+    white-space: nowrap;
+}
+
+.inputtext .x { display:none;}
+.inputtext:hover .x { display:inline-block;}
+
+
+.popupform, ul.popupform li:hover{
+    background-color: lightblue;
+    color: black;
+}
+

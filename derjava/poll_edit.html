@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <title>Редактирование опроса голосования</title>
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+
+<script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+<script type="text/javascript" src="/derjava/poll_edit.js?15"></script>
+
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+    <!-- $uploadfile$ -->
+
+<script>
+
+function refreshImg(id){
+    window.setTimeout(function(){
+        var n = document.getElementById(id);
+        var a = n.getAttribute('src');
+        n.removeAttribute('src');
+        n.setAttribute('src',a+'jj');
+    }, 1400 );
+    
+}
+
+function btn_poll_answerpic_upload(event){
+    var t = event.target;
+    var dp = t.getAttribute('data-p');
+    var da = t.getAttribute('data-pa');
+    var bf = document.getElementById("input_uploader");
+    bf.setAttribute('data-id',0);
+    bf.setAttribute('data-action','/derjava/ajax.php?ax=poll_answerpic_upload&qq='+dp+'&pa='+da);
+    bf.click();
+    refreshImg('picpa'+da);
+}
+
+
+function btn_poll_mainpic_upload(event){
+            var t = event.target;
+            var dp = t.getAttribute('data-p');
+
+    var bf = document.getElementById("input_uploader");
+    bf.setAttribute('data-id',0);
+    bf.setAttribute('data-action','/derjava/ajax.php?ax=poll_mainpic_upload&qq='+dp);
+    bf.click();
+    refreshImg('mainpic');
+}
+</script>
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+				<div class="no-gutters bg-white rounded border">
+
+					<!--Заголовок-->
+					<div class="col">
+<!-- %data0 -->
+                                            
+						<div class="badge shadow-none bg-white m-3 position-absolute"><span class="text-dark">РЕДАКТИРОВАНИЕ ОПРОСА ГОЛОСОВАНИЯ</span>
+						 
+                                                </div>
+						<div class="clearfix"></div>
+
+<img class="rounded-top overflow-hidden" 
+     id="mainpic"
+     src="/data.poll/__ID_POLL__/__ID_POLL__.jpg?0"
+     style=""> <!-- STYLE_IMG_POLL -->
+
+<button onclick="btn_poll_mainpic_upload(event)" data-p="__ID_POLL__" >Загрузить картинку 800 х 200 точек</button>
+
+                                                
+						<h1 id="1">
+                                                    <small class="float-left font-weight-light py-1">__NAME_POLL__</small>
+						</h1>
+						<div class="clearfix"></div>
+						<hr class="mt-2">
+                                                <div class="col mb-3">
+							<hr>
+							<h5 class="mt-4 mb-3 font-weight-normal">Заголовок</h5>
+							<input name="np" class="form-control col rounded m-height" type="search"
+							       value="__NAME_POLL__" 
+                                                               onchange="poll_name_change(event)"
+							       aria-label="Search">
+							<h5 class="mt-4 mb-3 font-weight-normal">Подробное описание</h5>
+							<textarea class="form-control rounded" 
+                                                                  onchange="poll_text_change(event)"
+                                                                  name="tp"
+                                                                  onkeyup="control_autoheight(event)"
+                                                                  onfocus="control_autoheight(event)"
+                                                                  style="overflow:hidden;min-width:500px;min-height: 30px;"
+							          >__TEXT_POLL__</textarea>
+							<hr>
+							<h5 class="mt-4 mb-3 font-weight-normal">Дата окончания голосования.</h5>
+							<div>
+								<label class="form-check my-2">
+									<input class="form-check-input" style="height: 28px;" 
+                                                                               type="radio"
+									       name="ep" 
+                                                                               id="poll_endperiod_check"
+                                                                               onclick="poll_ep_change(event)"
+									       value="1"
+                                                                               __DEP_CHECKED__
+                                                                               >
+                                                                        <input name="dep" value="__END_POLL__" 
+                                                                               type="date" 
+                                                                               id="poll_endperiod"
+                                                                               class="mb-2 form-control px-3 col-md-6 col-12" 
+                                                                               onchange="poll_ep_change(event)"
+                                                                               >
+                                                                </label>        
+							</div>
+							<div class="form-check my-2">
+								<input name="ep" 
+                                                                       class="form-check-input" 
+                                                                       type="radio" 
+                                                                       id="poll_no_period"
+                                                                       onclick="poll_ep_change(event)"
+								       value="0"
+                                                                       __EP_CHECKED__
+                                                                       >
+								<label class="form-check-label" for="poll_no_period">Бессрочно</label>
+							</div>
+							<hr>
+<!-- data0% -->                                                        
+                                                       
+						</div>
+						
+						<div class="col">
+							<h2 class="font-weight-normal">
+								<small>Варианты ответов:</small>
+							</h2>
+<!-- %data1 -->                                                    
+    <div class="row" >
+        <div class="col-12" >
+                    <p class="mt-4 mb-3 font-weight-normal">Ответ:</p>
+                    <textarea class="form-control rounded" 
+                              name="npa"
+                              onchange="change_answer(event)"
+                              data-qq="__ID_POLL__"
+                              data-pa="__ID_ANSWER__"
+                              onkeyup="control_autoheight(event)"
+                              onfocus="control_autoheight(event)"
+                              style="overflow:hidden;min-height: 30px;min-width:500px;width:100%;"
+                              >__NAME_ANSWER__</textarea>
+        </div>
+        <div>
+            <button onclick="btn_poll_answerpic_upload(event)" data-p="__ID_POLL__" data-pa="__ID_ANSWER__" >Загрузить картинку 200 x 200</button>
+            <img src="/data.poll/__ID_POLL__/__ID_ANSWER__.jpg?0" id="picpa__ID_ANSWER__">
+        </div>
+    </div>
+    <hr>
+<!-- data1% -->
+            
+
+    <button onclick="btn_golosovanie_more_(event)" class="btn main-btn m-0 rounded z-depth-1">Добавить вариант ответа</button>
+<!-- %data0 -->
+    <form style="display: none;" enctype="multipart/form-data" action="/derjava/ajax.php?ax=uploadfile_answer&qq=__ID_POLL__&pa=0&bx=edit"  method="POST">
+            <input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
+            <input name="userfile" type="file" />
+            <br><textarea name="npa"
+                          onkeyup="control_autoheight(event)" style="overflow:hidden;"
+                          style="min-width:500px;min-height: 30px;"
+                          placeholder="Текст ответа"></textarea>
+            <input type="submit" class="btn-large" value="Сохранить вариант ответа">
+    </form>
+                                                        
+							<hr>
+
+    <div class="custom-control custom-checkbox mt-3">
+            <input onclick="poll_option_click(event)"  type="checkbox" class="custom-control-input" id="checkboxAA" __AA_CHECKED__>
+            <label class="custom-control-label" for="checkboxAA">Разрешить голосующим добавлять варианты ответов</label>
+    </div>
+                                                        
+<!--                                                        
+    <div class="custom-control custom-checkbox mt-3">
+            <input onclick="poll_option_click(event)" type="checkbox" class="custom-control-input" id="checkboxWW" __WW_CHECKED__>
+            <label class="custom-control-label" for="checkboxWW">Разрешить голосующим добавлять интернет-ссылки</label>
+    </div>
+-->
+
+<div class="custom-control custom-checkbox mt-3">
+        <input onclick="poll_option_click(event)" type="checkbox" class="custom-control-input" id="checkboxVV" __VV_CHECKED__>
+        <label class="custom-control-label" for="checkboxVV">Голосование За/Против по каждому вопросу</label>
+</div>
+
+<div class="custom-control custom-checkbox mt-3">
+        <input onclick="poll_option_click(event)" type="checkbox" class="custom-control-input" id="checkboxPP" __PP_CHECKED__>
+        <label class="custom-control-label" for="checkboxPP">Голосование за решение</label>
+</div>
+
+
+<a class="main-a bg-main-vote my-4 px-3 py-1 rounded-pill d-inline-block" 
+   href="/derjava/poll.php?qq=__ID_POLL__"><small>Посмотреть как будет выглядеть опрос</small></a>
+
+		<button id="btn_publish_poll"
+                        data-qq="__ID_POLL__"
+                        onclick="poll_publish_click(event)"
+                        class="btn main-btn mb-5 mt-3 rounded z-depth-1 d-block">Опубликовать голосование</button>
+
+
+<!-- __CAN_DELETE_POLL__ -->
+<button onclick="setLocation('/derjava/ajax.php?ax=poll_delete&qq=__ID_POLL__')">Удалить голосование</button>
+<!-- __CAN_DELETE_POLL__ -->
+
+<!-- data0% -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+        </div>            
+</main>
+
+
+<!--Модальное окно регистрации-->
+   <!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+ 
+
+
+</body>
+</html>

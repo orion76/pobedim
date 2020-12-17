@@ -1,0 +1,17 @@
+
+
+<!-- %data0 -->
+<!-- __POLL_CHECK__ -->
+<div aligh="right" style="display:block;">
+
+   <button class="btn main-btn my-2 rounded z-depth-1 float-right"
+                  onclick="ajax_btn_click_and_hide(event)"
+                  data-href="/derjava/ajax.php?ax=poll_read_u&p=__ID_POLL__"
+                  title="С итогами ознакомлен"
+                  >
+               <i class="material-icons align-middle" style="font-size: 18px;">check</i>
+   </button>
+
+</div>
+<!-- __POLL_CHECK__ -->
+<!-- data0% -->

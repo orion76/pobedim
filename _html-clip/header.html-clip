@@ -1,0 +1,72 @@
+<header id="top">
+
+	<nav class="navbar navbar-expand-lg navbar-light main-bg-color-menu fixed-top p-0" >
+		<div class="container">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<a class="navbar-brand pl-2 p-md-0" href="/">
+				<img src="/derjava/img/derzhava.png" height="45" >
+			</a>
+			<ul class="navbar-nav d-block d-lg-none mt-2 mt-lg-0" >
+				<li class="nav-item">
+					<!-- %menu_u -->
+					<!-- __IS_USER_OFF__ -->
+					<a class="nav-link main-a pr-3 ml-2 pr-md-0 float-lg-right float-left" href="#" data-toggle="modal"
+					   data-target="#dModal">Вход/Регистрация</a>
+					<!-- __IS_USER_OFF__ -->
+					<!-- __IS_USER_ON__ -->
+					<a class="float-lg-right float-left ml-3" href="/derjava/user_settings.php?" rel="nofollow">
+						<img class="rounded-circle mr-3" style="width:40px;"
+							 src="/derjava/img/ava-4.jpg##__IMGSRC_USER_ON__">
+					</a>
+					<!-- __IS_USER_ON__ -->
+					<!-- menu_u% -->
+				</li>
+				<!--                <li class="nav-item">-->
+				<!--                    <a class="nav-link" href="#">Link</a>-->
+				<!--                </li>-->
+				<!--                <li class="nav-item">-->
+				<!--                    <a class="nav-link disabled" href="#">Disabled</a>-->
+				<!--                </li>-->
+			</ul>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<form class="col form-inline mr-1" action="/derjava/user_search.php" method="post">
+					<input name="sx" class="form-control col mr-1 rounded-pill m-height" type="text"
+						   placeholder="Поиск фамилия или имя" aria-label="Search">
+					<input class="btn shadow-none rounded-pill main-btn" type="submit" value="Искать">
+				</form>
+				<ul class="navbar-nav d-none d-lg-block mt-2 mt-lg-0 py-3" >
+					<li class="nav-item">
+						<!-- %menu_u -->
+						<!-- __IS_USER_OFF__ -->
+						<a class="nav-link main-a pr-3 pr-md-0 float-lg-right float-left" href="#" data-toggle="modal"
+						   data-target="#dModal">Вход/Регистрация</a>
+						<!-- __IS_USER_OFF__ -->
+						<!-- __IS_USER_ON__ -->
+						<a class="float-lg-right float-left ml-3" href="/derjava/user_settings.php" rel="nofollow">
+							<img class="rounded-circle mr-3" style="width:40px;"
+								 src="/derjava/img/ava-4.jpg##__IMGSRC_USER_ON__">
+						</a>
+						<a class="nav-link main-a pr-md-0 float-lg-right float-left"
+						   href="/auth/ajax0.php?ax=log_off&rx=/derjava/home.php">Выйти</a>
+						<!-- __IS_USER_ON__ -->
+						<!-- menu_u% -->
+					</li>
+					<!--                <li class="nav-item">-->
+					<!--                    <a class="nav-link" href="#">Link</a>-->
+					<!--                </li>-->
+					<!--                <li class="nav-item">-->
+					<!--                    <a class="nav-link disabled" href="#">Disabled</a>-->
+					<!--                </li>-->
+				</ul>
+				<div class="d-md-none bg-light pt-2">
+					<!-- $mmenu-header$ -->
+					<!-- $cmenu-0000$ -->
+				</div>
+			</div>
+		</div>
+	</nav>
+
+</header>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta name="robots" content="nofollow" >
+    <meta name="robots" content="noindex" >
+    <meta name="googlebot" content="noindex" >
+
+    <!-- session -->
+<!--        <link rel="canonical" href="__SESSION_ROOT__/veche_search.php"/> -->
+    <!-- session -->
+
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+
+    <!-- %remove -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <script type="text/javascript" src="/js/ut0.js?0"></script>
+    <script type="text/javascript" src="/js/ajax0.js?0"></script>
+    <script type="text/javascript" src="/js/fileuploader.js?0"></script>
+    <script type="text/javascript" src="/js/uploadfile.js?0"></script>
+    <script type="text/javascript" src="/js/wall.js?1"></script>
+
+    <!-- link href="/css/layout.css?02" rel="stylesheet" -->
+
+    <link href="/css/div_md_.css?0" rel="stylesheet">
+    <link href="/derjava/css/bootstrap.css?1" rel="stylesheet">
+    <link href="/derjava/css/mdb.css?1" rel="stylesheet">
+    <link href="/derjava/css/style.css?1" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="/derjava/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/derjava/js/popper.min.js"></script>
+    <script type="text/javascript" src="/derjava/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/derjava/js/mdb.min.js"></script>
+    <!-- remove% -->
+
+    <script type="text/javascript" src="/derjava/veche.js"></script>
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+<!-- $header$ -->
+<main>
+    <!--Контент-->
+    <div class="container pt-5 div-main">
+        <div class="row no-gutters">
+
+            <div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+                <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+                <!-- $cmenu-0000$ -->
+            </div>
+
+            <!--Основной контент   -->
+            <div class="no-gutters col-sm-12 col-md-8 col-lg-9 div-right">
+                <div class="no-gutters bg-white rounded border mb-3 p-3">
+                    <h1 class="float-left">Объединения</h1>
+                    <!-- %menu1 -->
+
+                    <!-- __IS_USER_ON__ -->
+                    <button href="/derjava/veche_create.php?ivp=&"
+                            onclick="veche_create(event)"
+                            class="btn main-btn ml-2 ml-lg-5 mt-2 rounded z-depth-1">Создать объединение
+                    </button>
+                    <!-- __IS_USER_ON__ -->
+                    <!-- menu1% -->
+                    <!--
+                        <div class="clearfix"></div>
+                                        <div style="z-index:555;position:absolute;top:110px;right:10px;left:auto;display:inline-block;">
+                                            <iframe width="350"
+                                                    height="150"
+                                                    src="https://www.youtube.com/embed/EdkuihIQmYo"
+                                                    frameborder="0"
+                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen>
+                                            </iframe>
+                                        </div>
+                    -->
+                    <div class="clearfix"></div>
+                    <hr class="mx-n3">
+                    <form class="col mr-5" action="/derjava/veche_search.php" method="post">
+
+                        <!-- %remove -->
+                        <!-- %kind_veche -->
+                        <div class="form-check" >
+                            <input class="form-check-input" type="radio" name="kv" id="kv__ID_KIND_VECHE__"
+                                   value="__ID_KIND_VECHE__" __CHECKED__  __ONCLICK__ >
+                            <label class="form-check-label" for="kv__ID_KIND_VECHE__">
+                                <!-- !__HREF_KIND_VECHE__ -->
+                                __NAME_KIND_VECHE__
+                                <!-- !__HREF_KIND_VECHE__ -->
+                                <!-- __HREF_KIND_VECHE__ -->
+                                __NAME_KIND_VECHE__  <span style="margin-left: 20px;">  <a href="__HREF_KIND_VECHE__" > __TREF_KIND_VECHE__ </a></span>
+                                <!-- __HREF_KIND_VECHE__ -->
+                            </label>
+                        </div>
+                        <!-- kind_veche% -->
+                        <!-- remove% -->
+
+                        <!-- $veche-kind$ -->
+                        <!-- %data0 -->
+                        <div class="form-inline mt-4">
+                            <input name="sx" value="__SX__" class="form-control col mr-1 rounded-pill m-height"
+                                   type="text"
+                                   id="veche_search"
+                                   placeholder="Поиск объединений" aria-label="Search">
+                            <button class="btn shadow-none rounded-pill main-btn" type="submit">Искать</button>
+                        </div>
+                        <!-- data0% -->
+                    </form>
+
+                    <div class="mt-3 table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>
+                                    Название
+                                </th>
+                                <th>
+                                    Объединение
+                                </th>
+                                <th>
+                                    Люди
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- %data1 -->
+                            <tr>
+                                <td class="text-nowrap p-1 text-center" scope="row">
+                                    <img src="temp/img/thumb64.jpg##__IMG_VECHE__" width="50"></td>
+                                <td><a class="main-a" href="/derjava/veche.php?__VECHE__" rel="canonical">__NAME_VECHE__</a></td>
+                                <td>__NAME_KIND_VECHE__</td>
+                                <td>__CNT_VECHE__</td>
+                            </tr>
+                            <!-- data1% -->
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!--Модальное окно регистрации-->
+<!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+</body>
+</html>

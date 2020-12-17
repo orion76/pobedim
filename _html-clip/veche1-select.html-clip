@@ -1,0 +1,25 @@
+<input type="hidden" id="selected_veche" value="0" name="ivp" >
+<div >
+    <select id="select0" onchange="select_veche0(event)" class="browser-default custom-select" >
+    </select>
+    <div></div>
+</div>
+
+
+<script>
+    load_veche0(event);
+</script>
+
+<div style="display:none" id="veche_treenode" >
+    <select name="select_" onchange="select_veche0(event)" class="browser-default custom-select" >
+        <option value="0" data-ivp="0" > -- </option>
+    </select>
+    <div>
+    </div>
+</div>
+
+
+
+
+
+

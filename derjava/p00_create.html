@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+    <script type="text/javascript" src="/derjava/veche.js"></script>        
+    <script type="text/javascript" src="/derjava/poll_edit.js"></script>        
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+   <!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+<!--Основной контент   -->
+<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right"> 
+    <div class="bg-white rounded border mb-3">
+
+        <div class="col">
+<!-- %data0 -->
+        <h2  class="font-weight-light pt-1"> Создание голосования в объединении
+            <a href="/derjava/veche.php?__VECHE__"> __NAME_VECHE__ </a> </h2>
+                <hr class="mt-2 mx-n3">
+                <form action="/derjava/ajax.php?ax=poll_create&iv=__VECHE__&kp=71" method="post">
+<!-- data0% -->
+                    <h5 class="mt-4 mb-3 font-weight-normal">Название голосования</h5>
+
+                        <input name="np" class="form-control col rounded m-height" type="text" placeholder="Название" aria-label="Search">
+
+                        <input type="submit" class="btn main-btn my-4 rounded z-depth-1" value="Сохранить и продолжить редактирование" >
+                </form>
+        </div>
+
+    </div>
+</div>
+
+                </div>
+        </div>
+</main>
+
+
+</body>
+</html>

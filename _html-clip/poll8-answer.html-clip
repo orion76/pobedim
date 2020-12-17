@@ -1,0 +1,55 @@
+<!-- %data1 -->
+<div class="card mb-3 text-left" style="max-width: 100%;">
+                                <div class="row no-gutters">
+                                    <div class="col-md-4 bg-main-vote">
+                                        <img src="http://www.cikrf.ru/upload/resize_cache/iblock/605/760_515_1/jzsle1zt_2.jpg##__IMG_ANSWER__"
+                                             class="card-img" style="max-height: 200px;">
+                                        
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-3">
+                                            <h5 class="card-title" id="pa__ID_ANSWER__">__NAME_ANSWER__ </h5>
+<!--                                            <p class="card-text">__TEXT_ANSWER__</p> -->
+
+                                            
+                                            
+<div class="clearfix"></div>
+<hr>
+<div style="margin-top: 10px;">
+    
+  <!--  <span>__IS_LIKE__ </span> -->
+    
+        <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+           href="/derjava/ajax.php?ax=set_like_answer&pa=__ID_ANSWER__&v=1"
+           onclick="ajax_a_like_click2(event)">
+            <img class="float-lg-left float-none" src="img/like.png" style="height: 20px;">
+        </a>
+        <span class="d-lg-inline"> За </span>
+        <a class="main-a mr-4" href="/derjava/ajax.php?ax=get_likeanswer_list&pa=__ID_ANSWER__&v=1"
+           onclick="ajax_a_likelist_click2(event)">
+        <span class="d-lg-inline" data-name="cnt_like">__CNT_LIKE__</span>
+        </a>
+
+        <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+           href="/derjava/ajax.php?ax=set_like_answer&pa=__ID_ANSWER__&v=-1"
+           onclick="ajax_a_like_click2(event)">
+            <img class="float-lg-left float-none" src="img/dislike.png" style="height: 20px;">
+        </a>
+        <span class="d-none d-lg-inline"> Против </span>
+        <a class="main-a" href="/derjava/ajax.php?ax=get_likeanswer_list&pa=__ID_ANSWER__&v=-1"
+           onclick="ajax_a_likelist_click2(event)">
+           <span class="d-lg-inline" data-name="cnt_dislike"> __CNT_DISLIKE__ </span>
+        </a>
+    <!-- в list_like  помещается список тех, кому нравится голосование -->
+    <div class="table-responsive text-left mt-3 table-hover">
+        <table data-name="list_like"></table>
+    </div>
+</div>
+
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+<!-- data1% -->

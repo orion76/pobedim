@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $bootstrap-head$ -->
+
+    <!-- %head0 -->
+    <title>__TITLE__</title>
+    <meta property="og:title" content="__TITLE_OG__"/>
+    <meta property="og:image" content="__IMG_POLL_OG__"/>
+    <!-- head0% -->
+    <!-- $head$ -->
+    <script type="text/javascript" src="/derjava/veche.js"></script>
+    <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+    <script type="text/javascript" src="/derzhava/golosovanie_user.js"></script>
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+                <div class="bg-white rounded border mb-3">
+
+
+<!-- %data99 -->
+    <div class="clearfix"></div>
+    <hr class="mx-n3">
+    
+    <!--  __DO_CREATE_POLL_RESULT__ -->
+    <button class="btn main-btn"
+            onclick="setLocation('/derjava/ajax.php?ax=create_poll_result&qq=__ID_POLL__')"
+            >Создать итоговое голосование
+    </button>
+    <!--  __DO_CREATE_POLL_RESULT__ -->
+
+    <!--  __ID_POLL_RESULT__ -->
+    Итоговое голосование: <a class="main-a" href="/derjava/poll.php?ax=&qq=__ID_POLL_RESULT__" > __NAME_POLL_RESULT__ </a>
+    <br>Принятое решение по итоговому голосованию: __NAME_ANSWER_RESULT__ 
+    <small><br>* координатор объединения фиксирует решение
+    </small>
+    <!--  __ID_POLL_RESULT__ -->
+   
+    <!--  __CAN_SET_RESULT__ -->
+                        <div class="form-inline">
+                            <span>Подтвержите решение итогового голосования в группе:</span>
+                            <select class="ml-3 form-control col rounded m-height d-inline" 
+                                    name="vpr"
+                                    onchange="set_veche_answer_result(event)" v="" data-qq="__ID_POLL__"  >
+                                <option class="" value="0">[решение не принято]</option>
+                                <!-- __data99s__ -->
+                                <option value="__ID_ANSWER__" __SELECTED__>__NAME_ANSWER__</option>
+                                <!-- __data99s__ -->
+                            </select>
+                        </div>
+    <!--  __CAN_SET_RESULT__ -->
+    
+<!-- data99% -->
+                   
+                    
+                    
+                    <!-- %data0 -->
+
+                    <!--Заголовок-->
+                    <!--
+                    <div class="badge shadow-none bg-white m-3 position-absolute">
+                                        <span class="text-dark">Народное голосование</span>
+                    </div> -->
+                    <!-- __IMG_POLL__ -->
+                    <img class="rounded-top overflow-hidden" style="max-width:100%; max-height:200px;__STYLE_IMG_POLL__"
+                         src="img/ava-0.jpg##__IMG_POLL__">
+                    <!-- __IMG_POLL__ -->
+
+                    <!-- !__IMG_POLL__ -->
+                    <img class="rounded-top overflow-hidden" style="max-width:100%; max-height:200px;"
+                         src="/data.derjava/noimgband.jpg">
+                    <!-- !__IMG_POLL__ -->
+
+                    <!--Если картинки нет то ставится картинка заглуцшка!!!-->
+
+                    <div class="col">
+                        Вопрос повестки cъезда
+                        <br>
+                        <h1>
+                            <small class="float-left font-weight-light pt-1">__NAME_POLL__</small>
+                        </h1>
+                        <div class="clearfix"></div>
+                    </div>
+                    <hr class="mt-2">
+                    <!--/Заголовок-->
+
+                    <div class="col no-gutters float-left col-md-12 col-lg-8">
+                        <!-- __CAN_EDIT_POLL__ -->
+                        <a class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect"
+                           href="/derjava/poll_edit.php?ax=edit&qq=__ID_POLL__">Редактировать голосование</a>
+                        <!-- __CAN_EDIT_POLL__ -->
+                        <!-- Описание голосования -->
+                        <div class="table-responsive">
+                            <table id="tablePreview" class="table table-sm table-borderless">
+                                <tbody>
+                                <tr>
+                                    <th>Съезд</th>
+                                    <td><a href="/derjava/veche.php?iv=__VECHE__" class="main-a font-weight-bold">__NAME_VECHE__</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Описание</th>
+                                    <td>
+                                        __TEXT_POLL__
+                                    </td>
+                                </tr>
+<!--
+<tr>
+    <th>*</th>
+    <td>
+        Предложения к повестке съезда могут предлагать только участники съезда
+    </td>
+</tr>
+-->
+                                <!-- data0% -->
+                                <tr>
+                                    <th></th>
+                                    <td>
+                                        <!-- %data2 -->
+                                        <a href="__URL_WEB_POLL__" class="main-a font-weight-bold">__TEXT_WEB_POLL__</a>
+                                        <br>
+                                        <!-- data2% -->
+
+                                        <!-- %data0 -->
+                                        <!-- __CAN_ADD_WEBLINK__ -->
+                                        <div>
+                                            <!-- по нажатию кнопки появляется форма добавления ссылки -->
+                                            <button class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect my-2"
+                                                    onclick="btn_golosovanie_more_(event)">Добавить ссылку
+                                            </button>
+                                            <form class="form-group" style="display: none" enctype="multipart/form-data"
+                                                  action="/derjava/ajax.php?ax=update_web_poll&qq=__ID_POLL__&pa=0&bx=view&pwu=&"  rel="nofollow"
+                                                  method="POST">
+                                                <input class="form-control my-1" placeholder="Новая ссылка" name="pwu__"
+                                                       type="text"/>
+                                                <textarea class="form-control my-1" name="pwt" rows="3"
+                                                          placeholder="Описание"></textarea>
+                                                <input type="submit"
+                                                       class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect my-2"
+                                                       value="Сохранить ссылку">
+                                            </form>
+                                        </div>
+                                        <!-- __CAN_ADD_WEBLINK__ -->
+                                        <!-- data0% -->
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--Описание голосования-->
+
+
+                        <!-- поделиться голосованием -->
+                        <div class="rounded border py-2 mb-3">
+
+                            <div class="p-2">
+                                <span class="mr-3"><small>ПОДЕЛИСЬ</small></span>
+                                <div class="w100 d-md-none my-2"></div>
+                                <!-- %data0 -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=__SHARE_POLL__"
+                                   target="_blank"><img
+                                        src="/derjava/img/logo/fb-logo.png" alt=""></a>
+                                <a href="https://vk.com/share.php?url=__SHARE_POLL__" target="_blank"><img
+                                        src="/derjava/img/logo/vk-logo.png" alt=""></a>
+                                <!--<a href=""><img src="/derjava/img/logo/inst-logo.png" alt=""></a>-->
+                                <a href="https://connect.ok.ru/offer?url=__SHARE_POLL__" target="_blank"><img
+                                        src="/derjava/img/logo/ok-logo.png" alt=""></a>
+                                <!-- data0% /-->
+                                <!-- %remove -->
+                                <a href=""><img src="/derjava/img/logo/twitter-logo.png" alt=""></a>
+                                <a href=""><img src="/derjava/img/logo/inst-logo.png" alt=""></a>
+                                <!-- remove% -->
+                            </div>
+
+                        </div>
+                        <!-- поделиться голосованием -->
+                    </div>
+
+
+                    <!-- Инструменты голосования -->
+
+                    <div class="float-right col-md-12 col-lg-4 border-left">
+                        <!-- %data0 -->
+
+                        <p>
+                            <a href="/derjava/poll_tree.php?qq=__ID_POLL__">
+                                <img src="/css/struct.png">
+                            </a>
+                        </p>
+
+                        <hr class="ml-n3 my-2">
+
+                        <button class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect my-2"
+                                id="fav_in"
+                                href="/derjava/ajax.php?ax=golosovanie_fav_in&qq=__ID_POLL__"
+                                onclick="ajax_btn_click(event)"
+                                fn_before="ajax_btn_before"
+                                fn_after="fav_in_ajax_btn_after"
+                                style="__VISIBLE_BTN_FAV_IN__">
+                            <i class="material-icons align-top main-color" style="line-height: 13px;">star</i>
+                            Добавить в избранное
+                        </button>
+                        <button class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect my-2"
+                                id="fav_out"
+                                href="/derjava/ajax.php?ax=golosovanie_fav_out&qq=__ID_POLL__"
+                                onclick="ajax_btn_click(event)"
+                                fn_before="ajax_btn_before"
+                                fn_after="fav_out_ajax_btn_after"
+                                style="__VISIBLE_BTN_FAV_OUT__">
+                            <i class="material-icons align-top main-color" style="line-height: 13px;">star</i>
+                            Убрать из избранного
+                        </button>
+
+                        <!-- data0% -->
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- /Инструменты голосования -->
+
+                    <!--/Основной контент-->
+                    <div class="jumbotron card card-image rounded p-0 z-depth-0 border mx-3"
+                         style="background-color:#f6f6f6">
+                        <div class="text-dark text-center py-1 px-3">
+                            
+<!-- $poll8-answer$ -->
+                            
+                            <!-- %data0 -->
+                            <!-- __CAN_ADD_ANSWER__ -->
+                            <div>
+                                <!-- по нажатию кнопки появляется форма добавления варианта ответа -->
+
+
+                                <button class="btn main-btn my-2 rounded z-depth-1 float-right"
+                                        onclick="btn_golosovanie_more_(event)"> Добавить свой вариант </button>
+                                
+                                <div class="clearfix"></div>
+                                <form class="form-group py-2" style="display: none;" enctype="multipart/form-data"
+                                      action="/derjava/ajax.php?ax=uploadfile_answer&qq=__ID_POLL__&pa=0&bx=view"
+                                      method="POST">
+                                    <input type="hidden" name="MAX_FILE_SIZE" value="3000000"/>
+                                    <label for="userfile">Выберите картинку</label>
+                                    <input id="userfile" name="userfile" type="file" accept="image/jpeg,image/png,image/gif"  />
+                                    <textarea class="form-control my-1" name="npa" rows="3"
+                                              placeholder="Текст ответа"></textarea>
+                                    <input type="submit" class="btn main-btn my-2 rounded z-depth-1 float-right"
+                                           value="Сохранить предложение"
+                                           >
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                            <!-- __CAN_ADD_ANSWER__ -->
+                            <!-- data0% -->
+
+                        </div>
+                    </div>
+
+<!-- $poll-read-btn$ -->
+
+
+<!-- $poll-like$ -->
+
+                    <!-- %data0 -->
+                    <!-- __CAN_EDIT_POLL__ -->
+                    <script type="text/javascript" src="/derjava/poll_edit.js"></script>
+                    <button id="btn_publish_poll"
+                            data-qq="__ID_POLL__"
+                            onclick="poll_publish_click(event)"
+                            class="btn main-btn mb-5 mt-3 ml-3 rounded z-depth-1 d-block">Опубликовать вопрос повестки
+                    </button>
+                    <!-- __CAN_EDIT_POLL__ -->
+                    <!-- data0% -->
+                </div>
+                
+                
+<!--
+
+    РАБОЧИЕ ГРУППЫ
+
+-->
+<!--  $-poll_w_gr$ -->
+<!-- --------------------------------- -->
+                
+                
+                
+                <div class="bg-white rounded border mb-3">
+                    <!--Блок оставления коммента в группе-->
+                        <p class="col font-weight-normal mt-3">Оставьте свое сообщение</p>
+                        <!-- %data0 -->
+                        <form action="/derjava/ajax.php?ax=newmsg6&redirect=1&qq=__ID_POLL__" method="post" class="mb-3">
+                            <input type="hidden" name="ln" value="/derjava/poll.php?qq=__ID_POLL__">
+                            <!-- data0% -->
+                            <div class="col media mt-3">
+                                <!-- %menu_u -->
+                                <img class="rounded-pill mr-3" style="height: 38px;"
+                                     src="img/ava-4.jpg##__IMGSRC_USER_ON__">
+                                <!-- menu_u% -->
+                                <textarea name="txt" class="form-control mr-3" rows="1"></textarea>
+                                <button type="submit"
+                                        class="w-25 btn main-bg-color main-btn px-2 m-0 shadow-none waves-effect waves-light">
+                                    <img class="float-lg-left float-none" src="/derjava/img/send.png" style="height: 20px;" >
+                                    <span class="d-none d-lg-inline">Отправить</span>
+                                </button>
+                            </div>
+                        </form>
+
+                </div>
+
+                <!-- $wall$ -->
+
+
+            </div>
+
+            <!--/Основной контент-->
+        </div>
+    </div>
+</main>
+
+
+<!--Модальное окно регистрации-->
+<!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+
+</body>
+</html>

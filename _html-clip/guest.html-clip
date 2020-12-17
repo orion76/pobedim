@@ -1,0 +1,10 @@
+<!--noindex-->
+<div class="text-danger font-weight-bold m-3"
+     style="z-index:3333;position:fixed;top:10px;right:10px;background-color: white;padding:10px;border: 1px solid gray;" >
+    <a class="nav-link main-a pr-3 pr-md-0 float-lg-right float-left" style="color:red;"
+   href="#" data-target="#dModal" data-toggle="modal">
+<!-- ЧТОБЫ ПОЛУЧИТЬ ДОСТУП К ПОЛЬЗОВАТЕЛЬСКИМ ФУНКЦИЯМ САЙТА НУЖНО ВОЙТИ В СИСТЕМУ -->
+  Чтобы получить доступ к пользовательским функциям сайта, нужно войти в систему.
+</a>
+</div>
+<!--/noindex-->

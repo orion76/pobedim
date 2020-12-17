@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script>
+
+        function user_an_cert_create(event) {
+            var fm = getElementById("fm_an_cert_");
+            fm.style.display = '';
+            event.target.style.display = 'none';
+            var e = fm.querySelector('input[name=ct]');
+            e.value = '';
+
+            e = fm.querySelector('input[name=n1]');e.value = '';
+            e = fm.querySelector('input[name=n2]');e.value = '';
+            e = fm.querySelector('input[name=n3]');e.value = '';
+            e = fm.querySelector('input[name=cc]');e.value = '';
+            e = fm.querySelector('input[name=pb]');e.value = '';
+            e = fm.querySelector('input[name=d0]');e.value = '';
+            e = fm.querySelector('input[name=el]');e.value = '';
+        }
+
+        function user_an_cert_update(event) {
+            var fm = getElementById("fm_an_cert_");
+            fm.style.display = '';
+            var tr = getParentNode('TR', event.target);
+            var q = tr.querySelectorAll('TD');
+            for (var j = 0; j < q.length; j++) {
+                var n = q[j].getAttribute('name');
+                var e = fm.querySelector('input[name=' + n + ']');
+                if (e) e.value = q[j].innerHTML;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+
+                <div class="col">
+                    <h1>
+                        <small class="float-left font-weight-light pt-1">
+
+                        </small>
+                    </h1>
+                    <div class="clearfix"></div>
+                    
+
+                    <button class="btn main-btn my-3" onclick="user_an_cert_create(event)">
+                        Добавить участника в Державу
+                    </button>
+
+                    <form id="fm_an_cert_" action="/derjava/user_an_ct.php?ax=update" method="post" style="display:none;">
+                        <h4>
+                            <small>Cведения об участнике Державы</small>
+                        </h4>
+                        <input type="hidden" name="ct" value="">
+                        <input class="my-1 form-control col rounded m-height" type="text" name="n1" value="" placeholder="Имя">
+                        <input class="my-1 form-control col rounded m-height" type="text" name="n2" value="" placeholder="Отчество">
+                        <input class="my-1 form-control col rounded m-height" type="text" name="n3" value="" placeholder="Фамилия">
+                        <input class="my-1 form-control col rounded m-height" type="text" name="cc" value="" placeholder="Контакт">
+                        <input class="my-1 form-control col rounded m-height" type="text" name="pb" value="" placeholder="Место рождения">
+                        <input class="my-1 form-control col rounded m-height" type="date" name="d0" value="" placeholder="Дата рождения">
+                        <input class="my-1 form-control col rounded m-height" type="text" name="el" value="" placeholder="Эл. почта">
+                        <input class="btn main-btn mb-3" type="submit" value="Сохранить">
+                    </form>
+
+
+                    <div class="clearfix"></div>
+
+
+                    <div class="table-hover table-responsive table-bordered table-striped">
+                        <h3>Участники Державы</h3>
+                        <table border="1">
+                            <!-- %data1 -->
+                            <tr>
+                                <td name="ct"> <a href="/derjava/ck.php?ct=__ID_CERTIFICATE__">*</a> </td>
+                                <td name="n3">__NAME3_CERTIFICATE__</td>
+                                <td name="n1">__NAME1_CERTIFICATE__</td>
+                                <td name="n2">__NAME2_CERTIFICATE__</td>
+                                <td>__TS_SYS__</td>
+                                <td name="au">__U__</td>
+                                <td name="d0">__D_BIRTH_CERTIFICATE__</td>
+                                <td name="pb">__PLACE_BIRTH_CERTIFICATE__</td>
+                                <td name="el">__EMAIL_CERTIFICATE__</td>
+                                <td name="cc">__CONTACT_CERTIFICATE__</td>
+                                <td>
+                                    <button class="main-btn-create-group m-1"
+                                            onclick="user_an_cert_update(event)">изменить
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- data1% -->
+                        </table>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!--/Основной контент-->
+        </div>
+    </div>
+</main>
+
+
+</body>
+</html>

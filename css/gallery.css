@@ -1,0 +1,9 @@
+/*
+
+array_push( $html['head'] , tag_link_css( '/css/gallery.css' ));
+array_push( $html['body'] , gallery_list( __DIR__ .'/gallery', '/pobedim/za_socializm/gallery/') );
+
+*/
+
+.photo { max-height: 100px; max-width: 100px; }
+.bigphoto { max-height: 500px; max-width: 500px; }

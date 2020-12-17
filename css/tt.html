@@ -1,0 +1,106 @@
+<!--
+весь текст до элемента !DOCTYPE  будет игнорирован мкриптом
+
+здесь стоит прокомментировать требуемые переменные для шаблона
+
+Блоки, содержащие переменные заменяются из значениями.
+Два варианта использования переменных
+
+вместо !!- и //-  читать как !-- и /-- соответственно
+    
+1.
+   <!!- %varname //-> 
+  -- игнорируемый текст при обработки шаблона
+    <!!- varname% //-> 
+2.
+    <!!- %varname% //-> 
+
+
+Это шаблон !!
+
+содержимое контейнеров из списка ниже будет удалено
+
+div-alarm
+div-header
+div-hmenu
+div-title
+div-content
+div-search
+div-found
+div-subtitle 
+div-text
+div-fmenu
+div-footer
+
+
+/-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/tt.css" rel="stylesheet" media="all">
+    <script src="/css/tt.js"></script>
+
+</head>
+
+
+<body onload="tt_loaded(event)">   
+
+ <div class="div-alarm">
+        __DIV_ALARM__
+ </div>
+ 
+    
+ <div class="div-header">
+        __DIV_HEADER__
+ </div>
+        
+        
+ <div class="div-hmenu">
+        __DIV_HMENU__
+ </div>
+
+<div class="div-body">   
+  <div align="center">
+    <div class="div-main">
+        <div class="div-title">
+          __DIV_TITLE__
+        </div>   
+        <div class="div-content">
+          __DIV_CONTENT__
+        </div>   
+        <div class="div-search">
+          __DIV_SEARCH__
+        </div>   
+        <div class="div-found">
+          __DIV_FOUND__
+        </div>  
+   </div>
+    <div class="div-ajax" >
+        <div class="div-subtitle" >
+             __DIV_SUBTITLE__
+        </div>
+        <div class="div-text">
+              __DIV_TEXT__ 
+        </div>
+    </div>
+  </div>
+</div>
+        
+ <div class="div-fmenu">
+        __DIV_FMENU__
+ </div>
+        
+ <div class="div-footer">
+        __DIV_FOOTER__
+ </div>        
+        
+        
+</body>
+
+
+
+</html>

@@ -1,0 +1,14 @@
+<!-- %kind_veche -->
+            <div class="form-check" >
+                    <input class="form-check-input" type="radio" name="kv" id="kv__ID_KIND_VECHE__"
+                           value="__ID_KIND_VECHE__" __CHECKED__  __ONCLICK__ >
+                    <label class="form-check-label" for="kv__ID_KIND_VECHE__">
+                      <!-- !__HREF_KIND_VECHE__ -->  
+                             __NAME_KIND_VECHE__
+                      <!-- !__HREF_KIND_VECHE__ -->
+                      <!-- __HREF_KIND_VECHE__ -->
+                      __NAME_KIND_VECHE__  <span style="margin-left: 20px;">  <a href="__HREF_KIND_VECHE__" > __TREF_KIND_VECHE__ </a></span>
+                      <!-- __HREF_KIND_VECHE__ -->
+                    </label>
+            </div>
+<!-- kind_veche% -->

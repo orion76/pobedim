@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+ <!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+
+				<h1 class="ml-3 mt-3">Новости Державы</h1>
+				<hr>
+				<!--<button type="button" class="btn main-btn ml-2 ml-lg-5 mb-4 mt-4 rounded z-depth-1">Предложить новость
+				</button>-->
+				<div class="clearfix"></div>
+				<p class="ml-3 mb-0" for="form1">Поиск новостей</p>
+<!-- %data0 -->
+                                <form class="col form-inline mr-5" action="/derjava/text_search.php?iv=__VECHE__" method="post">
+					<input name="sx" value="__SX__" class="form-control col mr-1 rounded-pill m-height" type="search" placeholder="Введите заголовок" aria-label="Search">
+					<button class="btn shadow-none rounded-pill main-btn" type="submit">Искать</button>
+				</form>
+
+                <div>
+                    <br><br><br>
+                    <form action="/tk/tk.php?ax=9204&iv=__VECHE__" method="post">
+                        <input value="" name="ttku" size="50" placeholder="Заголовок или  адрес ресурса в интернете" >
+                        <input type="submit" value="создать публикацию" >
+                    </form>
+                </div>
+
+
+
+<!-- data0% -->
+<!-- %data1 -->
+                                <div class="col my-3">
+					<div class="media position-relative border p-3">
+						<img src="img/img-721-1475773857.png##__IMG_TALK__" class="mr-3" alt="..." style="width:35%">
+						<div class="media-body">
+							<h5 class="mt-0">__NAME_TALK__</h5>
+							<span class="text-muted float-left"><small>Автор: __U__</small></span>
+							<span class="text-muted float-right"><small>__TS_SYS__</small></span>
+							<div class="clearfix"></div>
+							<hr class="mt-2 mb-2">
+							<p>__TEXT_TALK__</p>
+							<a href="__HREF_TALK__" class="stretched-link main-a" target="_blank">...</a>
+						</div>
+					</div>
+				</div>
+<!-- data1% -->                                                                                    
+
+			</div>
+		</div>
+	</div>
+
+</main>
+
+<!--Модальное окно регистрации-->
+
+   <!-- $login-modal$ -->
+
+<!--/Модальное окно регистрации-->
+ 
+</body>
+</html>

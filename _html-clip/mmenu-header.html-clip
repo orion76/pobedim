@@ -1,0 +1,214 @@
+ <!--
+
+ВНИМАНИЕ!!!   ЭТО МЕНЮ ЗАМЕНЯЕТ ТОЛЬКО ВЕРХНЮЮ СТАТИЧНУЮ ЧАСТЬ, 
+А НЕ ВСЮ ЛЕВУЮ ПАНЕЛЬ
+
+<div class="col-sm-12 col-md-4 col-lg-3 pr-3">
+    [!-- mmenu-left --]
+    [!-- cmenu-0000 --]
+</div>
+
+-->
+
+
+<!-- %session -->
+<!-- __SESSION_IU__ -->
+<span style="z-index:88888;position:fixed;bottom:0px;left:5px;" >
+    <small> __SESSION_IU__ </small>
+</span>
+<!-- __SESSION_IU__ -->
+<!-- session% -->
+<span style="z-index:88888;position:fixed;bottom:10px;right:5px;" >
+    <a href="#top" target="_self">
+    <i class="material-icons align-middle" style="font-size:30px;background-color:transparent;">keyboard_arrow_up</i>
+    </a>
+</span>
+
+
+<!--
+  main-list-active
+-->
+        <ul class="list-unstyled main-ul">
+                <!--%menu1 -->
+                <li class="mb-2 nav-item __ACTIVE1__">
+                        <a class="nav-link float-left" href="/derjava/veche_search.php?kv=1" >
+                        <i class="align-top material-icons main-color" title="Объединения" >people</i>
+                        ОБЪЕДИНЕНИЯ
+                        </a>
+<!-- __IS_USER_ON__ -->
+                <span class="float-right">
+                    <a href="/derjava/veche_search.php?f=1">
+                        <i class="material-icons align-top main-color-dark" title="избранные"
+                           style="font-size: 12pt;"  >star</i>
+                    </a>
+                </span>
+<!-- __IS_USER_ON__ -->
+                        <div class="clearfix"></div>
+                </li>
+                <li class="mb-2 nav-item __ACTIVE2__">
+                        <a href="/derjava/poll_search.php?c=50">
+                                <i class="material-icons align-top main-color" title="Голосования">thumbs_up_down</i>
+                                ГОЛОСОВАНИЯ</a>
+<!-- __IS_USER_ON__ -->
+                <span class="float-right">
+                     <a href="/derjava/poll_search.php?f=1">
+                         <i class="material-icons align-top main-color-dark" title="избранные"
+                            style="font-size: 12pt;" >star</i></a>
+                </span>
+<!-- __IS_USER_ON__ -->
+                     <div class="clearfix"></div>
+                </li>
+
+                <li class="mb-2 nav-item __ACTIVE4__">
+                    <a href="/derjava/sys_about.php"  target="_self">
+                        <i class="material-icons align-top main-color" title="О системе">shop</i>
+                        О СИСТЕМЕ
+                    </a>
+                </li>
+<!--
+                <li class="mb-2 nav-item __ACTIVE4__">
+                        <a href="/derjava/veche.php?900322"  target="_self">
+                                <i class="material-icons align-top main-color"
+                                   title="О системе">shop</i>
+                                О СИСТЕМЕ
+                        </a>
+                </li>
+-->
+                <!-- menu1% -->
+        </ul>
+        <!-- %menu_u -->
+        <!-- __IS_USER_ON__ -->
+        <hr>
+        <ul class="list-unstyled main-ul">
+
+                <!--   _SESSION_CNT4_NOT_VIEWED_  + _SESSION_CNT3_NOT_VIEWED_ -->
+
+
+                <li class="mb-2 nav-item small">
+                        <a href="/derjava/u_questions.php?" style="display:inline-block;">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="вопрос-ответ">question_answer</i>
+                                Личные сообщения
+                                <span style="color:red;"> __SESSION_CNT_NOT_VIEWED__ </span>
+                        </a>
+                </li>
+                <!-- __CNT_MSG_WALL_U__ -->
+                <li class="mb-2 nav-item small __ACTIVE15__" style="white-space:nowrap !important;">
+                        <a href="/derjava/u_wall_new.php" style="white-space:nowrap;display:inline-block;">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;"
+                                   title="Новые комментарии">library_add_check</i>
+                                Новые комментарии
+                                <span style="color:red;"> __CNT_MSG_WALL_U__ </span>
+                        </a>
+                </li>
+                <!-- __CNT_MSG_WALL_U__ -->
+                <li class="mb-2 nav-item small __ACTIVE16__" style="white-space:nowrap !important;">
+                        <a href="/derjava/u_wall_others.php" style="white-space:nowrap;display:inline-block;">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;"
+                                   title="">library_books</i>
+                                Прочие комментарии __CNT_MSG_WALL_OTHER__
+                        </a> и <a href="/derjava/u_wall_chat.php"> архив</a>
+                </li>
+                <li class="mb-2 nav-item small __ACTIVE17__" style="white-space:nowrap !important;">
+                        <a href="/derjava/u_wall_cast.php" style="white-space:nowrap;display:inline-block;">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;"
+                                   title="">cast_connected</i>
+                                Оповещения
+                                <i class="material-icons align-middle main-color" style="font-size: 10pt;padding-left: 5px;">cast</i>
+                                __CNT_MSG_CAST__
+
+                                <!-- __SESSION_CNT5_NOT_VIEWED__ -->
+                                    <i class="material-icons text-danger align-middle" 
+                                        style="font-size: 10pt;padding-left: 5px;">notification_important</i> __SESSION_CNT5_NOT_VIEWED__
+                                <!-- __SESSION_CNT5_NOT_VIEWED__ -->
+
+                        </a>
+                </li>
+
+
+                <li class="mb-2 nav-item small __ACTIVE11__">
+                        <a href="/derjava/ck.php?ct=">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;"
+                                   title="">playlist_add_check</i>
+                                Проверка голосований
+                        </a>
+                </li>
+                <li class="mb-2 nav-item small __ACTIVE12__"  style="white-space:nowrap !important;">
+                        <a href="/derjava/u_veche.php?">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;"
+                                   title="">group</i>
+                                Объединения пользователя <span style="color:red;"> __CNT_INFO_VECHE_U__ </span>
+                        </a>
+                </li>
+                <li class="mb-2 nav-item small __ACTIVE8__">
+                        <a href="/derjava/user_settings.php?">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">emoji_people</i>
+                                Настройка анкеты
+                        </a>
+                </li>
+
+                <li class="mb-2 nav-item small __ACTIVE__">
+                        <a href="/derjava/trustnet.php?">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">all_inclusive</i>
+                                Координаторы
+                        </a>
+                </li>
+
+                <li class="mb-2 nav-item small __ACTIVE5__">
+                        <a href="/derjava/drevo.php">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">bubble_chart</i>
+                                Древо знаний
+                        </a>
+                </li>
+
+                <li class="mb-2 nav-item small __ACTIVE9__">
+                        <a href="/coop/fin.php?iu=__IS_USER_ON__" target="fin">
+                                <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">account_balance</i>
+                                Финансы в кооперативах
+                        </a>
+                </li>
+        </ul>
+        <!-- __IS_USER_ON__ -->
+        <!-- menu_u% -->
+        <hr>
+        <ul class="list-unstyled main-ul">
+                <li class="mb-2 nav-item"><a href="/derjava/veche.php?iv=900113">
+                        <i class="material-icons align-middle main-color" style="line-height: 13px;" >group_work</i>
+                        Конституционное собрание</a>
+                </li>
+                <li class="mb-2 nav-item">
+                    <a href="/tk/1001/-11324.php">
+                        <i class="material-icons align-middle main-color" style="line-height: 13px;" >map</i>
+                        Принципы формирования норм права
+                    </a>
+                </li>
+                <li class="mb-2 nav-item">
+                    <a href="/derjava/kodeks.php?">
+                        <i class="material-icons align-middle main-color" style="line-height: 13px;" >menu_book</i>
+                        Конституция
+                    </a>
+                </li>
+
+                <li class="mb-2 nav-item">
+                    <a href="/derjava/ek_sxema.php">
+                        <i class="material-icons align-middle main-color" style="line-height: 13px;" >nature_people</i>
+                        Схема экономики народовластия
+                    </a>
+                </li>
+
+                <li class="mb-2 nav-item">
+                    <a href="/derjava/slovar_search.php?kp=4">
+                    <i class="material-icons align-middle main-color" style="line-height: 13px;" title="">local_library</i>
+                        Словарь
+                    </a>
+                </li>
+<!--
+   <li><a href="/derjava/flag/">О флагах</a></li>
+-->
+        </ul>
+
+<hr>
+
+
+
+<!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(52336315, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/52336315" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+

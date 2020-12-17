@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+    
+
+<!-- $header$ -->
+
+<main>
+
+    <div class="container pt-5  div-main">
+        <div class="row no-gutters">
+
+            <div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+                <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+                <!-- $cmenu-0000$ -->
+            </div>
+
+            <!--Основной контент-->
+            <div class="no-gutters col-sm-12 col-md-8 col-lg-9 div-right">
+                <div class="no-gutters bg-white rounded border mb-3 p-3">
+
+
+<script>
+  function select_ku_poll_analiz_change(event){
+      var n = document.getElementById('select_kind_user');
+      var href=n.getAttribute('data-action');
+      setLocation(href+'&ku='+n.value);
+  }
+</script>
+
+<!-- %data0 -->
+<select id="select_kind_user" onchange="select_ku_poll_analiz_change(event)"
+            data-action="/derjava/poll_analiz_list.php?iv=__VECHE__&p=__ID_POLL__"  >
+<!-- data0% -->
+
+<!-- %data20 -->
+    <option __SELECTED__ value="__ID_KIND_USER__" > __NAME_KIND_USER__ , __CNT_MSG_USER_KIND__</option>
+<!-- data20% -->
+</select>
+
+
+                    <!--Заголовок-->
+                    <!-- %data0 -->
+                    <h1> (в разработке)
+Перечень проголосовавших в совете __VECHE__ по голосованию __ID_POLL__                        
+                    </h1>
+
+
+                    <div class="table-striped table-responsive table-bordered table-hover">
+                    <table class="w-100" data-p="__ID_POLL__" data-a="__ID_ANSWER__">
+             <!-- data0% -->
+                        <tr >
+                            <th style="width:150px">.</th>
+                            <th style="width:250px">ФИО,Контакты</th>
+                            <th style="width:80px">Делегат</th>
+                            <th style="width:50px">статус</th>
+                            <th style="width:80px">Время</th>
+                        </tr>
+                        <!-- %data7 -->
+                        <tr data-c="__ID_CERTIFICATE__" data-ka="__ID_KIND_ANSWER__">
+                            <td  style="max-height: 30px">
+
+                <!-- __CHECK__ --> <i class="material-icons text-danger align-middle" style="font-size: 20px;">check</i> <!-- __CHECK__ -->
+                <!-- __YES__ --> <img class="float-lg-left float-none" src="img/like.png" style="height: 20px;"> <!-- __YES__ -->
+                <!-- __NO__ --><img class="float-lg-left float-none" src="img/dislike.png" style="height: 20px;"><!-- __NO__ -->
+                                __NAME_ANSWER__
+                            </td>
+
+                            <td>__NAME_CERTIFICATE__ , __CONTACT_CERTIFICATE__ </td>
+                            <td>__NAME_U_DELEGATE__
+                                <hr class="my-0"> __CONTACT_U_DELEGATE__</td>
+
+                            <td>__NAME_ROLE_VECHE__ ,
+                                <!-- __U_ADMIN__ --><a href="/derjava/user_contact.php?__U_ADMIN__"> контакт </a><!-- __U_ADMIN__ -->
+                                <!-- __HAS_DELEGATE__ -->
+                                <!-- __U_DELEGATE__ --><br> <a href="/derjava/user_contact.php?__U_DELEGATE__"> делегат </a>
+                                <!-- __U_DELEGATE__ -->
+                                <!-- __HAS_DELEGATE__ -->
+                            </td>
+                            <td>__TS_SYS__ <span style="display: none;">__ID_CERTIFICATE__</span> </td>
+                            <td>
+                         </td>
+
+                        </tr>
+                        <!-- data7% -->
+                    </table>
+                    </div>
+
+                    <div class="col no-gutters">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+</body>
+</html>

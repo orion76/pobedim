@@ -1,0 +1,44 @@
+.div-main {
+   width: auto; 
+   display:inline-block;
+   float:none;
+   vertical-align:top;
+   text-align: left;
+   border-right: 1px solid black;
+   }
+   
+.div-ajax { 
+   min-width: 200px;
+   width: auto;
+   display:inline-block;
+   float: none;
+   vertical-align:top;
+   text-align: left;
+   margin-left: 1px;
+   padding-left: 10px;
+   }
+
+.div-body { display:block; float: none; height: 100%;  }
+        
+.div-hmenu { display:block; float: none; text-align: left;}        
+.div-fmenu { display:block; float: none; text-align: right;}
+
+.div-header { display:block; float: none; text-align: left;}        
+.div-footer { display:block; float: none; text-align: left;}        
+
+.div-alarm { background-color: yellow; color:red; z-index: 555; top:10; left:200; position: fixed;}
+        
+.div-title {}        
+.div-content{}
+.div-search{}
+.div-found{}
+        
+.div-subtitle {}        
+.div-text{ white-space: normal;}        
+        
+.div-test {
+   width: 150px;
+   height: 50px;
+   display:inline-block;
+   border:1px solid red;
+   }   

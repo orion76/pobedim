@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- %data0 -->
+    <link rel="canonical" href="__SESSION_ROOT__/derjava/poll_answer.php?__ID_ANSWER__"/>
+    <!-- data0% -->
+
+    <!-- $bootstrap-head$ -->
+
+<!-- $head$ -->
+    <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+    <script type="text/javascript" src="/derzhava/golosovanie_user.js"></script>
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+    
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+				<div class="no-gutters bg-white rounded border mb-3">
+					<!--Заголовок-->
+					<div class="col">
+						
+                                            
+<!-- %data0 -->                                            
+<div>
+    Вам предлагается проголосовать:
+    <ol>
+        <li> как если бы этот вопрос звучал на референдуме с вариантами ответов "Да" и "Нет"  </li>
+        <li> как выбор из альтернатив в голосованиях ниже</li>
+    </ol>
+    
+    <p>
+        Ответы Да/Нет выполняют конкретизирующую функцию для голосования в целом. 
+        Это полезно при возникновении спорных нюансов в конкретных ситуациях.
+    </p>
+ 
+</div>
+
+<!-- data0% -->
+                                            
+<!-- $answer-polls$ -->                                            
+
+<!-- %data1 -->
+<form method="post" action="/derjava/poll_answer.php?ax=pollanswer_add&pa=__ID_ANSWER__">
+    Номер голосования к которому добавить опрос <input type="number" value="" name="p" >
+    <input type="submit" value="Добавить к голосованию" >
+</form>
+<!-- data1% -->
+
+
+<hr>
+<script>
+    function pollanswer_img_change(event){
+        preventDefault(event);
+        var fm = getParentNode('FORM',event.target);
+        fm.submit();
+    }
+</script>
+
+<!-- %data0 -->
+                                <form class="form-group py-2" style="" enctype="multipart/form-data"
+                                      action="/derjava/ajax.php?ax=uploadimage_answer&qq=__ID_POLL__&pa=__ID_ANSWER__&bx="
+                                      method="POST">
+                
+
+<!-- __CAN_CHANGE_IMG_ANSWER__ -->
+<input type="hidden" name="MAX_FILE_SIZE" value="3000000"/>
+                                    <label for="userfile">Выберите картинку</label>
+                                    <input id="userfile" name="userfile" type="file" accept="image/jpeg,image/png,image/gif"
+                                           onchange="pollanswer_img_change(event)"
+                                           />
+<!-- __CAN_CHANGE_IMG_ANSWER__ -->                                    
+                                    
+<!--                                    
+                                    <textarea class="form-control my-1" name="npa" rows="3"
+                                              placeholder="Текст ответа"></textarea>
+                                    <input type="submit" class="btn main-btn my-2 rounded z-depth-1 float-right"
+                                           value= "Сохранить" >
+-->
+                                    <div class="clearfix"></div>
+                                </form>
+<!-- data0% -->                   
+
+
+<!-- %data0 -->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=__SHARE_POLL__"
+                                   target="_blank"><img
+                                        src="/derjava/img/logo/fb-logo.png" alt=""></a>
+                                <a href="https://vk.com/share.php?url=__SHARE_POLL__" target="_blank"><img
+                                        src="/derjava/img/logo/vk-logo.png" alt=""></a>
+                                <!--<a href=""><img src="/derjava/img/logo/inst-logo.png" alt=""></a>-->
+                                <a href="https://connect.ok.ru/offer?url=__SHARE_POLL__" target="_blank"><img
+                                        src="/derjava/img/logo/ok-logo.png" alt=""></a>
+<!-- data0% /-->
+
+					</div>
+                                        
+                                        
+<div>
+    <p><br><br><br></p>    
+<p>
+    Включать/Исключать опросы в/из голосование могут только администраторы.
+    Если количество голосов будет более N, то операции с опросом запрещены.
+</p>
+<p>
+    Планируем сделать.
+    <br>
+    1. Если по опросу уже высказались пользователи как ДА в других голосованиях, то при включении
+    опроса (при отсутствии голосов этих пользователей) в другое голосование, 
+    автоматически проставляется голос в голосовании.
+    <br>
+    2. С каждым голосом будет маркер способа голосования (по паролю, через делегата, на автомате)
+    <br>
+    3. Правами включать/исключать опросы будут обладать координаторы соответствующих объединений
+    
+</p>
+</div>                                        
+                                        
+                                        
+				</div>
+			</div>
+		</div>
+	</div>
+
+</main>
+
+<!--Модальное окно регистрации-->
+   <!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+
+
+</body>
+</html>

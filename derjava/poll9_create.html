@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="nofollow" >
+    <meta name="robots" content="noindex" >
+    <meta name="googlebot" content="noindex" >
+
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+
+        <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+        <script type="text/javascript" src="/derjava/veche.js"></script>        
+        <script type="text/javascript" src="/derjava/poll_edit.js"></script>        
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+ <!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+                            
+				<div class="bg-white rounded border mb-3">
+
+					<!--Заголовок-->
+					<div class="col">
+						<h1>
+							<small class="font-weight-light pt-1">Организация собрания</small>
+						</h1>
+						<hr class="mt-2 mx-n3">
+<!-- %data0 -->
+						<form action="/derjava/ajax.php?ax=poll_create&iv=__VECHE__&kp=9" method="post">
+<!-- data0% -->
+                                                    <h5 class="mt-4 mb-3 font-weight-normal">Введите тему собрания</h5>
+
+							<input name="np" class="form-control col rounded m-height" type="search" placeholder="" aria-label="Search">
+                                                        
+<!--
+							<h5 class="mt-4 mb-3 font-weight-normal">2. Категория голосования</h5>
+							<select name="ka" class="browser-default custom-select">
+								<option disabled selected value="">[Выберите категорию]</option>
+								<option value="ЖКХ">ЖКХ</option>
+								<option value="Наука">Наука</option>
+								<option value="Политика">Политика</option>
+								<option value="Экономика">Экономика</option>
+								<option value="Спорт">Спорт</option>
+								<option value="Идеология и религия">Идеология и религия</option>
+								<option value="Культура">Культура</option>
+								<option value="Образование">Образование</option>
+								<option value="Медицина">Медицина</option>
+								<option value="Экология">Экология</option>
+								<option value="Сельское хозяйство">Сельское хозяйство</option>
+							</select>
+-->                                                        
+                                                        
+
+<h5 class="mt-4 mb-3 font-weight-normal">Место</h5>
+<!-- $veche-tree$ --> 
+
+                                                        <input type="submit" class="btn main-btn my-4 rounded z-depth-1" value="Сохранить и продолжить редактирование" >
+						</form>
+					</div>
+
+				</div>
+			</div>
+                </div>
+        </div>
+
+</main>
+
+<!--Модальное окно регистрации-->
+   <!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+</body>
+</html>

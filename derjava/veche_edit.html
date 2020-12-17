@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script type="text/javascript" src="/derjava/veche.js?2"></script>
+    <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js?2"></script>
+    <script>
+        function fu_onComplete(id, fileName, responseJSON) {
+            if (responseJSON.success) {
+                var img = document.getElementById("img_v");
+                img.setAttribute("src",responseJSON.filename);
+                return true;
+            } else return false;
+        }
+            
+function  _onload(event){
+   file_uploader('veche_img_upload',fu_onComplete);
+}           
+    
+    </script>
+
+<script>
+function veche_jobs_upd(event){
+   var t = event_target(event);
+   var tr = getParentNode('TR',t);
+   var job= tr.getAttribute('data-job');
+   ajax_post('/derjava/ajax.php?ax=veche_job_upd&job='+job+'&nv='+t.name,'v='+encodeURIComponent(t.value));
+}
+function veche_jobs_add(event){
+    var tt = document.getElementById("vechejobtable");
+    var v = tt.getAttribute("data-veche");
+    var rz = ajax_get('/derjava/ajax.php?ax=veche_job_add&iv='+v);
+    rz = JSON.parse(rz);
+    var et = document.createElement("tr");
+    et.setAttribute('data-job',rz[0]["ID_JOB_VECHE"]);
+    et.innerHTML = '<td><input type="text" name="NAME_JOB_VECHE" onchange="veche_jobs_upd(event)" value="'+rz[0]["NAME_JOB_VECHE"] +'"></td>'
+                  +'<td><textarea name="TEXT_JOB_VECHE" onchange="veche_jobs_upd(event)"></textarea></td><td></td>';
+    tt.appendChild(et);
+}
+
+  
+
+</script>
+
+</head>
+
+<body class="pt-5 body-color"  onload="_onload(event)">
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+                <div class="no-gutters bg-white rounded border mb-3">
+                    <div class="col p-3">
+                        <!-- %data99 -->
+                        <!-- __VECHE_IS_COMMETTEE__ -->
+
+                        <p>Цель группы - исполнение решения __VECHE_IS_COMMETTEE__ по голосованию
+                            <a class="main-a" href="/derjava/poll.php?qq=__ID_POLL_VECHE__"> __NAME_POLL_VECHE__ </a>
+                        </p>
+
+                        <!--  __DO_CREATE_POLL_RESULT__ -->
+                        <button class="btn main-btn my-3 mx-0"
+                                onclick="setLocation('/derjava/ajax.php?ax=create_poll_result&iv=__VECHE__&qq=')">
+                            Создать итоговое голосование комитета
+                        </button>
+                        <!--  __DO_CREATE_POLL_RESULT__ -->
+
+                        <!--  __ID_POLL_RESULT__ -->
+                        <p>
+                            Итоговое голосование: <a href="/derjava/poll.php?qq=__ID_POLL_RESULT__">
+                            __NAME_POLL_RESULT__ </a></p>
+                        <!--  __ID_POLL_RESULT__ -->
+
+                        <!-- __VECHE_IS_COMMETTEE__ -->
+
+
+                        <div class="form-inline">
+                            <span>Подтвержите решение итогового голосования в группе:</span>
+                            <select class="ml-3 form-control col rounded m-height d-inline" name="vpr"
+                                    onchange="set_veche_answer_result(event)" v="__VECHE__">
+                                <option class="" value="0">[решение не принято]</option>
+                                <!-- __data99s__ -->
+                                <option value="__ID_ANSWER__" __SELECTED__>__NAME_ANSWER__</option>
+                                <!-- __data99s__ -->
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- data99% -->                    
+
+<!-- %data0 -->
+                    <h1>
+                        <small class="ml-3 float-left font-weight-light">__NAME_VECHE__</small>
+                    </h1>
+                    
+                    
+                    
+                    <div class="clearfix"></div>
+                    <div>
+                        <img class="mt-3" id="img_v"
+                             src="https://pobedim.su/data.veche/900044/900044.jpg?13267##__IMG_VECHE__"
+                             >
+                    </div>
+                    
+                    <div id="veche_img_upload"
+                         data-action="/derjava/ajax.php?ax=veche_img_upload&iv=__VECHE__">
+                    </div>
+                     
+                    <hr>
+
+                    <div class="col p-3">
+                        <h5>Важная информация для участников объединения</h5>
+                        <textarea
+                                      data-action="/derjava/ajax.php?ax=veche_text_members&iv=__VECHE__"
+                                      class="form-control rounded"
+                                      onchange="ajax_textarea_change(event)"
+                                      onfocus="control_autoheight(event)"
+                                      style="overflow:hidden;min-height: 30px;min-width:500px;"
+                                       >__TEXT_MSG_MEMBER_VECHE__</textarea>
+
+
+
+                        <h5 class="font-weight-normal">Описание объединения  </h5>
+
+
+                        <textarea
+                                      data-action="/derjava/ajax.php?ax=veche_text&iv=__VECHE__"
+                                      class="form-control rounded" 
+                                      onchange="ajax_textarea_change(event)"
+                                      onfocus="control_autoheight(event)"
+                                      style="overflow:hidden;min-height: 30px;min-width:500px;"
+                                       >__TEXT_VECHE__</textarea>
+
+
+                            <div class="clearfix"></div>
+
+                            <br>На стену могут добавлять посты все участники <input action="/derjava/ajax.php?ax=veche_option&iv=__VECHE__" type="checkbox" value="91" name="CAN_GUEST_EDIT_WALL" __CAN_GUEST_EDIT_WALL__  onclick="ajax_input_change(event)" >
+                            <br>На стену могут добавлять посты все пользователи <input action="/derjava/ajax.php?ax=veche_option&iv=__VECHE__" type="checkbox" value="92" name="CAN_MEMBER_EDIT_WALL" __CAN_MEMBER_EDIT_WALL__ onclick="ajax_input_change(event)">
+                            <br>Комментировать могут только участники <input action="/derjava/ajax.php?ax=veche_option&iv=__VECHE__" type="checkbox" value="93" name="CAN_GUEST_COMMENT_WALL" __CAN_GUEST_COMMENT_WALL__ onclick="ajax_input_change(event)">
+                            <br>* по умолчанию комментировать могут все пользователи, а добавлять посты только координатор и редакторы
+<!-- data0% -->
+
+<!-- %data0 -->
+<!-- !__ID_POLL_70__ -->
+<br><a href="/derjava/poll_create.php?kp=70&iv=__VECHE__" rel="nofollow" target="_blank" >Добавить оргструктуру</a>
+<!-- !__ID_POLL_70__ -->
+<!-- __ID_POLL_70__ -->
+<br><a href="/derjava/poll.php?__ID_POLL_70__" rel="nofollow"  target="_blank">Задачи объединения</a>
+<!-- __ID_POLL_70__ -->
+<!-- data0% -->
+
+
+<!-- %data0 -->
+
+<h2>Функции, штат</h2>
+<table>
+    <tr>
+    <td>Задача</td><td>Обязанности</td><td>Оклад</td>
+    </tr>
+    <tbody  id="vechejobtable" data-veche="__VECHE__" >
+<!-- __rows70__ -->
+<tr data-job="__ID_JOB_VECHE__">
+    <td><a href="/derjava/poll_edit.php?p=__ID_JOB_VECHE__" target="vje">  __NAME_JOB_VECHE__ </a></td>
+    <td>__TEXT_JOB_VECHE__</td>
+    <td>__WAGE_JOB_VECHE__</td>
+</tr>
+<!-- __rows70__ -->
+
+<!--
+<tr data-job="__ID_JOB_VECHE__">
+    <td><input type="text" name="NAME_JOB_VECHE" onchange="veche_jobs_upd(event)" value="__NAME_JOB_VECHE__"></td>
+    <td><textarea name="TEXT_JOB_VECHE" onchange="veche_jobs_upd(event)">__TEXT_JOB_VECHE__</textarea></td>
+    <td>__WAGE_JOB_VECHE__</td>
+</tr>
+-->
+
+    </tbody>
+</table>
+<br><a href="/derjava/poll_create.php?kp=71&iv=__VECHE__" rel="nofollow" target="_blank" >Добавить функцию, штатную единицу</a>
+<!--
+<button onclick="veche_jobs_add(event)">Добавить функцию, штатную единицу</button>
+-->
+<!-- data0% -->
+
+
+                        <h5 class="mt-4 mb-3 font-weight-normal">Интернет ссылки</h5>
+
+                        <!-- %data2 -->
+                            <div class="form-check row col-12">
+                                <textarea placeholder="Описание ссылки"
+                                          data-action="/derjava/ajax.php?ax=veche_webtext&wv=__ID_URL_VECHE__"
+                                          onchange="ajax_textarea_change(event)"
+                                          class="col form-control">__TEXT_WEB_VECHE__</textarea>
+                                          
+                                <input type="text" 
+                                       value="__URL_WEB_VECHE__"
+                                       data-action="/derjava/ajax.php?ax=veche_weburl&wv=__ID_URL_VECHE__"
+                                       placeholder="Вставьте ссылку"
+                                       onchange="ajax_text_change(event)"
+                                       class="col form-control mt-1" >
+                            </div>
+                        <hr>                        
+                        <!-- data2% -->
+                        <p class="font-weight-normal">Добавление ссылки</p>
+                        <!-- %data0 -->
+                        <form class="row px-3" action="/derjava/veche_edit.php?ax=add_web_veche&iv=__VECHE__"
+                              method="post">
+                            <div class="form-check row col-12">
+                                <textarea name="twv" id="twv" placeholder="Описание ссылки"
+                                          class="col form-control"></textarea>
+                                <input name="uwv__" id="uwv__" type="text" size="50" value=""
+                                       placeholder="Вставьте ссылку"
+                                       class="col form-control mt-1">
+                                <input class="btn main-btn mt-1 mx-0" type="submit" value="Сохранить новую ссылку">
+                            </div>
+                        </form>
+                        <!-- data0% -->
+
+                    </div>
+                    <hr class="m-0">
+                    <!-- %data0 -->
+                    <div class="m-0  bg-light" align="right">
+                        <a class="btn main-btn m-3" href="/derjava/veche.php?iv=__VECHE__">Перейти на страницу объединения</a>
+                    </div>
+
+                    <hr class="m-0">
+                    <button class="btn main-btn my-3 mx-0"
+                            action="/derjava/ajax.php?ax=veche_delete&iv=__VECHE__"
+                            href="/derjava/veche.php?__VECHE__"
+                            onclick="ajax_btn_redirect(event)">
+                        удалить объединение
+                    </button>
+
+                    <!-- data0% -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+</body>
+</html>

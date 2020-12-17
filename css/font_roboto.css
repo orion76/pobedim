@@ -1,0 +1,83 @@
+ .ft0 /* ,h1, h2, h3, h4, h5, h6{ font-family: MyriadProLight; }  */
+h1, h2, h3, h4, h5, h6, * { font-family: "Roboto"; }
+/*
+.ft1 ,p, body, div, li, input, td, th { font-family: MyriadPro; }
+.ft2 { font-family: MyriadProBold; }
+.ft3 { font-family: MyriadProCond; }
+.ft4 { font-family: HeliosCondLight;}
+.ft5 { font-family: HeliosCompressed; }
+*/
+
+/*
+
+@font-face {
+    font-family: 'MyriadProLight';
+    src: url('/css/font/MyriadPro-Semibold.eot');
+    src: local('@')
+        , url('/css/font/MyriadPro-Semibold.woff') format('woff')
+        , url('/css/font/MyriadPro-Semibold.ttf') format('truetype')
+        , url('/css/font/MyriadPro-Semibold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal; 
+}
+
+
+@font-face {
+    font-family: 'MyriadPro';
+    src: url('/css/font/MyriadPro-Regular.eot');
+    src: local('@')
+        , url('/css/font/MyriadPro-Regular.woff') format('woff')
+        , url('/css/font/MyriadPro-Regular.ttf') format('truetype')
+        , url('/css/font/MyriadPro-Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'MyriadProBold';
+    src: url('/css/font/MyriadPro-Bold.eot');
+    src: local('@')
+        , url('/css/font/MyriadPro-Bold.woff') format('woff')
+        , url('/css/font/MyriadPro-Bold.ttf') format('truetype')
+        , url('/css/font/MyriadPro-Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+   font-family: 'MyriadProCond';
+   src: url('/css/font/MyriadPro-BoldCond.eot');
+   src: local('@')
+       , url('/css/font/MyriadPro-BoldCond.woff') format('woff')
+       , url('/css/font/MyriadPro-BoldCond.ttf') format('truetype')
+       , url('/css/font/MyriadPro-BoldCond.svg') format('svg');
+   font-weight: normal;
+   font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'HeliosCondLight';
+    src: url('/css/font/HeliosCondLight.eot');
+    src: local('@'), url('/css/font/HeliosCondLight.woff') format('woff')
+        , url('/css/font/HeliosCondLight.ttf') format('truetype')
+        , url('/css/font/HeliosCondLight.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'HeliosCompressed';
+    src: url('/css/font/HeliosCompressed.eot');
+    src: local('@'), url('/css/font/HeliosCompressed.woff') format('woff')
+        , url('/css/font/HeliosCompressed.ttf') format('truetype')
+        , url('/css/font/HeliosCompressed.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+*/

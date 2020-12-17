@@ -1,0 +1,62 @@
+<!-- оценка голосования -->
+<div class="col">
+    <div class="col rounded border py-2 mb-3">
+        <div class="p-2 text-center">
+
+            <span class="mr-3 font-weight-normal">Оцените голосование:</span>
+            <div class="w-100 d-lg-none d-block"></div>
+<!-- %data3 -->
+            <div>
+                <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+                   href="/derzhava/derzhava_ajax.php?ax=set_like&qq=__ID_POLL__&v=1"
+                   onclick="ajax_a_like_click2(event)">
+                    <i class="material-icons" style="color:green;" title="нравится">thumb_up</i>
+                </a>
+
+                <span class="d-lg-inline">Нравится </span>
+                <a class="main-a mr-4" href="/derjava/user_search.php?lu=7&sx=__ID_POLL__" target="su" rel="nofollow" >
+                    <span class="d-lg-inline" id="cnt_like" data-name="cnt_like">__CNT_LIKE__</span>
+                </a>
+
+                <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+                   href="/derzhava/derzhava_ajax.php?ax=set_like&qq=__ID_POLL__&v=-1"
+                   onclick="ajax_a_like_click2(event)">
+                  <!--  <img class="float-lg-left float-none" src="img/dislike.png" style="height: 20px;"> -->
+                    <i class="material-icons" style="color:red;" title="не нравится">thumb_down</i>
+                </a>
+
+                <span class="d-none d-lg-inline">Не нравится</span>
+                <a class="main-a"
+                   href="/derjava/user_search.php?lu=6&sx=__ID_POLL__" target="su" rel="nofollow" >
+                    <span class="d-lg-inline" id="cnt_dislike"  data-name="cnt_dislike"> __CNT_DISLIKE__ </span>
+                </a>
+<!-- data3% -->
+
+<!-- %remove -->
+                <!-- в list_like  помещается список тех, кому нравится голосование -->
+                <div class="table-responsive text-left mt-3 table-hover">
+                    <table id="list_like" data-name="list_like">
+                        <!-- remove -->
+
+                        <!--  этот текст полностью собирается в  /derjava/ajax.php?ax=get_likelist&qq=__ID_POLL__&v=
+                              шаблон игнорируется
+
+                        <tr>
+                            <td><a class="p-2" href="#" target="u1286"><img src="https://pobedim.su/u/1286/thumb/thumb64.png" class="online "></a></td>
+                            <td><a class="p-2 main-a" href="#" target="u1286">__NAME_U__</a></td>
+                        </tr>
+
+                        -->
+
+                        <!-- remove -->
+                    </table>
+                </div>
+<!-- remove% -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- /оценка голосования -->
+<div class="clearfix" style="min-height: 10px;"></div>

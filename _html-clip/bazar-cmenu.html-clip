@@ -1,0 +1,12 @@
+<!--
+    это шаблон контекстного меню
+
+-->
+
+<!-- %data0 -->
+        <div class="col img-comment mt-3 mx-1">
+            <!-- __CNT_OWN_BARGAIN__ -->
+            <a href="/bazar/bazar_search_own.php?ax=ownbargains" >собственные предложения  __CNT_OWN_BARGAIN__ </a>
+            <!-- __CNT_OWN_BARGAIN__ -->
+        </div>
+<!-- data0% -->

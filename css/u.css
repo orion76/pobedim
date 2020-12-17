@@ -1,0 +1,84 @@
+/* публичные данные сохраняются в CSS пользователя */
+.u[data-u=""] img{
+    background-image: none;
+}
+
+.u[data-u=""] ul li:nth-child(1)::before{
+    content: "aaaaa";
+}
+.u[data-u=""] ul li:nth-child(2)::before{
+    content: 'bbbbb';
+}
+.u[data-u=""] ul li:nth-child(3)::before{
+    content: 'ccccc';
+}
+
+
+
+
+span.u { margin: 0px; padding: 0px; display: inline-block; text-align: left;}
+.u {color: navy; background-color: none;}
+
+
+/* msq counter */
+span.u a sup { 
+    background-color: yellow; color: blue; 
+    position: relative; 
+    left: -7px; top: -10px; 
+    z-index: 555;
+    font-size: 12pt;
+}
+
+/* user id */
+/*
+.u:before {
+   content:  attr(data-u);  
+   position: relative;  
+   left:  7px; top: 8px;  
+   z-index: 555;
+   color: black; 
+   font-size: 8pt;
+}
+*/
+
+.u img{ background-repeat: no-repeat; background-size: contain; background-color: white; }
+.u ul{ display:none;}
+
+
+/* user info */
+.u:hover ul, .woph ul{ display: inline-block;  
+            font-size: 8pt; 
+            margin: 0px; 
+            padding: 2px; 
+            background-color: white;
+            background-image: none;
+            position: relative; 
+            left: -2px; 
+            top: -30px; 
+            z-index: 777;
+            list-style: none;
+}
+.woph:hover ul{background-color: lightcyan;}
+
+/* .u:hover img { width:64px; height: 64px;} */
+
+.u .offline { border-color: white; border-style:solid; border-width: 1px;}
+.u .online { border-color: green; border-style:solid; border-width: 2px;}
+
+
+
+
+.cs {
+    background-image: none;
+    color: black;
+}
+li.cs{ padding: 10px; background-color: lightgrey; border-bottom: 1px solid;
+        }
+
+
+.cs .u_ct { text-align: right; background-color: white; }
+.cs .u_pf { text-align: left; }
+/* временная заплатка к стилю */
+li a, a.filefolder { color: black; }
+
+

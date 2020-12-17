@@ -1,0 +1,53 @@
+body { background-image: url(listovka_bg.jpg);
+       background-repeat: repeat-y;
+       background-size: contain;
+       color: navy; }
+.div-hmenu a {color: yellow;}
+
+
+.div-header{
+    color: wheat;
+     margin: 0px; 
+}
+.div-hmenu {}
+.div-body{ display: inline-block; margin: 0px;
+           background-image: none;  background-color: white;}
+
+.div-main { width: 340px; padding-left: 10px;
+}
+.div-ajax{ text-align: left; min-width: 300px;
+           background-image: none;
+      
+}
+
+.div-footer{
+     color: wheat; 
+     text-align: center;
+}
+
+
+
+.no-list li { display: inline-block; margin-right: 5px; margin-left: 5px;padding-top: 4px; }
+
+table {padding: 10px;}
+tr, td, th { border-bottom: 1px; border-bottom-style:solid;  }
+th {background-color: white; color: black;}
+td {padding: 4px; vertical-align: top;}
+
+div.lveche{ display: inline-block; }
+div.lveche * {
+    background-color: lightcyan;
+    background-image: none;
+    color: black;
+}
+
+div.lveche h1 { text-align:center; }
+
+ 
+ul.u64  img { 
+   height:64px;
+   width:64px
+}
+ 
+li.u64 {   height: 100px; vertical-align: middle;
+           display: inline-block;  width: 100px; text-align: center; list-style: none;}

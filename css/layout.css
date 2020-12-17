@@ -1,0 +1,33 @@
+div.menu-left {
+           z-index: 1111;
+           position: absolute;
+           left: 0px;
+           top:200px;
+           margin-left:0px;
+           white-space: normal;
+           max-width: 60px;
+           overflow: hidden;
+           background-color: gray;
+ }
+div.menu-left:hover {
+    max-width: 270px;
+}
+div.div-right {
+    width:340px;
+    margin-left:30px;
+}
+
+@media all and ( min-width:440px ) { div.div-right { max-width:none; width:400px;  } }
+@media all and ( min-width:505px ) { div.div-right { max-width:none; width:450px;  } }
+@media all and ( min-width:540px ) { div.div-right { max-width:none; width:500px;  } }
+
+@media all and ( min-width:700px ) {
+    div.menu-left { max-width:240px;  background-color:transparent; top:50px; }
+    div.div-right { margin-left: 240px; max-width:none; width:auto;
+   }
+}
+@media all and ( min-width:800px ) { div.menu-left {left:5%;} div.div-right { max-width:none; width:600px;  } }
+@media all and ( min-width:850px ) { div.div-right { max-width:none; width:700px; } }
+@media all and ( min-width:950px ) { div.div-right { max-width:none; width:800px;  } }
+@media all and ( min-width:1010px ) { div.div-right { max-width:none; width:880px;  } }
+@media all and ( min-width:1100px ) { div.div-right { max-width:none; width:950px;  }  }

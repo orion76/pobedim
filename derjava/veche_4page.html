@@ -1,0 +1,469 @@
+<!-- 
+
+data1_lu - таблица участников
+      
+remove - системная псевдо-переменная, которая удаляет блоки
+
+$header$ - вложенный файл  header.html-clip
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $bootstrap-head$ -->
+
+    <!-- %head0 -->
+    <title>__TITLE__</title>
+    <meta property="og:title" content="__TITLE_OG__"/>
+    <meta property="og:image" content="__IMG_VECHE_OG__"/>
+    <!-- head0% -->
+    <!-- $head$ -->
+    <script type="text/javascript" src="/derjava/veche.js"></script>
+    <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+                <div class="bg-white rounded border mb-3">
+                    <!--Заголовок-->
+                    <!-- %data0 -->
+                    <div class="badge shadow-none bg-white m-3 position-absolute"><span class="text-dark">__NAME_KIND_VECHE__</span>
+                    </div>
+                    <!-- __IMG_VECHE__ -->
+                    <img class="rounded-top overflow-hidden" style="max-height:200px; __STYLE_IMG_VECHE__"
+                         src="__IMG_VECHE__"
+                         alt="__NAME_VECHE__">
+                    <!-- __IMG_VECHE__ -->
+                    <div class="col">
+                        <h1>
+                            <small class="float-left font-weight-light pt-1">__NAME_VECHE__</small>
+                        </h1>
+
+                        <!-- data0% -->
+
+
+                        <hr class="mx-n3">
+                        <!-- %member_in -->
+                        <a href="/derjava/ajax.php?ax=member&bx=in&iv=__VECHE__&ic=__IC__"
+                           class="btn main-bg-color main-btn float-left float-lg-right shadow-none">Присоединиться</a>
+                        <!-- member_in% -->
+                        <!-- %member_out -->
+                        <a href="/derjava/ajax.php?ax=member&bx=out&iv=__VECHE__&ic=__IC__"
+                           class="btn main-bg-color main-btn float-left float-lg-right shadow-none">Выйти из группы</a>
+                        <!-- member_out% -->
+
+                        <!-- %members_inout -->
+                        <button onclick="veche_join_member_click(event)"
+                                class="btn main-bg-color main-btn float-left float-lg-right shadow-none">Присоединить
+                        </button>
+
+                        <div class="clearfix"></div>
+                        <div class="table-responsive mt-3">
+                            <table class="table table-sm mt-2" id="tblJoinMember" style="display:none;">
+                                <thead><tr>
+                                <th>Владелец голоса</th>
+                                <th>Делегат</th>
+                                <th></th>
+                                <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- members_inout% -->
+                                <!-- %member_inout -->
+                                <tr>
+                                    <td>__NAME_CERTIFICATE__</td>
+                                    <td><img class="rounded-pill mr-3" style="height: 38px;"
+                                             src="__IMGSRC_U_DELEGATE__" title="__U_DELEGATE__"></td>
+                                    <td><!-- __IN__ --> <a
+                                            href="/derjava/ajax.php?ax=member&bx=in&iv=__VECHE__&ic=__IC__"
+                                            class="btn main-bg-color main-btn float-left float-lg-right shadow-none">Добавить</a>
+                                        <!-- __IN__ -->
+                                    </td>
+                                    <td>
+                                        <!-- __OUT__ --><a
+                                            href="/derjava/ajax.php?ax=member&bx=out&iv=__VECHE__&ic=__IC__"
+                                            class="btn main-bg-color main-btn float-left float-lg-right shadow-none">Убрать</a>
+                                        <!-- __OUT__ -->
+                                    </td>
+                                </tr>
+                                <!-- member_inout% -->
+                                <!-- %members_inout -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- members_inout% -->
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                    <hr class="mt-2">
+
+                    <!--/Заголовок-->
+
+                    <div class="col no-gutters float-left col-md-12 col-lg-8">
+
+                        <!--Описание группы-->
+
+                        <table id="tablePreview" class="table table-sm table-borderless">
+                            <tbody>
+                            <!-- %data0 -->
+                            <tr>
+                                <td colspan="2">
+                                <!-- __VISIBLE_CAN_EDIT_VECHE__ -->
+                                <a class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect"
+                                   href="/derjava/veche_edit.php?iv=__VECHE__"> Редактировать объединение </a>
+                                <!-- __VISIBLE_CAN_EDIT_VECHE__ -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Описание</th>
+                                <td>
+                                    __TEXT_VECHE__
+                                </td>
+                                <!-- data0% -->
+                            </tr>
+                          
+                            </tbody>
+                        </table>
+
+                        <!--Описание группы-->
+
+                        <!--Приглашение в объединение-->
+
+                        <div class="rounded border py-2 mb-3">
+
+                            <div class="p-2">
+                                <span class="mr-3"><small>ПРИГЛАСИ В ОБЪЕДИНЕНИЕ</small></span>
+                                <div class="w100 d-md-none my-2"></div>
+                                <!-- %data0 -->
+                                <!--<a href=""><img src="/derjava/img/logo/twitter-logo.png" alt=""></a>-->
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=__SHARE_VECHE__"
+                                   target="_blank"><img
+                                        src="/derjava/img/logo/fb-logo.png" alt=""></a>
+                                <a href="https://vk.com/share.php?url=__SHARE_VECHE__" target="_blank"><img
+                                        src="/derjava/img/logo/vk-logo.png" alt=""></a>
+                                <!--<a href=""><img src="/derjava/img/logo/inst-logo.png" alt=""></a>-->
+                                <a href="https://connect.ok.ru/offer?url=__SHARE_VECHE__" target="_blank"><img
+                                        src="/derjava/img/logo/ok-logo.png" alt=""></a>
+                                <!-- data0% /-->
+
+                            </div>
+
+                        </div>
+
+                        <!--Приглашение в объединение-->
+                    </div>
+
+                    <!-- Инструменты объединения -->
+
+                    <div class="float-right col-md-12 col-lg-4 border-left">
+                        <!-- %data0 -->
+
+                        <hr class="ml-n3 my-2">
+
+                        <button class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect my-2"
+                                id="fav_in" href="/derjava/ajax.php?ax=gr_fav_in&iv=__VECHE__"
+                                onclick="ajax_btn_click(event)"
+                                fn_before="ajax_btn_before"
+                                fn_after="fav_in_ajax_btn_after"
+                                style="__VISIBLE_BTN_FAV_IN__">
+                            <i class="material-icons align-top main-color" style="line-height: 13px;">star</i>
+                            Добавить в избранное
+                        </button>
+                        <button class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect my-2"
+                                id="fav_out" href="/derjava/ajax.php?ax=gr_fav_out&iv=__VECHE__"
+                                onclick="ajax_btn_click(event)"
+                                fn_before="ajax_btn_before"
+                                fn_after="fav_out_ajax_btn_after"
+                                style="__VISIBLE_BTN_FAV_OUT__">
+                            <i class="material-icons align-top main-color" style="line-height: 13px;">star</i>
+                            Убрать из избранного
+                        </button>
+
+                        <hr class="ml-n3 my-2">
+                        <a class="main-a" href="/derjava/slovar_search.php?iv=__VECHE__&kp=4">Перечень понятий</a>
+                        <button class="btn main-btn mt-1 mb-3 rounded z-depth-1"
+                                onclick="setLocation('/derjava/slovar_create.php?iv=__VECHE__')">Добавить понятие
+                        </button>
+
+
+                        <!-- data0% -->
+                    </div>
+
+                    <!-- /Инструменты объединения -->
+
+                    <!-- /Участники правая колонка -->
+                    <div class="clearfix"></div>
+                </div>
+
+                <!--/Основной контент-->
+
+                <!-- Участники -->
+                <div class="bg-white rounded border mb-3">
+                    <!-- %info -->
+                    <p class="col font-weight-normal" id="voteGroup"></p>
+                    <p class="px-3">
+                    </p>
+                    <div class="col alert-danger py-2">__TEXT_VOTE4ADMIN__</div>
+                    <!-- info% -->
+
+                    <!-- %data0 -->
+                    <!-- __VISIBLE_CNT_CV__ -->
+                    <div class="col py-3">
+                        <p>
+                        __INFO_CNT_CV__</p>
+                        <form class="form-inline" method="post" action="/derjava/veche.php?iv=__VECHE__">
+                            <input class="form-control col mr-1 rounded-pill m-height" type="text" name="sx" value="__SX__"
+                                   placeholder="введите % чтобы отобразить всех участников">
+                            <input class="btn shadow-none rounded-pill main-btn" type="submit" value="Найти участника">
+                        </form>
+                    </div>
+                    <!-- __VISIBLE_CNT_CV__ -->
+                    <!-- data0% -->
+
+
+                    <div class="table-responsive mt-3">
+                        <table class="table table-striped drj-table table-sm">
+                            <thead>
+                            <tr>
+                                <th scope="col" colspan="2"><a class="main-a" data-toggle="modal"
+                                                               href="#modalYchastnik">Участник</a></th>
+                                <th scope="col"><a class="main-a" data-toggle="modal" href="#modalDelegat">Делегат</a>
+                                </th>
+                                <th scope="col"><a class="main-a" data-toggle="modal" href="#modalStatus">Статус</a>
+                                </th>
+                                <th scope="col"><a class="main-a" data-toggle="modal" href="#modalKoord">Выбор
+                                    координатора</a></th>
+                                <th scope="col"><a class="main-a" data-toggle="modal" href="#modalVote">Подтвердили</a>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- %data1_lu -->
+                            <tr>
+                                <td>
+                                    <a class="main-a" href="/derjava/user_contact.php?__U__"><img
+                                            class="rounded-pill mr-3"
+                                            style="height: 38px;"
+                                            src="img/ava-4.jpg##__IMGSRC_USER__"
+                                            alt=""></a>
+                                </td>
+                                <td> __TEXT_CERTIFICATE__</td>
+                                <td><!-- __U_DELEGATE_EX__ -->
+                                    <a class="main-a" href="#"><img class="rounded-pill mr-3" style="height: 38px;"
+                                                                    src="img/ava-2.jpg##__IMGSRC_DELEDATE__" alt=""></a>
+                                    <!-- __U_DELEGATE_EX__ -->
+                                </td>
+                                <td>__NAME_ROLE_VECHE__</td>
+                                <td>
+                                    <!-- __VISIBLE_VOTED_U__ -->
+                                    <i class="material-icons text-danger">
+                                        check
+                                    </i>
+                                    <!-- __VISIBLE_VOTED_U__ -->
+                                    <!-- __VISIBLE_BTN_VOTE_U__ -->
+                                    <a href="/derjava/ajax.php?ax=vote4admin&iv=__VECHE__&v=__U__&checked=1"
+                                       class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect">
+                                        Выбрать
+                                    </a>
+                                    <!-- __VISIBLE_BTN_VOTE_U__ -->
+                                    <p class="my-1"><a href="/derjava/veche_v4a.php?iv=__VECHE__&v4a=__U__" rel="nofollow">
+                                        __CNT_VOTE4ADMIN__ </a><!-- __CNT_VOTE4ADMIN__ -->голосов
+                                        <!-- __CNT_VOTE4ADMIN__ -->
+                                        __IS_U_VOTE4ADMIN__
+                                    </p>
+                                </td>
+                                <td>
+
+                                    <!-- __VISIBLE_BTN_VFY_U__ -->
+                                    <button class="btn btn-outline-primary z-depth-0 btn-sm m-0 waves-effect"
+
+                                            id="btnvfyu"
+                                            href="/derzhava/derzhava_ajax.php?ax=verify_n_c&ic=__ID_CERTIFICATE__&urc=0"
+                                            onclick="ajax_btn_click(event)"
+                                            fn_before="ajax_btn_before"
+                                            fn_after="ajax_btn_after_verify_person"
+                                            data-cntv="__CNT_U_VERIFICATION__"
+                                    >
+
+                                        Подтвердить
+                                    </button>
+                                    <!-- __VISIBLE_BTN_VFY_U__ -->
+
+                                    <p class="my-1"><a href="/derzhava/derzhava_cert.php?ic=__ID_CERTIFICATE__">
+                                        __CNT_U_VERIFICATION__ </a></p>
+                                </td>
+                            </tr>
+                            <!-- data1_lu% -->
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- /Участники -->
+
+
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+
+<!--Модальное окно регистрации-->
+<!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+
+<!-- Модальные окна таблицы участников -->
+<div class="modal fade" id="modalReg" tabindex="-1" role="dialog" aria-labelledby="modalReg"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Кто такой регистратор участника</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>В Державе действует система взаимной верификации. Вы можете подтвердить известных вам участников,
+                    чтобы повысить уровень доверия к ним. Так мы сформируем сеть доверия - всех между всеми.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalYchastnik" tabindex="-1" role="dialog" aria-labelledby="modalYchastnik"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Кто такой участник объединения</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalDelegat" tabindex="-1" role="dialog" aria-labelledby="modalDelegat"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Кто такой делегат объединения</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>В Державе вы можете делегировать свой голос. Делегирование в каждом объединении оформляется
+                    индивидуально. Вы можете назначить одного делегата в нескольких объединениях или выбрать различных
+                    делегатов. Вы можете переголосовать поверх вашего делегата напрямую. В любое время вы можете
+                    отозвать делегированный голос.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalStatus" tabindex="-1" role="dialog" aria-labelledby="modalDelegat"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Статусы участников объединения</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Статус участника или гостя даёт координатор объединения после верификации пользователя.
+                    Координатор назначает сокоординаторов для верификации участников Державы и размещения постов на
+                    стене объединения.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalKoord" tabindex="-1" role="dialog" aria-labelledby="modalDelegat"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Координатор сообщества</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Участники объединения сами выбирают координатора. Функции координатора автоматически становятся
+                    доступны участнику, за которого проголосовало большинство. Координатором и сокоординатором может
+                    стать только тот, кто проголосовал сам за себя, подтвердив свою готовность работать в
+                    объединении.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalVote" tabindex="-1" role="dialog" aria-labelledby="modalVote"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Подтверждение человека</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>В Державе действует система взаимной верификации . Вы можете подтвердить известных вам участников,
+                    чтобы повысить уровень доверия к ним. Так мы сформируем сеть доверия - всех между всеми.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Модальные окна таблицы участников -->
+
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+
+</body>
+</html>

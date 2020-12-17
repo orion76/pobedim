@@ -1,0 +1,45 @@
+th { text-align: center; }
+.s_ , .p_ { padding-left: 10px; padding-right: 4px; text-align: right; min-width: 30px; }
+.q_ { padding-left: 10px; padding-right: 4px; text-align: center; min-width: 30px; }
+.t_ { text-align: left; min-width: 60px; }
+
+input[type="checkbox"].l , input[type="radio"].l  { display:none; }
+
+label  span.l
+{
+    height: 40px;
+    width: 40px;
+    background-image: none;
+    background-color: transparent; 
+}
+
+input[type="checkbox"] + label span.l , input[type="radio"] + label  span.l
+{
+    display:inline-block;
+    width:29px;
+    height:29px; 
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-position: top;
+    border: none;
+    background-size:contain;
+}
+        
+input[type="checkbox"] + label span.l {
+    background-image: url(/css/40check0.png) ;
+}
+
+input[type="checkbox"]:checked + label span.l {
+    background-image: url(/css/40check1.png) ;
+}
+
+input[type="radio"] + label  span.l {
+   background-image: url(/css/40check2.png) ;
+}
+        
+input[type="radio"]:checked + label  span.l {
+   background-image: url(/css/40check3.png) ;
+}

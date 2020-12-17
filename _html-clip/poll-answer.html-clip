@@ -1,0 +1,194 @@
+
+<!-- %data1 -->
+<div class="card mb-3 text-left" style="max-width: 100%;">
+    <div class="row no-gutters">
+
+            <!-- __IMG_ANSWER__ -->
+            <div class="col-md-4 bg-main-vote"
+                style="background-image: url(__IMG_ANSWER__);background-position:center; background-repeat:no-repeat; background-size:contain; min-height: 200px; max-height: 200px;" >
+             
+                <!-- __IMG_ANSWER_0__ -->
+                <a href="__IMG_ANSWER_0__" target="_blank">
+                    <!-- __IMG_ANSWER_0__ -->
+                        <img src="/32/32.png" style="height: 100%;width: 100%;">
+                    <!-- __IMG_ANSWER_0__ -->
+                </a>
+                <!-- __IMG_ANSWER_0__ -->
+                
+            <!-- __IMG_ANSWER__ -->
+
+
+            <!-- !__IMG_ANSWER__ -->
+                <div class="col-md-4 bg-main-vote">
+                <!-- __KEY_YOUTUBE__ -->
+                    <img data-time="__T_YOUTUBE__" src="__IMGSRC_MSG_WALL__" onclick="__IMG_CLICK__"
+                         style="min-height: 200px; max-width: 200px;__IMG_STYLE__">
+                <!-- __KEY_YOUTUBE__ -->
+            <!-- !__IMG_ANSWER__ -->
+
+
+<a href="/derjava/opinion.php?__ID_ANSWER__" rel="canonical"
+        style="z-index: 1;position: absolute; bottom: 4px; left:10px;">
+    <i class="material-icons align-middle" style="font-size: 30px;">forum</i> __CNT_MSG_WALL__
+</a>
+
+        </div>
+        <div class="col-md-8">
+            <div align="right" class="m_answer_more" >
+                <i class="material-icons align-middle" style="font-size:30px;background-color:transparent;">keyboard_arrow_down</i>
+                <br>
+                <ul>
+                    <li><a class="ml-2 main-a" href="/derjava/poll_list_c.php?qq=__ID_POLL__&pa=__ID_ANSWER__&ax=view" target="lc">
+                            <i class="material-icons align-middle" style="font-size: 30px;">list</i>
+                            Список проголосовавших</a>
+                    </li>
+
+                    <!-- __U_ADMIN__ -->
+                    <li>
+                    <a href="/derjava/user_contact.php?__U_ADMIN__" target="u">
+                        Автор ответа: <img class="rounded-pill mr-3" src="__IMGSRC_U_ANSWER__" title="Автор" style="width:32px;height:32px;">
+                    </a>
+                    </li>
+                    <!-- __U_ADMIN__ -->
+
+                                        <li>
+                                            <!-- __BTN_VECHE_ANSWER_CREATE__ -->
+                                            <a class="main-btn-create-group mb-2"
+                                               href="/derjava/v5_create.php?kv=5&pa=__ID_ANSWER__">
+                                                Создать рабочую группу</a>
+                                            <!-- __BTN_VECHE_ANSWER_CREATE__ -->
+                                            <!-- __BTN_VECHE_ANSWER_ENTER__ -->
+                                            <a class="main-btn-create-group mb-2"
+                                               href="/derjava/veche.php?iv=__VECHE_ANSWER__"
+                                            >Перейти к рабочей группе</a>
+                                            <!-- __BTN_VECHE_ANSWER_ENTER__ -->
+
+                                        </li>
+
+
+
+                    <li>
+                        <a href="/derjava/poll_answer.php?pa=__ID_ANSWER__&qq=__ID_POLL__" title="__ID_ANSWER__">Дополнение к данному ответу</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="card-body p-3">
+                <div class="card-title" id="pa__ID_ANSWER__">
+                    <!-- __IS_ANSWER_NEW_U__ -->
+                    <i class="material-icons text-danger align-middle" title="это новый вариант, который появился после вашего голосования"
+                           style="font-size: 20pt;">notification_important</i>
+                    <!-- __IS_ANSWER_NEW_U__ -->
+                    __NAME_ANSWER__
+                </div>
+               <!--    <p class="card-text">__TEXT_ANSWER__</p> -->
+
+                <!-- __BTN_ADMINU__ -->
+                <button class="btn"
+                        onclick="poll_answer_adminu_click2(event)"
+                        data-pa="__ID_ANSWER__"
+                        data-qq="__ID_POLL__"
+                >
+                    Администрировать голоса
+                </button> <br>
+                <!-- __BTN_ADMINU__ -->
+
+                <!-- __poll_certificates__ -->
+                <!-- __CHECK__ --> <i class="material-icons text-danger align-middle" style="font-size: 10px;">check</i> <!-- __CHECK__ -->
+                <!-- __YES__ --> <img class="float-lg-left float-none" src="img/like.png" style="height: 10px;"> <!-- __YES__ -->
+                <!-- __NO__ --><img class="float-lg-left float-none" src="img/dislike.png" style="height: 10px;"><!-- __NO__ -->
+                <small style="white-space:nowrap;fontsize:5pt;"> __NAME1_CERTIFICATE__ __NAME2_CERTIFICATE__
+                    __NAME3_CERTIFICATE__ <br></small>
+                <!-- __poll_certificates__ -->
+
+
+<!-- __CAN_ANSWER_BE_VOTE__ -->
+                <!-- __VISIBLE_BTN_ANSWER_CHECK__ -->
+                <button class="btn main-bg-color main-btn float-left float-lg-right my-1 mx-0 shadow-none"
+                        onclick="poll_answer_click2(event)"
+                        data-pa="__ID_ANSWER__"
+                        data-qq="__ID_POLL__"
+                        data-cu="__ID_CERTIFICATE_U__"
+                        data-checked="unchecked"
+                >
+                    Голосовать
+                </button>
+                <!-- __VISIBLE_BTN_ANSWER_CHECK__ -->
+                <!-- __IS_ANSWER_CHECKED__ -->
+                <div class="float-left float-lg-right mt-1 mb-3 mx-0 px-2">
+                    <button class="btn z-depth-0 p-0 border"
+                            onclick="poll_answer_click2(event)"
+                            data-pa="__ID_ANSWER__"
+                            data-qq="__ID_POLL__"
+                            data-cu="__ID_CERTIFICATE_U__"
+                            data-checked="checked"
+                    >
+                        <i class="material-icons text-danger align-middle"
+                           style="font-size: 30pt;">check</i>
+                    </button>
+
+                    <small class="align-middle" style="line-height: 33px;">Ваш голос принят
+                        <br> ** для отмены голоса нажмите галочку
+                    </small>
+                </div>
+                <!-- __IS_ANSWER_CHECKED__ -->
+<!-- __CAN_ANSWER_BE_VOTE__ -->
+
+                <!-- __CAN_ANSWER_BE_REFERENDUM__ -->
+                <div class="clearfix"></div>
+
+                <div style="margin-top: 5px;">
+                    <!-- __VISIBLE_HREF_ANSWER__ -->
+                    <!-- <a href="/derjava/poll_answer.php?pa=__ID_ANSWER__&qq=__ID_POLL__">...</a> -->
+                    <!-- __VISIBLE_HREF_ANSWER__ -->
+
+                    <!-- __VISIBLE_HREF_POLL__ -->
+                    <a href="/derjava/poll.php?qq=__ID_POLL__#pa__ID_ANSWER__">!!!!!</a>
+                    <!-- __VISIBLE_HREF_POLL__ -->
+
+
+                  <!--  <span>__IS_LIKE__ </span> -->
+
+                    <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+                       href="/derjava/ajax.php?ax=set_like_answer&qq=__ID_POLL__&pa=__ID_ANSWER__&v=1"
+                       onclick="ajax_a_like_click2(event)">
+                        <img class="float-lg-left float-none" src="img/like.png" style="height: 20px;">
+                    </a>
+                    <span class="d-lg-inline"> За </span>
+                    <a class="main-a mr-4" href="/derjava/ajax.php?ax=get_likeanswer_list&qq=__ID_POLL__&pa=__ID_ANSWER__&v=1"
+                       onclick="ajax_a_likelist_click2(event)">
+                        <span class="d-lg-inline" data-name="cnt_like">__CNT_LIKE__</span>
+                    </a>
+
+                    <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+                       href="/derjava/ajax.php?ax=set_like_answer&qq=__ID_POLL__&pa=__ID_ANSWER__&v=-1"
+                       onclick="ajax_a_like_click2(event)">
+                        <img class="float-lg-left float-none" src="img/dislike.png" style="height: 20px;">
+                    </a>
+                    <span class="d-none d-lg-inline"> Против </span>
+                    <a class="main-a" href="/derjava/ajax.php?ax=get_likeanswer_list&qq=__ID_POLL__&pa=__ID_ANSWER__&v=-1"
+                       onclick="ajax_a_likelist_click2(event)">
+                        <span class="d-lg-inline" data-name="cnt_dislike"> __CNT_DISLIKE__ </span>
+                    </a>
+
+                    <a class="btn border rounded p-3 m-0 shadow-none waves-effect waves-light"
+                       href="/derjava/ajax.php?ax=set_like_answer&qq=__ID_POLL__&pa=__ID_ANSWER__&v=0"
+                       onclick="ajax_a_like_click2(event)">
+                        x
+                    </a>
+
+
+                    <!-- в list_like  помещается список тех, кому нравится голосование -->
+                    <div class="table-responsive text-left mt-3 table-hover">
+                        <table data-name="list_like"></table>
+                    </div>
+                </div>
+                <!-- __CAN_ANSWER_BE_REFERENDUM__ -->
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- data1% -->

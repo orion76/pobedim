@@ -1,0 +1,21 @@
+<!-- %data0 -->
+<ul style="list-style: none;margin:0px;padding-left:0px; ">
+    <!-- __rows_tree_up__ -->
+        <li style="padding-bottom: 3px;">
+           <!-- __IS_HREF__ -->    <a href="/derjava/veche.php?__VECHE__" rel="canonical" target="vv"> <!-- __IS_HREF__ -->
+               __NAME_VECHE__
+           <!-- __IS_HREF__ --> </a> <!-- __IS_HREF__ -->
+        </li>
+    <!-- __rows_tree_up__ -->
+    <li>
+        <!-- __row_tree0__ -->
+        <span style="color:green"> __NAME_VECHE__ </span>
+        <!-- __row_tree0__ -->
+        <ul>
+            <!-- __rows_tree_children__ -->
+            <li> <a href="/derjava/veche.php?__VECHE__" rel="canonical" target="vv"> __NAME_VECHE__ </a> </li>
+            <!-- __rows_tree_children__ -->
+        </ul>
+    </li>
+</ul>
+<!-- data0% -->

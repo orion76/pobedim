@@ -1,0 +1,518 @@
+<style>
+    .wall img {
+        max-height: 320px;
+        max-width: 480px;
+    }
+</style>
+
+<div style="display:none" id="uploader">
+    <form style="display:none" method="post" enctype="multipart/form-data" target="iframe_uploader" id="form_uploader" action="" >
+        <input type="file" id="input_uploader" name="userfile" onchange="chosen_uploader(event)">
+        <input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+    </form>
+</div>
+
+<!-- %data0 -->
+<!-- __TEXT_RIGHTS_WALL__ --> <br><small>  __TEXT_RIGHTS_WALL__ </small> <!-- __TEXT_RIGHTS_WALL__ -->
+<div>
+    <br>
+    Получать оповещения 
+    <input type="checkbox" onclick="ajax_input_change(event)" name="DO_GET_CAST"
+                         data-action="/derjava/ajax.php?ax=session&bx=set&w=__ID_WALL__"
+                         value="1"
+                         __CHECKED_DO_GET_CAST__ >
+
+    <br>
+
+    <a name="DO_SHOW_READ" style="padding: 10px;" > Показывать прочитанные посты </a>
+        <input type="checkbox" onclick="wall_do_show_read(event)" name="DO_SHOW_READ"
+                         data-action="/derjava/ajax.php?ax=session&bx=set"
+                         value="1"
+                         __CHECKED_DO_SHOW_READ__ >
+
+<!-- __ID_MSG_WALL__ -->
+    <a style="padding: 10px;" href="javascript:void();"
+        href-="/derjava/wall.php?w=__ID_WALL__" onclick="wall_show_entire(event)"  > показывать всю стену</a>
+<!-- __ID_MSG_WALL__ -->
+    <br><a href="/derjava/wall_users_cast.php?w=__ID_WALL__" target="wuc">Подписчики</a>
+</div>
+<!-- data0% -->
+
+
+<div id="wall_editor"  class="rounded border mb-3"
+     style="display: none;z-index:1111;position:fixed;top:40px;right:20px;width:80%;background-color:greenyellow;opacity:100%;"
+     align="center">
+
+    <i class="material-icons" data-toggle="tooltip" title="ответить">person_add</i>
+    Номер анкеты присоединяемого к разговору пользователя <input type="text" value="" name="person" >
+
+    <textarea style="width:90%;min-height:100px;max-height:400px;margin-top:20px;"
+              onkeyup="control_autoheight(event)" >
+    </textarea>
+    <br><button onclick="wall_save_click(event)">Сохранить</button> &nbsp;&nbsp;&nbsp; <button onclick="wall_edit_close(event)">X</button>
+</div>
+
+
+<!-- %data0 -->
+<!-- WALL_SEARCH -->
+                <div class="mb-3"> 
+                    <form id="sxwall" action="__WALL_SEARCH__#sxwall" method="post" class="mb-3">
+
+                        <div class="form-inline mt-4">
+                            <input name="sxw" value="__WALL_SEARCHED__" class="form-control col mr-1 rounded-pill m-height"
+                                   type="search"
+                                   placeholder="поиск постов" aria-label="Search">
+                            <button class="btn shadow-none rounded-pill main-btn" type="submit">Искать</button>
+                        </div>
+                    </form>
+                </div>
+<!-- WALL_SEARCH -->
+<!-- data0% -->
+
+
+
+<!-- %data8 -->
+            <!-- СООБЩЕНИЕ В СООБЩЕСТВЕ !!!! -->
+
+            <div class="bg-white rounded border mb-3 wall" style="border-color: black !important;">
+
+
+                <!--ОСНОВНОЕ -->
+                <div class="col media pt-3" id="div_m__ID_MSG_WALL__">
+                    
+<!-- <a name="m__ID_MSG_WALL__" href="/derjava/wallmsg.php?m=__ID_MSG_WALL__" ><small>__ID_MSG_WALL__</small></a><br> -->
+<img id="m__ID_MSG_WALL__" src="/32/copylink32.png" data-href="/derjava/wallmsg.php?m=__ID_MSG_WALL__"  title="копировать ссылку [__ID_MSG_WALL__]" onclick="href2clipboard(event)">
+
+                    <a href="/derjava/user_contact.php?__U__">
+                        <img class="mr-3 rounded-circle" style="width:64px;" src="img/ava-2.jpg##__IMGSRC_USER__" >
+                    </a>
+                    <p>__NAME_USER__ <!-- __TEXT_U__ --> ( __TEXT_U__ ) <!-- __TEXT_U__ -->
+                        <br>
+                        <!-- <a class="main-a" href="/derjava/user_contact.php?__U__"></a> -->
+                        <!-- __VECHE__ -->
+                        <small><a class="main-a text-muted"
+                                  href="/derjava/veche.php?iv=__VECHE__#m__ID_MSG_WALL__"> __TS_MSG_WALL__ </a>
+                        </small>
+                        <!-- __VECHE__ -->
+                        <!-- __ID_POLL__ -->
+                        <small><a class="main-a text-muted"
+                                  href="/derjava/poll.php?qq=__ID_POLL__#m__ID_MSG_WALL__"> __TS_MSG_WALL__ </a>
+                        </small>
+                        <!-- __ID_POLL__ -->
+                    </p>
+
+                <!-- __MSG_IS_PUB__ -->
+                <span> <a href="/tk/__U__/__ID_MSG_WALL__.php"  style="padding:5px;color:red;background-color:yellow;" target="tk" >это публикация !</a></span>
+                <!-- __MSG_IS_PUB__ -->
+
+
+        <span class="position-absolute d-flex align-middle" style="right: 16px;">
+           <!--Пожаловаться-->
+<!--
+           <button class="mr-1 main-a"
+              data-flag="claim"
+              data-target="xclaim"
+              href="/derjava/ajax.php?ax=wall_msg_flag&bx=claim&v=1&m=__ID_MSG_WALL__"
+              onclick="wall_msg_flag(event)">
+               <i class="material-icons" data-toggle="tooltip" title="Пожаловаться">announcement</i>
+           </button>
+
+          <button class="mr-1 main-a" style="display: none;"
+             data-flag="xclaim"
+             data-target="claim"
+             href="/derjava/ajax.php?ax=wall_msg_flag&bx=claim&v=0&m=__ID_MSG_WALL__"
+             onclick="wall_msg_flag(event)">
+              <img src="/data.derjava/xclaim.png" >
+          </button>
+-->
+
+
+
+
+
+<!-- __CAN_USER_ADD_COMMENT__ -->
+                        <button class="mr-1 main-a"
+                           data-id="0"
+                           data-action="/derjava/ajax.php?ax=newmsg6&m=0&mr=0&mp=__ID_MSG_WALL__"
+                           onclick="wall_msg_reply(event)">
+                            <i class="material-icons" data-toggle="tooltip" title="ответить">reply_all</i>
+                        </button>
+<!-- __CAN_USER_ADD_COMMENT__ -->
+
+                        <!-- __CAN_WALL_EDIT__ -->
+                        <button class="mr-1 main-a" style="padding: 0; border: 0; background: none;"
+                                data-id="__ID_MSG_WALL__"
+                                data-action="/derjava/ajax.php?ax=msg&bx=set&m=__ID_MSG_WALL__"
+                                onclick="wall_edit_click(event)"
+                                >
+                            <i class="material-icons" data-toggle="tooltip" title="Изменить">edit</i>
+                        </button>
+                        <button  class="mr-1 main-a" onclick="wall_fileup(event)" data-id="__ID_MSG_WALL__"
+                                 style="padding: 0; border: 0; background: none;">
+                            <i class="material-icons" data-toggle="tooltip" title="присоединить файл">attach_file</i>
+                        </button>
+                        <!-- __CAN_WALL_EDIT__ -->
+
+                        <!-- remove
+                                   --Одобрить--
+                                   <a class="mr-1 main-a text-muted" style="display: none"
+                                      href="/derjava/ajax.php?ax=wall_msg_flag&bx=approve&m=__ID_MSG_WALL__"
+                                      onclick="wall_msg_flag(event)"><i class="material-icons" data-toggle="tooltip" title="Одобрить">thumb_up</i>
+                                   </a>
+                                   --Блокировать--
+                                   <a class="mr-1 main-a text-muted" style="display: none"
+                                      href="/derjava/ajax.php?ax=wall_msg_flag&bx=ban&m=__ID_MSG_WALL__"
+                                      onclick="wall_msg_flag(event)">
+                                       <i class="material-icons" data-toggle="tooltip" title="Блокировать">block</i>
+                                   </a>
+                         remove -->
+
+                        <!--ЛАЙК-->
+           <button class="mr-1 main-a text-muted" style="__DISPLAY_LIKE__;padding: 0; border: 0; background: none;"
+              data-flag="like"
+              data-target="xlike"
+              href="/derjava/ajax.php?ax=wall_msg_flag&bx=like&v=1&m=__ID_MSG_WALL__"
+              onclick="wall_msg_flag(event)">
+               <i class="material-icons" data-toggle="tooltip" title="Нравится">favorite_border</i>
+           </button>
+               <!-- __CNT_LIKE__ -->
+               <small class="cnt" style="__DISPLAY_LIKE__;text-decoration:none">
+                   <a href="/derjava/user_search.php?lu=5&sx=__ID_MSG_WALL__" target="su" rel="nofollow">  __CNT_LIKE__ </a>
+               </small>
+               <!-- __CNT_LIKE__ -->
+           <button class="mr-1 main-a" style="__DISPLAY_LIKED__;padding: 0; border: 0; background: none;"
+              data-flag="xlike"
+              data-target="like"
+              href="/derjava/ajax.php?ax=wall_msg_flag&bx=like&v=0&m=__ID_MSG_WALL__"
+              onclick="wall_msg_flag(event)">
+               <img src="/data.derjava/xlike.png" >
+           </button>
+                <!-- __CNT_LIKED__ -->
+                <small class="cnt" style="__DISPLAY_LIKED__;text-decoration:none">
+                    <a href="/derjava/user_search.php?lu=5&sx=__ID_MSG_WALL__" target="su" rel="nofollow">  __CNT_LIKED__ </a>
+                </small>
+               <!-- __CNT_LIKED__ -->
+
+
+           <button class="mr-1 main-a" style="__DISPLAY_CHECK__;padding: 0; border: 0; background: none;"
+              href="/derjava/ajax.php?ax=wall_msg_read&m=__ID_MSG_WALL__"
+              data-flag="check"
+              onclick="wall_msg_flag_click(event)">
+               <i class="material-icons" data-toggle="tooltip" title="прочитано">check</i>
+           </button>
+       </span>
+
+        <div align="right" class="m_msg_more" >
+            <i class="material-icons" data-toggle="tooltip" title="">more_vert</i>
+            <ul>
+                <li>
+<!-- __CAN_WALL_CAST__ -->
+           <button class="mr-1 main-a" style="__DISPLAY_CAST__"
+              data-flag="cast"
+              data-target="xcast"
+              href="/derjava/ajax.php?ax=wall_msg_flag&bx=cast&v=1&m=__ID_MSG_WALL__"
+              onclick="wall_msg_flag(event)">
+               Оповестить всех <i class="material-icons" data-toggle="tooltip" title="оповестить">cast</i>
+           </button>
+
+          <button class="mr-1 main-a" style="__DISPLAY_CASTED__"
+             data-flag="xcast"
+             data-target="cast"
+             href="/derjava/ajax.php?ax=wall_msg_flag&bx=cast&v=0&m=__ID_MSG_WALL__"
+             onclick="wall_msg_flag(event)">
+               Убрать оповещение <i class="material-icons" data-toggle="tooltip" title="убрать оповещение">cast_connected</i>
+          </button>
+<!-- __CAN_WALL_CAST__ -->
+                </li>
+
+
+           <!--Удаление сообщения-->
+                <li>
+           <button class="mr-1 main-a" style="padding: 0; border: 0; background: none;"
+              data-flag="delete"
+              data-target="xdelete"
+              href="/derjava/ajax.php?ax=wall_msg_flag&bx=delete&v=1&m=__ID_MSG_WALL__"
+              onclick="wall_msg_flag(event)">
+               Бросить в корзину <i class="material-icons" data-toggle="tooltip" title="Удалить сообщение">delete_outline</i>
+           </button>
+           <button class="mr-1 main-a" style="display: none;" style="padding: 0; border: 0; background: none;"
+              data-flag="xdelete"
+              data-target="delete"
+              href="/derjava/ajax.php?ax=wall_msg_flag&bx=delete&v=0&m=__ID_MSG_WALL__"
+              onclick="wall_msg_flag(event)">
+               Вернуть из корзины <img src="/data.derjava/xdelete.png" >
+           </button>
+                </li><!-- /Удаление сообщения-->
+
+
+            </ul>
+        </div>
+                
+
+                </div>
+
+                <hr>
+
+                <div class="col">
+                    <!-- !__TEXT_MSG_WALL_200__ -->
+                    __TEXT_MSG_WALL__
+                    <!-- !__TEXT_MSG_WALL_200__ -->
+                    <!-- __TEXT_MSG_WALL_200__ -->
+                    <div> __TEXT_MSG_WALL_200__
+                        <button onclick="wall_msg_showfull(event)"
+                                style="color: #89b852;background-color: while;"
+                                class="btn ml-3 p-1 border z-depth-0 d-inline font-weight-bold">показать полностью ...</button>
+                        <div class="original_text" style="display:none;">__TEXT_MSG_WALL__</div>
+                    </div>
+                    <!-- __TEXT_MSG_WALL_200__ -->
+                
+<ul id="fm__ID_MSG_WALL__" style="display:block"  >
+<!-- __rows11__ -->
+<li>
+    <a href="/w/__ID_MSG_WALL__/__FILE_WALL__" target="fw"  rel="nofollow">
+    <!-- __IMGSRC_FILE_WALL__ --> <img src="__IMGSRC_FILE_WALL__" > <!-- __IMGSRC_FILE_WALL__ -->  __FILE_WALL__ </a>
+</li>
+<!-- __rows11__ -->
+</ul>
+                </div>
+
+                <div class="row px-3 no-gutters">
+                    <!-- __rows10__ -->
+                    <div class="col img-comment mt-3 mx-1" >
+
+                        <!-- __KEY_YOUTUBE__ -->
+                        <div style="display:inline-block;">
+                            <h4>__TITLE__</h4>
+                            <img data-time="__T_YOUTUBE__" src="__IMGSRC_MSG_WALL__" onclick="__IMG_CLICK__" style="__IMG_STYLE__">
+                        </div>
+                        <!-- __KEY_YOUTUBE__ -->
+
+                        <!-- !__KEY_YOUTUBE__ -->
+                        <!-- __IMG__ -->
+                        <img class="" src="__IMGSRC_MSG_WALL__" onclick="__IMG_CLICK__" style="__IMG_STYLE__">
+                        <!-- __IMG__ -->
+                        <!-- !__KEY_YOUTUBE__ -->
+
+                        <!-- __IFRAME__ -->
+                        <!-- __IFRAME__ -->
+                    </div>
+                    <!-- __rows10__ -->
+                </div>
+
+
+
+
+                <hr>
+                <!--КОММЕНТАРИИ ПОЛЬЗОВАТЕЛЕЙ-->
+                <!-- __rows9__  -->
+                <div class="col" id="m__ID_MSG_WALL__">
+
+    <!-- __ID_MSG_WALL_REPLY__ -->
+        <div style="margin-left:50px;">
+    <!-- __ID_MSG_WALL_REPLY__ -->
+
+    <img id="m__ID_MSG_WALL__" src="/32/copylink32.png" data-href="/derjava/wallmsg.php?m=__ID_MSG_WALL__"  title="копировать ссылку [__ID_MSG_WALL__]" onclick="href2clipboard(event)">
+
+<!--
+                    <a name="m__ID_MSG_WALL__" href="/derjava/wallmsg.php?m=__ID_MSG_WALL__" >
+                        <small>__ID_MSG_WALL__</small>
+                    </a>
+-->
+                        <!-- __ID_MSG_WALL_REPLY__ --> -> <small> __ID_MSG_WALL_REPLY__ </small> <!-- __ID_MSG_WALL_REPLY__ -->
+
+
+
+                    <small> __TS_MSG_WALL__</small>
+                    
+                    <br>
+                    <a href="/derjava/user_contact.php?__U__">
+                        <!-- __ID_MSG_WALL_REPLY__ -->
+                        <img class="ml-4 mr-2 rounded-pill" align="left" style="height: 20px;width:20px;"  src="__IMGSRC_USER__">
+                        <!-- __ID_MSG_WALL_REPLY__ -->
+                        <!-- !__ID_MSG_WALL_REPLY__ -->
+                        <img class="ml-4 mr-2 rounded-pill" align="left" style="height: 38px"  src="__IMGSRC_USER__">
+                        <!-- !__ID_MSG_WALL_REPLY__ -->
+                    __NAME_USER__  <!-- __TEXT_U__ --> ( __TEXT_U__ ) <!-- __TEXT_U__ -->
+                    </a>
+
+                    <!-- __NAME_U_JOINED__ -->
+                        <br><i class="material-icons" >person_add</i> __NAME_U_JOINED__
+                    <!-- __NAME_U_JOINED__ -->
+                    <div class="d-flex ml-4 mb-2" style="font-size: 0.85rem">
+                        <!-- !__TEXT_MSG_WALL_200__ -->
+                        __TEXT_MSG_WALL__
+                        <!-- !__TEXT_MSG_WALL_200__ -->
+                        <!-- __TEXT_MSG_WALL_200__ -->
+                        <div> __TEXT_MSG_WALL_200__
+
+                        <button onclick="wall_msg_showfull(event)"
+                                style="color: #89b852;background-color: while;"
+                                class="btn ml-3 p-1 border z-depth-0 d-inline font-weight-bold">показать полностью ...</button>
+                            
+
+                                <div class="original_text" style="display:none;background-color: blue;">__TEXT_MSG_WALL__</div>
+                        </div>
+                        <!-- __TEXT_MSG_WALL_200__ -->
+                    </div>
+    <!-- __ID_MSG_WALL_REPLY__ -->
+        </div>
+    <!-- __ID_MSG_WALL_REPLY__ -->
+
+<ul id="fm__ID_MSG_WALL__" class="col">
+<!-- __rows12__ -->
+<li>
+    <a href="/w/__ID_MSG_WALL__/__FILE_WALL__" target="fw" rel="nofollow">
+    <!-- __IMGSRC_FILE_WALL__ --> <img src="__IMGSRC_FILE_WALL__" > <!-- __IMGSRC_FILE_WALL__ -->  __FILE_WALL__ </a>
+</li>
+<!-- __rows12__ -->
+</ul>
+
+                    
+
+
+<span class="float-right mr-1 mb-0 d-flex">
+
+                        <!-- __CAN_EDIT_MSG__ -->
+
+                        <button class="mr-1 main-a" style="padding: 0; border: 0; background: none;"
+                                data-id="__ID_MSG_WALL__"
+                                data-action="/derjava/ajax.php?ax=msg&bx=set&m=__ID_MSG_WALL__"
+                                onclick="wall_edit_click(event)"
+                                >
+                            <i class="material-icons" data-toggle="tooltip" title="изменить">edit</i>
+                            <!-- <img src="/data.derjava/edit.png" data-id="__ID_MSG_WALL__" > -->
+                        </button>
+
+                        <button  class="mr-1 main-a" onclick="wall_fileup(event)" data-id="__ID_MSG_WALL__"
+                                 style="padding: 0; border: 0; background: none;"
+                                 >
+                            <i class="material-icons" data-toggle="tooltip" title="присоединить файл">attach_file</i>
+                        </button>
+                        <!-- __CAN_EDIT_MSG__ -->
+
+<!-- __CAN_REPLY_MSG__ -->
+                            <button class="mr-1 main-a"
+                               data-id="0"
+                               data-action="/derjava/ajax.php?ax=newmsg6&m=0&mr=__ID_MSG_WALL__"
+                               onclick="wall_msg_reply(event)">
+                                <i class="material-icons" data-toggle="tooltip" title="ответить">reply</i>
+                            </button>
+<!-- __CAN_REPLY_MSG__ -->
+
+                        
+<!--
+                            <button class="mr-1 main-a"
+                               data-flag="claim"
+                               data-target="xclaim"
+                               href="/derjava/ajax.php?ax=wall_msg_flag&bx=claim&v=1&m=__ID_MSG_WALL__"
+                               onclick="wall_msg_flag(event)">
+                                <i class="material-icons" data-toggle="tooltip" title="Пожаловаться">announcement</i>
+                            </button>
+
+                           <button class="mr-1 main-a" style="display: none;"
+                              data-flag="xclaim"
+                              data-target="claim"
+                              href="/derjava/ajax.php?ax=wall_msg_flag&bx=claim&v=0&m=__ID_MSG_VECHE__"
+                              onclick="wall_msg_flag(event)">
+                               <img src="/data.derjava/xclaim.png" >
+                           </button>
+-->
+
+                            <button class="mr-1 main-a"
+                               style="padding: 0; border: 0; background: none;"
+                               data-flag="delete"
+                               data-target="xdelete"
+                               href="/derjava/ajax.php?ax=wall_msg_flag&bx=delete&v=1&m=__ID_MSG_WALL__"
+                               onclick="wall_msg_flag(event)">
+                                <i class="material-icons" data-toggle="tooltip" title="Удалить сообщение">delete_outline</i>
+                            </button>
+                            <button class="mr-1 main-a" style="display: none;padding: 0; border: 0; background: none;"
+                               data-flag="xdelete"
+                               data-target="delete"
+                               href="/derjava/ajax.php?ax=wall_msg_flag&bx=delete&v=0&m=__ID_MSG_WALL__"
+                               onclick="wall_msg_flag(event)">
+                                <img src="/data.derjava/xdelete.png" >
+                            </button>
+
+                            <button class="mr-1 main-a text-muted" style="__DISPLAY_LIKE__;padding: 0; border: 0; background: none;"
+                               data-flag="like"
+                               data-target="xlike"
+                               href="/derjava/ajax.php?ax=wall_msg_flag&bx=like&v=1&m=__ID_MSG_WALL__"
+                               onclick="wall_msg_flag(event)">
+                                <i class="material-icons" data-toggle="tooltip" title="Нравится">favorite_border</i>
+                            </button>
+                                 <!-- __CNT_LIKE__ -->
+                                 <small class="cnt" style="__DISPLAY_LIKE__;text-decoration:none">
+                                     <a href="/derjava/user_search.php?lu=5&sx=__ID_MSG_WALL__" target="su" rel="nofollow">  __CNT_LIKE__ </a>
+                                 </small>
+                                 <!-- __CNT_LIKE__ -->
+
+                            <button class="mr-1 main-a" style="__DISPLAY_LIKED__;padding: 0; border: 0; background: none;"
+                               data-flag="xlike"
+                               data-target="like"
+                               href="/derjava/ajax.php?ax=wall_msg_flag&bx=like&v=0&m=__ID_MSG_WALL__"
+                               onclick="wall_msg_flag(event)">
+                                <img src="/data.derjava/xlike.png" >
+                            </button>
+                                <!-- __CNT_LIKED__ -->
+                                <small class="cnt" style="__DISPLAY_LIKED__;text-decoration:none">
+                                    <a href="/derjava/user_search.php?lu=5&sx=__ID_MSG_WALL__" target="su" rel="nofollow">  __CNT_LIKED__ </a>
+                                </small>
+                                <!-- __CNT_LIKED__ -->
+
+
+                            <button class="mr-1 main-a text-muted" style="__DISPLAY_MARK__;padding: 0; border: 0; background: none;"
+                               data-flag="mark"
+                               data-target="xmark"
+                               href="/derjava/ajax.php?ax=wall_msg_flag&bx=mark&v=1&m=__ID_MSG_WALL__"
+                               onclick="wall_msg_flag(event)">
+                                <i class="material-icons" data-toggle="tooltip" title="Закладка">label</i>
+                            </button>
+                            <button class="mr-1 main-a text-muted" style="__DISPLAY_MARKED__;padding: 0; border: 0; background: none;"
+                               data-flag="xmark"
+                               data-target="mark"
+                               href="/derjava/ajax.php?ax=wall_msg_flag&bx=mark&v=0&m=__ID_MSG_WALL__"
+                               onclick="wall_msg_flag(event)">
+                                <i class="material-icons" data-toggle="tooltip" title="Убрать закладку">label_off</i>
+                            </button>
+
+           <button class="mr-1 main-a" style="__DISPLAY_CHECK__;padding: 0; border: 0; background: none;"
+              href="/derjava/ajax.php?ax=wall_msg_read&m=__ID_MSG_WALL_PARENT__"
+              data-flag="check"
+              onclick="wall_msg_flag_click(event)">
+               <i class="material-icons" data-toggle="tooltip" title="прочитано">check</i>
+           </button>
+
+        </span>
+        <div class="clearfix"></div>
+
+                </div>
+                <!-- __rows9__ -->
+                
+                <hr class="mx-3 mt-1">
+            </div>
+<!-- data8% -->
+
+
+<!-- %data0 -->
+                <!-- !__SESSION_ISUSERLOGGED__ -->
+                <div>[комментарии доступны после авторизации]</div>
+                <!-- !__SESSION_ISUSERLOGGED__ -->
+
+
+
+<!-- __CNT_WALL_LAST__ -->
+<div>
+    <button class="w-45 btn main-bg-color main-btn px-2 m-0 shadow-none waves-effect waves-light"
+        style="height:55px;"
+        data-w="__ID_WALL__"
+        data-ts="__ID_MSG_WALL_LAST__"
+        data-mx="__ID_MSG_WALL_EX__"
+        data-sx="__WALL_SEARCHED__"
+        onclick="wall_nextpage(event)">
+        Есть ещё __CNT_WALL_LAST__ постов,  загрузить несколько ?
+    </button>
+</div>
+<!-- __CNT_WALL_LAST__ -->
+<!-- data0% -->
+

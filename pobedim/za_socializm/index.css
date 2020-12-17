@@ -1,0 +1,8 @@
+body { font-size: 12pt; 
+       background-image: none;
+       
+       background-repeat: repeat-y;
+       background-size: contain;
+       background-color: white;
+       color: black; 
+}

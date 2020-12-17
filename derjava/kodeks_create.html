@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Держава  Народовластие!</title>
+<!-- $bootstrap-head$ -->
+<!-- $head$ -->        
+        <script type="text/javascript" src="/derzhava/derzhava_golosovanie.js"></script>
+        <script type="text/javascript" src="/derjava/poll_edit.js"></script>        
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+    
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 div-right">
+				<div class="bg-white rounded border mb-3">
+
+					<!--Заголовок-->
+					<div class="col">
+						<h1>
+							<small class="font-weight-light pt-1">Создание статута</small>
+						</h1>
+						<hr class="mt-2 mx-n3">
+
+                                                <form action="/derjava/ajax.php?ax=kodeks_create" method="post">
+                                                    <h5 class="mt-4 mb-3 font-weight-normal">Введите название статута</h5>
+
+							<input name="ns" class="form-control col rounded m-height" type="search" placeholder="Название" aria-label="Search">
+                                                    <h5 class="mt-4 mb-3 font-weight-normal">Введите и.н. статута верхнего уровня</h5>
+                                                        <input name="nsp" class="form-control col rounded m-height" type="search" placeholder="номер статута верхнего уровня" aria-label="Search">
+                                                        
+                                                    <input type="submit" class="btn main-btn my-4 rounded z-depth-1" value="Сохранить" >
+						</form>
+					</div>
+
+				</div>
+			</div>
+                </div>
+        </div>
+
+</main>
+
+<!--Модальное окно регистрации-->
+   <!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+</body>
+</html>

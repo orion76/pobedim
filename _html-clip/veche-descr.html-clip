@@ -1,0 +1,133 @@
+<!-- Модальные окна таблицы участников -->
+<div class="modal fade" id="modalReg" tabindex="-1" role="dialog" aria-labelledby="modalReg"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Кто такой регистратор участника</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>В Державе действует система взаимной верификации. Вы можете подтвердить известных вам участников,
+                    чтобы повысить уровень доверия к ним. Так мы сформируем сеть доверия - всех между всеми.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalYchastnik" tabindex="-1" role="dialog" aria-labelledby="modalYchastnik"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Кто такой участник объединения</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalDelegat" tabindex="-1" role="dialog" aria-labelledby="modalDelegat"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Кто такой делегат объединения</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>В Державе вы можете делегировать свой голос. Делегирование в каждом объединении оформляется
+                    индивидуально. Вы можете назначить одного делегата в нескольких объединениях или выбрать различных
+                    делегатов. Вы можете переголосовать поверх вашего делегата напрямую. В любое время вы можете
+                    отозвать делегированный голос.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalStatus" tabindex="-1" role="dialog" aria-labelledby="modalDelegat"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Статусы участников объединения</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Статус участника или гостя даёт координатор объединения после верификации пользователя.
+                    Координатор назначает сокоординаторов для верификации участников Державы и размещения постов на
+                    стене объединения.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalKoord" tabindex="-1" role="dialog" aria-labelledby="modalDelegat"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Координатор сообщества</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Участники объединения сами выбирают координатора. Функции координатора автоматически становятся
+                    доступны участнику, за которого проголосовало большинство. Координатором и сокоординатором может
+                    стать только тот, кто проголосовал сам за себя, подтвердив свою готовность работать в
+                    объединении.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalVote" tabindex="-1" role="dialog" aria-labelledby="modalVote"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Подтверждение человека</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>В Державе действует система взаимной верификации . Вы можете подтвердить известных вам участников,
+                    чтобы повысить уровень доверия к ним. Так мы сформируем сеть доверия - всех между всеми.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn main-btn" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Модальные окна таблицы участников -->
+
+
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+  <!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+				<div class="no-gutters bg-white rounded border mb-3">
+					<!--Заголовок-->
+					<div class="col">
+<script>
+  function select_ku_change(event){
+      var n = document.getElementById('select_kind_user');
+      var lx = document.querySelectorAll('input[type=checkbox]');
+      var s = '';
+      for(var i=0; i< lx.length; i++){
+          s = s+'&'+lx[i].name+'='+lx[i].checked;
+      }
+      setLocation('/derjava/u_wall_chat.php?ku='+n.value+s);
+  }
+</script>
+                                            
+<select id="select_kind_user" onchange="select_ku_change(event)" data-action="---/derjava/ajax.php?ax=set_user_kind&ux=__U__">
+<!-- %data20 -->
+    <option __SELECTED__ value="__ID_KIND_USER__" > __NAME_KIND_USER__ , __CNT_MSG_USER_KIND__</option>
+<!-- data20% -->
+</select>
+
+<!-- %data0 -->
+<ul>
+    <li> понравившиеся <input name="on:liked" __CHECKED1__ type="checkbox" onchange="select_ku_change(event)"> </li>
+    <li> с закладкой <input name="on:marked" __CHECKED2__ type="checkbox" onchange="select_ku_change(event)"> </li>
+    <li> в урне <input name="on:trashed" __CHECKED3__ type="checkbox" onchange="select_ku_change(event)"> </li>
+    <li> оповещения <input name="on:casted" __CHECKED4__ type="checkbox" onchange="select_ku_change(event)"> </li>
+    <li> с файлами <input name="on:attached" __CHECKED5__ type="checkbox" onchange="select_ku_change(event)"> </li>
+    <li> публикации <input name="on:pub" __CHECKED6__ type="checkbox" onchange="select_ku_change(event)"> </li>
+</div>
+<!-- data0% -->
+
+<ul>
+
+<!-- %data1 -->
+<li style="vertical-align: top;padding:10px;width:100%;">
+
+<!--
+<td style="white-space:nowrap;width:80px;padding-right: 10px;" >__ID_WALL__ / <a href="/w/__ID_WALL__/index.php" target="ww"> __ID_MSG_WALL_PARENT__ </a></td>
+-->
+    <small style="white-space:nowrap;padding-right:10px;">
+        <a href="/derjava/wallmsg.php?w=__ID_WALL__&m=__ID_MSG_WALL__#m__ID_MSG_WALL__" target="_self" title=""> **** </a>
+    </small>
+<!-- __TS_MSG_WALL_U__  -->
+    __BLOB_MSG_WALL_BRIEF__
+</li>
+<!-- data1% -->
+
+</ul>
+
+
+ <!-- a href="/w/__ID_WALL__/index.php" target="ww"> __ID_MSG_WALL_PARENT__ </a -->
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+
+
+<!-- $login-modal$ -->
+
+
+
+</body>
+</html>

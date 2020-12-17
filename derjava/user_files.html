@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- $noindex$ -->
+    <!-- $bootstrap-head$ -->
+    <!-- $head$ -->
+    <script>
+        function m_u_use_photo(event) {
+            var t = event.target;
+            var f = t.getAttribute('data-f');
+            var href = location.protocol + '//' + location.host + '/derjava/user_settings.php?ax=set_photo&f=' + f;
+            location.assign(href);
+        }
+    </script>
+
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+                <div class="col">
+                    <h1>
+                        <small class="float-left font-weight-light pt-1">Файлы пользователя в свободном доступе</small>
+                    </h1>
+                    <div class="clearfix"></div>
+                    <hr class="mt-2 mx-n3">
+
+
+                    <form enctype="multipart/form-data" action="/derjava/user_files.php?ax=filefolder&bx=uploadfile"
+                          method="POST">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="3000000"/>
+                        <input name="userfile" type="file"/>
+                        <input class="btn main-btn" type="submit" value="Загрузить файл на сервер"/>
+                    </form>
+
+                    <!-- %data0 -->
+                    <!-- data0% -->
+                    <div class="table-responsive table-bordered table-striped my-3">
+                    <table class="w-100">
+                        <!-- %data1 -->
+                        <tr>
+                            <td>__NAME_FILE__</td>
+                            <td><a href="__HREF_FILE__"> __IMG_FILE__ </a></td>
+                            <td>
+                                <button class="main-btn-create-group w-100" data-f="__NAME_FILE__" onclick="m_u_use_photo(event)">фото</button>
+                            </td>
+                        </tr>
+                        <!-- data1% -->
+                    </table>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--/Основной контент-->
+        </div>
+    </div>
+</main>
+
+
+</body>
+</html>

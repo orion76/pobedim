@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Держава — система самоуправления граждан.</title>
+    <!-- $bootstrap-head$ -->
+
+    <!-- $head$ -->
+
+    <script>
+
+        function select_certificate(event) {
+            var t = event.target;
+            var v = t.value;
+            window.location = location.protocol + '//' + location.host + location.pathname + '?ic=' + v;
+        }
+
+
+    </script>
+</head>
+
+<body class="pt-3 pt-md-5 body-color">
+
+<!-- $header$ -->
+<main>
+<!--Контент-->
+	<div class="container pt-5  div-main">
+		<div class="row no-gutters">
+
+<div class="d-none d-md-block col-md-4 col-lg-3 pr-3 menu-left">
+    <!-- $mmenu-header$ --><!-- $mmenu-left$ -->
+    <!-- $cmenu-0000$ -->
+</div>
+
+			<!--Основной контент   -->
+			<div class="no-gutters col-sm-12 col-md-8 col-lg-9 bg-white div-right">
+                <div class="bg-white rounded border">
+                    <!--Заголовок-->
+                    <!-- %data0 -->
+                    <div class="col">
+                        <h4 class="mt-3"><small>Делегирование голоса в группе <a href="/derjava/veche.php?iv=__VECHE__"> __NAME_VECHE__ </a></small></h4>
+                        <!-- data0% -->
+                        <hr class="mx-n3">
+                        <p class="font-weight-normal">Делегируемый голос:</p>
+                        <ul class="list-unstyled">
+                            <!-- %data2 -->
+                            <li>
+                                <input name="sd" type="radio" __CHECKED__ value="__ID_CERTIFICATE__&iv=__VECHE__"
+                                       onchange="select_certificate(event)">
+
+                                __ID_CERTIFICATE__ <span> __NAME_CERTIFICATE__ </span>
+
+                            </li>
+                            <!-- data2% -->
+                        </ul>
+
+
+                        <h5><small>Делегаты:</small></h5>
+                        <!-- %data0 -->
+                        <form class="form-inline" action="/derjava/veche_delegates.php?ic=__ID_CERTIFICATE__&iv=__VECHE__" method="post">
+                            <input class="form-control col mr-1 rounded-pill m-height d-inline" type="text" name="sx_dt" value="__SX__" placeholder="Поиск делегата">
+                            <input class="btn main-btn rounded-pill" type="submit" value="найти">
+                        </form>
+                    
+
+                        <ul class="mt-3">
+                            <li> НЕ ДЕЛЕГИРОВАТЬ ГОЛОС
+                                <input name="du" type="radio" value="0" id="nodelegate"
+                                       onchange="ajax_input_change(event)"
+                                       href="/derjava/veche_delegates.php?ax=set_delegate&iv=__VECHE__&ic=__ID_CERTIFICATE__">
+                            </li>
+                     <!-- data0% -->
+                            <!-- %data1 -->
+                            <li>
+                                <img src="__IMGSRC_U__"> __NAME_CERTIFICATE_U__
+                                <input name="du" type="radio" __CHECKED__ value="__U__"
+                                       onchange="ajax_input_change(event)"
+                                       href="/derjava/veche_delegates.php?ax=set_delegate&iv=__VECHE__&ic=__ID_CERTIFICATE__">
+                            </li>
+                            <!-- data1% -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<!--Модальное окно регистрации-->
+<!-- $login-modal$ -->
+<!--/Модальное окно регистрации-->
+
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+.div-body { display:inline-block; float: none; height: 100%; width:100%; text-align: left; margin-top: 20px; }
+        
+.div-hmenu { display:block; float: none; text-align: left; margin-bottom: 10px; margin-top: 1px;}        
+.div-fmenu { display:block; float: none; text-align: right;}
+
+.div-header { display:block; float: none; text-align: left; width:100%; margin: 0px;}        
+.div-footer { display:block; float: none; text-align: left;}        
+
+.div-alarm { background-color: yellow; color:red; z-index: 555; top:10px; left:20px; position: fixed; }
+.div-title {  display:block; float: none; }        
+.div-content ,.div-search, .div-found { width: 200px; display:inline-block; text-align:left; }
+
+.div-main { display: block;
+            margin: 0px; 
+            margin-left:10px; 
+            text-align: left; 
+            float:none; 
+            vertical-align:top;  
+            text-align: left;  
+            border-right: 0px;  
+            min-width: 200px; 
+        }
+.div-ajax { display: block;
+            margin-right: 10px;
+            background-color: white;
+            min-width: auto; 
+            max-width: auto;  
+            width: auto; 
+            float: none; 
+            vertical-align:top; 
+            text-align: left; 
+            margin-left: 1px; 
+        }
+.div-text {  white-space: normal; padding-left: 10px;}
+
+@media only screen and (min-width: 799px)  {
+    .div-ajax {  display: inline-block;} 
+    .div-main { display: inline-block; max-width: 200px;}
+}
+
+@media only screen and (min-width: 900px)  { .div-main { margin-left:10px; } }
+@media only screen and (min-width: 1050px) { .div-main { margin-left:100px; } }
+@media only screen and (min-width: 1200px)  { .div-main { margin-left:170px; } }
+
+@media only screen and (min-width: 800px)  { .div-ajax { max-width: 550px;} }
+@media only screen and (min-width: 900px)  { .div-ajax { max-width: 650px;} }
+@media only screen and (min-width: 1000px)  { .div-ajax { max-width: 730px;} }
+@media only screen and (min-width: 1050px)  { .div-ajax { max-width: 700px;} }
+@media only screen and (min-width: 1200px)  { .div-ajax { max-width: 770px;} }
+
+
+   
+input.sxu {
+    background-color: #DAEAC6;
+    background-image: url( /32/lupa32.png); 
+    background-repeat: no-repeat;
+    background-position: 2px; /* Позиционируем */   
+    /*  outline: none; убираем стандартную обводку браузера */   
+    border-width: 1px;
+
+    -moz-border-radius: 10px; /*  закругляем углы для Mozilla */  
+    -webkit-border-radius: 10px; /*  закругляем углы для Chrome, Safari */   
+    border-radius: 10px; /* закругляем углы для остальных браузеров  */  
+
+    padding-left: 25px; /* отступ слева от ввода, чтобы текст не был на картинке(выбирать по размеру картинки) */  
+    height: 20px; /* высота строки ввода */   
+    font-size: 13px; /* размер шрифта */    
+    margin-left: 8px;
+    margin-top:4px;
+}
+   
+
+
+
+div.login_proposal img { width: 32px; }
+
+span.derzhava-login {
+    bottom: auto; 
+    left: auto; 
+    top:  5px;
+    right: 10px;
+    z-index: 11; 
+    position: fixed;
+}
+
+div.derzhava-login > div > div.login_proposal{
+   bottom: 10px; 
+   left: 10px; 
+   top:  auto;
+   right: auto;
+   z-index: 11; 
+   position: fixed;
+}
+
+div.topline{
+    background-image: none; 
+    background-color: #B2D48A; 
+    color:white;     
+    height: 48px;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+div.topline img{ height: 45px; margin: 10px; padding-left: 60px; }
+
+div.topline form { 
+    display:inline-block;
+    vertical-align:top; 
+    padding-left: 10px; 
+    padding-top: 8px; 
+    margin: 0px;
+}
